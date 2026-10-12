@@ -5,25 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>首页 · 导演入门学习站</title>
 <meta name="description" content="零基础导演入门：视听语言、剧本剧集、导演方法与 AI 影视创作">
+<meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="css/styles.css">
+<script>
+(function(){
+  try {
+    var s = localStorage.getItem("director-site-theme");
+    var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var t = (s === "light" || s === "dark") ? s : (dark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", t);
+    document.documentElement.style.colorScheme = t;
+  } catch (e) {}
+})();
+</script>
 
 </head>
 <body data-page="home" data-total-pages="34">
+<a class="skip-link" href="#content">跳到正文</a>
 <header class="site-header">
-  <button class="btn-icon menu-toggle" id="menu-toggle" aria-label="打开菜单">☰</button>
+  <button class="btn-icon menu-toggle" id="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="sidebar"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
   <a class="brand" href="index.html">🎬 导演入门</a>
+  <button class="search-trigger" id="search-trigger" type="button" aria-label="搜索全站" aria-keyshortcuts="Control+K Meta+K"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="search-trigger-label">搜索全站</span><kbd class="search-kbd" id="search-kbd">Ctrl K</kbd></button>
   <div class="header-actions">
-    <button class="btn-icon" id="theme-toggle" aria-label="切换主题" title="切换主题">☾</button>
+    <button class="btn-icon" id="theme-toggle" type="button" aria-label="切换主题" title="切换主题">☾</button>
   </div>
+  <div class="read-progress" aria-hidden="true"><span id="read-progress-fill"></span></div>
 </header>
 <div class="layout">
 
 <aside class="sidebar" id="sidebar">
+  <nav class="sidebar-nav" aria-label="课程目录">
   <div class="sidebar-section">总览</div>
   <a href="index.html" class="stage-link">首页</a>
   <div class="sidebar-section">学习阶段</div>
-  <details >
+  <details class="nav-group">
     <summary>阶段一 · 视听语言</summary>
+    <div class="nav-group-links">
     <a href="stage1/index.html" class="">阶段概览</a>
     <a href="stage1/shot-size.html" class="sub-link">景别与角度</a>
     <a href="stage1/camera-movement.html" class="sub-link">运镜</a>
@@ -33,9 +50,11 @@
     <a href="stage1/montage.html" class="sub-link">蒙太奇与剪辑</a>
     <a href="stage1/sound.html" class="sub-link">声音</a>
     <a href="stage1/practice.html" class="sub-link">练习与资源</a>
+    </div>
   </details>
-  <details >
+  <details class="nav-group">
     <summary>阶段二 · 剧本与剧集</summary>
+    <div class="nav-group-links">
     <a href="stage2/index.html" class="">阶段概览</a>
     <a href="stage2/story-structure.html" class="sub-link">故事结构</a>
     <a href="stage2/character-conflict.html" class="sub-link">人物与冲突</a>
@@ -43,9 +62,11 @@
     <a href="stage2/series-hooks.html" class="sub-link">剧集弧线与钩子</a>
     <a href="stage2/shot-list.html" class="sub-link">分镜头脚本</a>
     <a href="stage2/practice.html" class="sub-link">练习与资源</a>
+    </div>
   </details>
-  <details >
+  <details class="nav-group">
     <summary>阶段三 · 导演方法</summary>
+    <div class="nav-group-links">
     <a href="stage3/index.html" class="">阶段概览</a>
     <a href="stage3/workflow.html" class="sub-link">导演流程</a>
     <a href="stage3/blocking.html" class="sub-link">场面调度</a>
@@ -53,9 +74,11 @@
     <a href="stage3/storyboard.html" class="sub-link">故事板与机位</a>
     <a href="stage3/shooting-plan.html" class="sub-link">拍摄计划</a>
     <a href="stage3/practice.html" class="sub-link">练习与资源</a>
+    </div>
   </details>
-  <details >
+  <details class="nav-group">
     <summary>阶段四 · AI 影视</summary>
+    <div class="nav-group-links">
     <a href="stage4/index.html" class="">阶段概览</a>
     <a href="stage4/tools-2026.html" class="sub-link">2026 工具现状</a>
     <a href="stage4/prompt-structure.html" class="sub-link">提示词结构</a>
@@ -63,31 +86,35 @@
     <a href="stage4/short-film-workflow.html" class="sub-link">短片流程</a>
     <a href="stage4/compliance.html" class="sub-link">合规提醒</a>
     <a href="stage4/practice.html" class="sub-link">练习与资源</a>
+    </div>
   </details>
   <div class="sidebar-section">附录</div>
   <a href="appendix/glossary.html" class="">镜头术语速查</a>
   <a href="appendix/progress.html" class="">30 周进度表</a>
   <a href="appendix/resources.html" class="">推荐书单片单</a>
+  </nav>
+  <div class="sidebar-foot" id="sidebar-progress"></div>
 </aside>
 <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
-<div class="main-wrap">
-<main class="main">
+<div class="doc-shell">
+<div class="doc-column">
+<main class="main" id="content">
 <nav class="breadcrumb" aria-label="面包屑"><span>首页</span></nav>
 
 <div class="hero">
   <h1>导演入门学习站</h1>
   <p class="lead">写给 Mark：完全零基础，从「电影怎么说话」学到「怎么用 AI 拍电影」。重点是剧集创作与镜头拍摄，最终目标是成为 AI 视频生成导演。</p>
   <div class="progress-bar-wrap">
-    <div class="progress-bar"><span id="progress-bar-fill"></span></div>
-    <p class="progress-text" id="progress-text">浏览页面后会自动记录进度</p>
+    <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="学习进度"><span id="progress-bar-fill"></span></div>
+    <p class="progress-text" id="progress-text">已学完 0 / 34 页</p>
   </div>
 </div>
 
 <h2>核心思路</h2>
 <p>先学「电影怎么说话」，再学「讲什么故事」，再学「怎么组织拍摄」，最后把这些全部翻译给 AI。</p>
 <p>AI 能替你「拍」，但不能替你「导」——镜头该怎么切、演员什么情绪、观众什么时候该紧张，这些判断永远是导演的工作。所以前三个阶段不是可选项，而是 AI 导演的核心竞争力。</p>
-<div class="remember"><strong>一句话记住：</strong>工具会过时；镜头语言、故事和对人的理解不会。</div>
+<div class="remember callout"><strong>一句话记住：</strong>工具会过时；镜头语言、故事和对人的理解不会。</div>
 
 <h2>四阶段 · 约 30 周总览</h2>
 <div class="card-grid">
@@ -129,11 +156,11 @@
 
 <h2>如何使用本站</h2>
 <ol>
-  <li><strong>按阶段顺序学</strong>：侧边栏展开各阶段，每章有「上一章 / 下一章」。</li>
+  <li><strong>按阶段顺序学</strong>：左侧目录可折叠各阶段，右侧是本页目录，页底有上一章 / 下一章。</li>
   <li><strong>每页结构固定</strong>：是什么 → 为什么 → 怎么用 → 练习；遇到术语会立刻白话解释。</li>
   <li><strong>边学边练</strong>：各阶段末有练习与资源；附录有术语速查、30 周进度表、书单片单。</li>
-  <li><strong>本地打开即可</strong>：双击 <code>index.html</code>，无需服务器；可用右上角切换深色/浅色。</li>
-  <li><strong>进度会记在本机</strong>：浏览器 localStorage 记录你浏览过的页面（仅本机，不上传）。</li>
+  <li><strong>本地打开即可</strong>：双击 <code>index.html</code>，无需服务器。顶栏可搜索全站（Ctrl 或 ⌘ 加 K），主题默认跟随系统。</li>
+  <li><strong>进度会记在本机</strong>：勾选每页的「我已学完本页」，首页显示总进度（只存在这台浏览器，不上传）。</li>
 </ol>
 
 <h2>零基础学习习惯（贯穿全程）</h2>
@@ -153,7 +180,7 @@
   </div>
 </div>
 
-<div class="tip"><strong>小提示：</strong>推荐免费工具：手机 + 剪映 / CapCut（剪辑）、DaVinci Resolve 免费版（剪辑与调色）、Storyboarder（免费故事板）。</div>
+<div class="tip callout"><strong>小提示：</strong>推荐免费工具：手机 + 剪映 / CapCut（剪辑）、DaVinci Resolve 免费版（剪辑与调色）、Storyboarder（免费故事板）。</div>
 
 <h2>附录入口</h2>
 <div class="card-grid">
@@ -162,14 +189,33 @@
   <a class="card appendix" href="appendix/resources.html"><h3>推荐书单与片单</h3><p>四阶段书籍、课程、拉片片单汇总。</p></a>
 </div>
 
-<nav class="chapter-nav"><a href="stage1/index.html" class="next"><span class="label">下一章 →</span>阶段一：视听语言基础</a></nav>
+<div class="learn-card" id="learn-card">
+  <label class="learn-check">
+    <input type="checkbox" id="learn-complete">
+    <span>
+      <span class="learn-title">我已学完本页</span>
+      <span class="learn-hint">只保存在这台浏览器里，并计入首页总进度</span>
+    </span>
+  </label>
+</div>
+<nav class="chapter-nav" aria-label="上一页和下一页"><a href="stage1/index.html" class="next"><span class="label">下一章 →</span><span class="chapter-title">阶段一：视听语言基础</span></a></nav>
 </main>
 <footer class="site-footer">
   写给 Mark · 零基础导演入门 · 目标：AI 影视创作 · 内容基准日期 2026-10-12 · AI 工具请以官网为准
 </footer>
 </div>
+<aside class="toc-aside" id="toc-aside">
+  <details class="toc-details" id="toc-details">
+    <summary>本页目录</summary>
+    <nav class="toc-nav" aria-label="本页目录">
+      <ol id="toc-list"></ol>
+    </nav>
+  </details>
+</aside>
 </div>
-<button class="back-to-top" id="back-to-top" aria-label="回到顶部">↑</button>
+</div>
+<button class="back-to-top" id="back-to-top" type="button" aria-label="回到顶部">↑</button>
+<script src="js/search-index.js"></script>
 <script src="js/nav.js"></script>
 </body>
 </html>

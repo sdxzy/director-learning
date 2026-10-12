@@ -3,6 +3,8 @@
 """Generate the director learning static site."""
 from pathlib import Path
 import html
+import json
+import re
 
 ROOT = Path(__file__).resolve().parent
 TOTAL_PAGES = 36  # updated after defining all pages
@@ -20,19 +22,53 @@ def rel_prefix(depth):
     return "" if depth == 0 else "../" * depth
 
 
+ICON_MENU = (
+    '<svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">'
+    '<path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" '
+    'stroke-width="2" stroke-linecap="round"/></svg>'
+)
+ICON_SEARCH = (
+    '<svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">'
+    '<circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/>'
+    '<path d="M16 16l5 5" fill="none" stroke="currentColor" stroke-width="2" '
+    'stroke-linecap="round"/></svg>'
+)
+THEME_BOOT = """<script>
+(function(){
+  try {
+    var s = localStorage.getItem("director-site-theme");
+    var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var t = (s === "light" || s === "dark") ? s : (dark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", t);
+    document.documentElement.style.colorScheme = t;
+  } catch (e) {}
+})();
+</script>
+"""
+
+
 def sidebar_html(depth, current):
     p = rel_prefix(depth)
+
     def link(href, label, cls=""):
         return f'<a href="{p}{href}" class="{cls}">{label}</a>'
 
+    def group(stage_key, summary, links):
+        opened = " open" if current.startswith(stage_key) else ""
+        return (
+            f'<details class="nav-group"{opened}>\n'
+            f"    <summary>{summary}</summary>\n"
+            f"    <div class=\"nav-group-links\">\n{links}\n    </div>\n"
+            f"  </details>"
+        )
+
     return f"""
 <aside class="sidebar" id="sidebar">
+  <nav class="sidebar-nav" aria-label="课程目录">
   <div class="sidebar-section">总览</div>
   {link("index.html", "首页", "stage-link")}
   <div class="sidebar-section">学习阶段</div>
-  <details {"open" if current.startswith("stage1") else ""}>
-    <summary>阶段一 · 视听语言</summary>
-    {link("stage1/index.html", "阶段概览")}
+  {group("stage1", "阶段一 · 视听语言", f'''    {link("stage1/index.html", "阶段概览")}
     {link("stage1/shot-size.html", "景别与角度", "sub-link")}
     {link("stage1/camera-movement.html", "运镜", "sub-link")}
     {link("stage1/composition.html", "构图", "sub-link")}
@@ -40,42 +76,34 @@ def sidebar_html(depth, current):
     {link("stage1/axis.html", "轴线与正反打", "sub-link")}
     {link("stage1/montage.html", "蒙太奇与剪辑", "sub-link")}
     {link("stage1/sound.html", "声音", "sub-link")}
-    {link("stage1/practice.html", "练习与资源", "sub-link")}
-  </details>
-  <details {"open" if current.startswith("stage2") else ""}>
-    <summary>阶段二 · 剧本与剧集</summary>
-    {link("stage2/index.html", "阶段概览")}
+    {link("stage1/practice.html", "练习与资源", "sub-link")}''')}
+  {group("stage2", "阶段二 · 剧本与剧集", f'''    {link("stage2/index.html", "阶段概览")}
     {link("stage2/story-structure.html", "故事结构", "sub-link")}
     {link("stage2/character-conflict.html", "人物与冲突", "sub-link")}
     {link("stage2/scene-writing.html", "场景写作", "sub-link")}
     {link("stage2/series-hooks.html", "剧集弧线与钩子", "sub-link")}
     {link("stage2/shot-list.html", "分镜头脚本", "sub-link")}
-    {link("stage2/practice.html", "练习与资源", "sub-link")}
-  </details>
-  <details {"open" if current.startswith("stage3") else ""}>
-    <summary>阶段三 · 导演方法</summary>
-    {link("stage3/index.html", "阶段概览")}
+    {link("stage2/practice.html", "练习与资源", "sub-link")}''')}
+  {group("stage3", "阶段三 · 导演方法", f'''    {link("stage3/index.html", "阶段概览")}
     {link("stage3/workflow.html", "导演流程", "sub-link")}
     {link("stage3/blocking.html", "场面调度", "sub-link")}
     {link("stage3/directing-actors.html", "演员指导", "sub-link")}
     {link("stage3/storyboard.html", "故事板与机位", "sub-link")}
     {link("stage3/shooting-plan.html", "拍摄计划", "sub-link")}
-    {link("stage3/practice.html", "练习与资源", "sub-link")}
-  </details>
-  <details {"open" if current.startswith("stage4") else ""}>
-    <summary>阶段四 · AI 影视</summary>
-    {link("stage4/index.html", "阶段概览")}
+    {link("stage3/practice.html", "练习与资源", "sub-link")}''')}
+  {group("stage4", "阶段四 · AI 影视", f'''    {link("stage4/index.html", "阶段概览")}
     {link("stage4/tools-2026.html", "2026 工具现状", "sub-link")}
     {link("stage4/prompt-structure.html", "提示词结构", "sub-link")}
     {link("stage4/character-consistency.html", "角色一致性", "sub-link")}
     {link("stage4/short-film-workflow.html", "短片流程", "sub-link")}
     {link("stage4/compliance.html", "合规提醒", "sub-link")}
-    {link("stage4/practice.html", "练习与资源", "sub-link")}
-  </details>
+    {link("stage4/practice.html", "练习与资源", "sub-link")}''')}
   <div class="sidebar-section">附录</div>
   {link("appendix/glossary.html", "镜头术语速查")}
   {link("appendix/progress.html", "30 周进度表")}
   {link("appendix/resources.html", "推荐书单片单")}
+  </nav>
+  <div class="sidebar-foot" id="sidebar-progress"></div>
 </aside>
 <div class="sidebar-overlay" id="sidebar-overlay"></div>
 """
@@ -101,11 +129,17 @@ def chapter_nav(prev_info, next_info, depth):
     right = ""
     if prev_info:
         href, title = prev_info
-        left = f'<a href="{p}{href}" class="prev"><span class="label">← 上一章</span>{title}</a>'
+        left = (
+            f'<a href="{p}{href}" class="prev"><span class="label">← 上一章</span>'
+            f'<span class="chapter-title">{esc(title)}</span></a>'
+        )
     if next_info:
         href, title = next_info
-        right = f'<a href="{p}{href}" class="next"><span class="label">下一章 →</span>{title}</a>'
-    return f'<nav class="chapter-nav">{left}{right}</nav>'
+        right = (
+            f'<a href="{p}{href}" class="next"><span class="label">下一章 →</span>'
+            f'<span class="chapter-title">{esc(title)}</span></a>'
+        )
+    return f'<nav class="chapter-nav" aria-label="上一页和下一页">{left}{right}</nav>'
 
 
 def page_shell(
@@ -131,31 +165,55 @@ def page_shell(
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)} · 导演入门学习站</title>
 <meta name="description" content="零基础导演入门：视听语言、剧本剧集、导演方法与 AI 影视创作">
+<meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="{p}css/styles.css">
-{extra_head}
+{THEME_BOOT}{extra_head}
 </head>
 <body data-page="{page_id}" data-total-pages="{TOTAL_PAGES}"{stage_attr}>
+<a class="skip-link" href="#content">跳到正文</a>
 <header class="site-header">
-  <button class="btn-icon menu-toggle" id="menu-toggle" aria-label="打开菜单">☰</button>
+  <button class="btn-icon menu-toggle" id="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="sidebar">{ICON_MENU}</button>
   <a class="brand" href="{p}index.html">🎬 导演入门</a>
+  <button class="search-trigger" id="search-trigger" type="button" aria-label="搜索全站" aria-keyshortcuts="Control+K Meta+K">{ICON_SEARCH}<span class="search-trigger-label">搜索全站</span><kbd class="search-kbd" id="search-kbd">Ctrl K</kbd></button>
   <div class="header-actions">
-    <button class="btn-icon" id="theme-toggle" aria-label="切换主题" title="切换主题">☾</button>
+    <button class="btn-icon" id="theme-toggle" type="button" aria-label="切换主题" title="切换主题">☾</button>
   </div>
+  <div class="read-progress" aria-hidden="true"><span id="read-progress-fill"></span></div>
 </header>
 <div class="layout">
 {sidebar_html(depth, current)}
-<div class="main-wrap">
-<main class="main">
+<div class="doc-shell">
+<div class="doc-column">
+<main class="main" id="content">
 {bc}
 {body}
+<div class="learn-card" id="learn-card">
+  <label class="learn-check">
+    <input type="checkbox" id="learn-complete">
+    <span>
+      <span class="learn-title">我已学完本页</span>
+      <span class="learn-hint">只保存在这台浏览器里，并计入首页总进度</span>
+    </span>
+  </label>
+</div>
 {nav}
 </main>
 <footer class="site-footer">
   写给 Mark · 零基础导演入门 · 目标：AI 影视创作 · 内容基准日期 2026-10-12 · AI 工具请以官网为准
 </footer>
 </div>
+<aside class="toc-aside" id="toc-aside">
+  <details class="toc-details" id="toc-details">
+    <summary>本页目录</summary>
+    <nav class="toc-nav" aria-label="本页目录">
+      <ol id="toc-list"></ol>
+    </nav>
+  </details>
+</aside>
 </div>
-<button class="back-to-top" id="back-to-top" aria-label="回到顶部">↑</button>
+</div>
+<button class="back-to-top" id="back-to-top" type="button" aria-label="回到顶部">↑</button>
+<script src="{p}js/search-index.js"></script>
 <script src="{p}js/nav.js"></script>
 </body>
 </html>
@@ -165,15 +223,15 @@ def page_shell(
 # ========== Content helpers ==========
 
 def remember(text):
-    return f'<div class="remember"><strong>一句话记住：</strong>{text}</div>'
+    return f'<div class="remember callout"><strong>一句话记住：</strong>{text}</div>'
 
 
 def tip(text):
-    return f'<div class="tip"><strong>小提示：</strong>{text}</div>'
+    return f'<div class="tip callout"><strong>小提示：</strong>{text}</div>'
 
 
 def warning(text):
-    return f'<div class="warning-box"><strong>注意：</strong>{text}</div>'
+    return f'<div class="warning-box callout"><strong>注意：</strong>{text}</div>'
 
 
 def example(title, content):
@@ -220,8 +278,8 @@ add(
   <h1>导演入门学习站</h1>
   <p class="lead">写给 Mark：完全零基础，从「电影怎么说话」学到「怎么用 AI 拍电影」。重点是剧集创作与镜头拍摄，最终目标是成为 AI 视频生成导演。</p>
   <div class="progress-bar-wrap">
-    <div class="progress-bar"><span id="progress-bar-fill"></span></div>
-    <p class="progress-text" id="progress-text">浏览页面后会自动记录进度</p>
+    <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="学习进度"><span id="progress-bar-fill"></span></div>
+    <p class="progress-text" id="progress-text">已学完 0 / 34 页</p>
   </div>
 </div>
 
@@ -270,11 +328,11 @@ add(
 
 <h2>如何使用本站</h2>
 <ol>
-  <li><strong>按阶段顺序学</strong>：侧边栏展开各阶段，每章有「上一章 / 下一章」。</li>
+  <li><strong>按阶段顺序学</strong>：左侧目录可折叠各阶段，右侧是本页目录，页底有上一章 / 下一章。</li>
   <li><strong>每页结构固定</strong>：是什么 → 为什么 → 怎么用 → 练习；遇到术语会立刻白话解释。</li>
   <li><strong>边学边练</strong>：各阶段末有练习与资源；附录有术语速查、30 周进度表、书单片单。</li>
-  <li><strong>本地打开即可</strong>：双击 <code>index.html</code>，无需服务器；可用右上角切换深色/浅色。</li>
-  <li><strong>进度会记在本机</strong>：浏览器 localStorage 记录你浏览过的页面（仅本机，不上传）。</li>
+  <li><strong>本地打开即可</strong>：双击 <code>index.html</code>，无需服务器。顶栏可搜索全站（Ctrl 或 ⌘ 加 K），主题默认跟随系统。</li>
+  <li><strong>进度会记在本机</strong>：勾选每页的「我已学完本页」，首页显示总进度（只存在这台浏览器，不上传）。</li>
 </ol>
 
 <h2>零基础学习习惯（贯穿全程）</h2>
@@ -1624,11 +1682,52 @@ def render(page):
     out.write_text(html_out, encoding="utf-8")
     return out
 
+def plain_text(fragment):
+    text = re.sub(r"<script[\s\S]*?</script>", " ", fragment, flags=re.I)
+    text = re.sub(r"<style[\s\S]*?</style>", " ", text, flags=re.I)
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = html.unescape(text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def section_of(page):
+    labels = {"1": "阶段一", "2": "阶段二", "3": "阶段三", "4": "阶段四"}
+    stage = str(page.get("stage") or "")
+    if stage in labels:
+        return labels[stage]
+    if page["path"].startswith("appendix"):
+        return "附录"
+    return "总览"
+
+
+def write_search_index():
+    items = []
+    for page in pages:
+        items.append(
+            {
+                "title": page["title"],
+                "path": page["path"],
+                "section": section_of(page),
+                "text": plain_text(page["body"])[:4000],
+            }
+        )
+    payload = json.dumps(items, ensure_ascii=False, separators=(",", ":"))
+    out = ROOT / "js" / "search-index.js"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(
+        "/* Generated by _generate.py — do not edit by hand. */\n"
+        "window.DIRECTOR_SEARCH_INDEX=" + payload + ";\n",
+        encoding="utf-8",
+    )
+    print(f"Wrote search index ({len(items)} pages)")
+
+
 def main():
     written = []
     for page in pages:
         out = render(page)
         written.append(str(out.relative_to(ROOT)))
+    write_search_index()
     print(f"Wrote {len(written)} pages:")
     for w in written:
         print(" ", w)
