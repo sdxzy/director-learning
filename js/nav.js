@@ -235,7 +235,7 @@
     return Array.prototype.filter.call(
       document.querySelectorAll("main h2, main h3"),
       function (h) {
-        return !h.closest(".card, .habit, .chapter-nav, .learn-card");
+        return !h.closest(".card, .habit, .chapter-nav, .learn-card, .syllabus");
       }
     );
   }
