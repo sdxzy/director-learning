@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 210" role="img" aria-label="机位角度：仰拍、平视、俯拍、鸟瞰、荷兰角">
+<rect width="720" height="210" fill="#f7f5f1"/>
+<g class="diagram-angles">
+<g class="panel" tabindex="0"><title>仰拍</title>
+<rect class="frame" x="18" y="16" width="128" height="150" fill="#f7f5f1" stroke="#cfc9bd"/>
+<g fill="none" stroke="#1a1916" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="82.0" cy="48.1" r="10.1" fill="#f7f5f1"/>
+<path d="M82.0 58.2 L82.0 89.8"/>
+<path d="M82.0 63.9 L66.6 81.2"/>
+<path d="M82.0 63.9 L98.3 77.4"/>
+<path d="M82.0 89.8 L73.4 134.0"/>
+<path d="M82.0 89.8 L91.6 134.0"/>
+</g>
+<g fill="#1a1916" stroke="none"><circle cx="78.8" cy="47.9" r="0.8"/><circle cx="85.2" cy="47.9" r="0.8"/></g>
+<path d="M82.0 49.9 L82.0 52.1" fill="none" stroke="#1a1916" stroke-width="1.2" stroke-linecap="round"/>
+<path d="M79.8 53.6 Q82.0 55.5 84.2 53.6" fill="none" stroke="#1a1916" stroke-width="1.2" stroke-linecap="round"/>
+<g transform="translate(82.0 154.0) rotate(-90) scale(0.85)" fill="#f7f5f1" stroke="#1a1916" stroke-width="1.5" stroke-linejoin="round"><rect x="-16" y="-9" width="22" height="18"/><path d="M6 -6 L16 0 L6 6 Z"/><circle cx="-5" cy="-12" r="2.2" fill="#f7f5f1"/></g>
+<text x="82.0" y="188" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">仰拍</text>
+</g>
+<g class="panel" tabindex="0"><title>平视</title>
+<rect class="frame" x="160" y="16" width="128" height="150" fill="#f7f5f1" stroke="#cfc9bd"/>
+<g fill="none" stroke="#1a1916" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="224.0" cy="51.3" r="11.3" fill="#f7f5f1"/>
+<path d="M224.0 62.7 L224.0 98.3"/>
+<path d="M224.0 69.2 L206.7 88.6"/>
+<path d="M224.0 69.2 L242.4 84.3"/>
+<path d="M224.0 98.3 L214.3 148.0"/>
+<path d="M224.0 98.3 L234.8 148.0"/>
+</g>
+<g fill="#1a1916" stroke="none"><circle cx="220.4" cy="51.1" r="0.8"/><circle cx="227.6" cy="51.1" r="0.8"/></g>
+<path d="M224.0 53.4 L224.0 55.9" fill="none" stroke="#1a1916" stroke-width="1.2" stroke-linecap="round"/>
+<path d="M221.5 57.6 Q224.0 59.7 226.5 57.6" fill="none" stroke="#1a1916" stroke-width="1.2" stroke-linecap="round"/>
+<g transform="translate(178.0 94.0) rotate(0) scale(0.8)" fill="#f7f5f1" stroke="#1a1916" stroke-width="1.5" stroke-linejoin="round"><rect x="-16" y="-9" width="22" height="18"/><path d="M6 -6 L16 0 L6 6 Z"/><circle cx="-5" cy="-12" r="2.2" fill="#f7f5f1"/></g>
+<text x="224.0" y="188" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">平视</text>
+</g>
+<g class="panel" tabindex="0"><title>俯拍</title>
+<rect class="frame" x="302" y="16" width="128" height="150" fill="#f7f5f1" stroke="#cfc9bd"/>
+<g fill="none" stroke="#1a1916" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="366.0" cy="84.4" r="8.4" fill="#f7f5f1"/>
+<path d="M366.0 92.8 L366.0 119.2"/>
+<path d="M366.0 97.6 L353.2 112.0"/>
+<path d="M366.0 97.6 L379.6 108.8"/>
+<path d="M366.0 119.2 L358.8 156.0"/>
+<path d="M366.0 119.2 L374.0 156.0"/>
+</g>
+<g fill="#1a1916" stroke="none"><circle cx="363.3" cy="84.2" r="0.8"/><circle cx="368.7" cy="84.2" r="0.8"/></g>
+<path d="M366.0 85.9 L366.0 87.8" fill="none" stroke="#1a1916" stroke-width="1.2" stroke-linecap="round"/>
+<path d="M364.2 89.0 Q366.0 90.6 367.8 89.0" fill="none" stroke="#1a1916" stroke-width="1.2" stroke-linecap="round"/>
+<g transform="translate(366.0 44.0) rotate(90) scale(0.85)" fill="#f7f5f1" stroke="#1a1916" stroke-width="1.5" stroke-linejoin="round"><rect x="-16" y="-9" width="22" height="18"/><path d="M6 -6 L16 0 L6 6 Z"/><circle cx="-5" cy="-12" r="2.2" fill="#f7f5f1"/></g>
+<text x="366.0" y="188" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">俯拍</text>
+</g>
+<g class="panel" tabindex="0"><title>鸟瞰</title>
+<rect class="frame" x="444" y="16" width="128" height="150" fill="#f7f5f1" stroke="#cfc9bd"/>
+<ellipse cx="508.0" cy="104" rx="28" ry="10" fill="none" stroke="#1a1916" stroke-width="1.5"/>
+<circle cx="508.0" cy="86" r="14" fill="#f7f5f1" stroke="#1a1916" stroke-width="1.5"/>
+<g transform="translate(508.0 44.0) rotate(90) scale(0.8)" fill="#f7f5f1" stroke="#1a1916" stroke-width="1.5" stroke-linejoin="round"><rect x="-16" y="-9" width="22" height="18"/><path d="M6 -6 L16 0 L6 6 Z"/><circle cx="-5" cy="-12" r="2.2" fill="#f7f5f1"/></g>
+<text x="508.0" y="188" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">鸟瞰</text>
+</g>
+<g class="panel" tabindex="0"><title>荷兰角</title>
+<rect class="frame" x="586" y="16" width="128" height="150" fill="#f7f5f1" stroke="#cfc9bd"/>
+<g transform="rotate(-16 650.0 94)">
+<line x1="602" y1="94" x2="698" y2="64" stroke="#cfc9bd" stroke-width="1"/>
+<g fill="none" stroke="#1a1916" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="650.0" cy="59.5" r="9.4" fill="#f7f5f1"/>
+<path d="M650.0 68.9 L650.0 98.6"/>
+<path d="M650.0 74.3 L635.6 90.5"/>
+<path d="M650.0 74.3 L665.3 86.9"/>
+<path d="M650.0 98.6 L641.9 140.0"/>
+<path d="M650.0 98.6 L659.0 140.0"/>
+</g>
+<g fill="#1a1916" stroke="none"><circle cx="647.0" cy="59.3" r="0.8"/><circle cx="653.0" cy="59.3" r="0.8"/></g>
+<path d="M650.0 61.2 L650.0 63.2" fill="none" stroke="#1a1916" stroke-width="1.2" stroke-linecap="round"/>
+<path d="M647.9 64.6 Q650.0 66.4 652.1 64.6" fill="none" stroke="#1a1916" stroke-width="1.2" stroke-linecap="round"/></g>
+<text x="650.0" y="188" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">荷兰角</text>
+</g>
+</g>
+</svg>

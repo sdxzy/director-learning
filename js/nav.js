@@ -655,6 +655,59 @@
     });
   }
 
+  function initShotLabs() {
+    var labs = document.querySelectorAll("[data-shot-lab]");
+    Array.prototype.forEach.call(labs, function (lab) {
+      var labels = (lab.getAttribute("data-labels") || "").split(",");
+      var range = lab.querySelector('input[type="range"]');
+      var name = lab.querySelector("[data-shot-name]");
+      var shots = lab.querySelectorAll("[data-shot]");
+      if (!range) return;
+      function apply(n) {
+        var s = String(n);
+        Array.prototype.forEach.call(shots, function (el) {
+          el.classList.toggle("is-on", el.getAttribute("data-shot") === s);
+        });
+        if (name && labels[n]) name.textContent = labels[n];
+        range.setAttribute("aria-valuetext", labels[n] || s);
+      }
+      range.addEventListener("input", function () { apply(range.value); });
+      Array.prototype.forEach.call(shots, function (el) {
+        function choose() {
+          range.value = el.getAttribute("data-shot");
+          apply(range.value);
+        }
+        el.addEventListener("click", choose);
+        el.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            choose();
+          }
+        });
+      });
+      apply(range.value);
+    });
+  }
+
+  function initVideos() {
+    document.addEventListener("click", function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest(".video-facade") : null;
+      if (!btn) return;
+      var src = btn.getAttribute("data-embed");
+      if (!src) return;
+      var frame = document.createElement("iframe");
+      frame.src = src;
+      frame.title = btn.getAttribute("data-title") || "视频";
+      frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      frame.allowFullscreen = true;
+      frame.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+      btn.replaceWith(frame);
+    });
+  }
+
+  initShotLabs();
+  initVideos();
+
   window.DirectorSite = window.DirectorSite || {};
   window.DirectorSite.getLearned = getLearned;
 })();

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="三层冲突：内心、人际、外部">
+<rect width="720" height="280" fill="#f7f5f1"/>
+<rect x="80" y="40" width="560" height="200" fill="#f7f5f1" stroke="#5c5852" stroke-width="1.5"/>
+<text x="360.0" y="62" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">外部 · 社会 / 环境 / 命运</text>
+<rect x="140" y="80" width="440" height="130" fill="#f7f5f1" stroke="#1a1916" stroke-width="1.5"/>
+<text x="360.0" y="102" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">人际 · 对手</text>
+<rect x="220" y="120" width="280" height="60" fill="#f7f5f1" stroke="#8d3a32" stroke-width="1.5"/>
+<text x="360.0" y="142" text-anchor="middle" fill="#8d3a32" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">内心 · 自己</text>
+</svg>

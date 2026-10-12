@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 310" role="img" aria-label="180 度轴线：机位 A、机位 B 在同一侧，对面是禁区">
+<rect width="720" height="310" fill="#f7f5f1"/>
+
+<line x1="80" y1="150" x2="640" y2="150" stroke="#1a1916" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="360" y="126" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">轴线</text>
+<circle cx="230" cy="150" r="16" fill="#f7f5f1" stroke="#1a1916" stroke-width="1.5"/>
+<text x="230" y="154" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">A</text>
+<circle cx="490" cy="150" r="16" fill="#f7f5f1" stroke="#1a1916" stroke-width="1.5"/>
+<text x="490" y="154" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">B</text>
+<text x="230" y="186" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">演员 A</text>
+<text x="490" y="186" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">演员 B</text>
+<rect x="80" y="36" width="560" height="88" fill="url(#axis-180-hatch)"/>
+<text x="430" y="86" text-anchor="middle" fill="#8d3a32" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="16" font-weight="400">禁区</text>
+<g transform="translate(200.0 78.0) rotate(90) scale(0.75)" fill="#f7f5f1" stroke="#8d3a32" stroke-width="1.5" stroke-linejoin="round"><rect x="-16" y="-9" width="22" height="18"/><path d="M6 -6 L16 0 L6 6 Z"/><circle cx="-5" cy="-12" r="2.2" fill="#f7f5f1"/></g>
+<path d="M186 64 L214 92 M214 64 L186 92" stroke="#8d3a32" stroke-width="1.5"/>
+<g transform="translate(280.0 248.0) rotate(-90) scale(0.9)" fill="#f7f5f1" stroke="#1a1916" stroke-width="1.5" stroke-linejoin="round"><rect x="-16" y="-9" width="22" height="18"/><path d="M6 -6 L16 0 L6 6 Z"/><circle cx="-5" cy="-12" r="2.2" fill="#f7f5f1"/></g>
+<text x="280" y="286" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">机位 A · 拍 B</text>
+<g transform="translate(460.0 248.0) rotate(-90) scale(0.9)" fill="#f7f5f1" stroke="#1a1916" stroke-width="1.5" stroke-linejoin="round"><rect x="-16" y="-9" width="22" height="18"/><path d="M6 -6 L16 0 L6 6 Z"/><circle cx="-5" cy="-12" r="2.2" fill="#f7f5f1"/></g>
+<text x="460" y="286" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">机位 B · 拍 A</text>
+<path d="M292 228 L390 168" stroke="#8d3a32" stroke-width="1.5" fill="none" marker-end="url(#axis-180-arr)"/>
+<path d="M448 228 L350 168" stroke="#8d3a32" stroke-width="1.5" fill="none" marker-end="url(#axis-180-arr)"/>
+<defs>
+<marker id="axis-180-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#8d3a32"/></marker>
+<pattern id="axis-180-hatch" width="8" height="8" patternUnits="userSpaceOnUse">
+<path d="M0 8 L8 0" stroke="#cfc9bd" stroke-width="1"/>
+</pattern>
+</defs>
+
+</svg>

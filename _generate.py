@@ -1717,7 +1717,8 @@ def render(page):
     return out
 
 def plain_text(fragment):
-    text = re.sub(r"<script[\s\S]*?</script>", " ", fragment, flags=re.I)
+    text = re.sub(r"<svg[\s\S]*?</svg>", " ", fragment, flags=re.I)
+    text = re.sub(r"<script[\s\S]*?</script>", " ", text, flags=re.I)
     text = re.sub(r"<style[\s\S]*?</style>", " ", text, flags=re.I)
     text = re.sub(r"<[^>]+>", " ", text)
     text = html.unescape(text)
@@ -1757,8 +1758,10 @@ def write_search_index():
 
 
 def main():
+    import visuals
     written = []
     for page in pages:
+        page["body"] = visuals.apply_visuals(page["path"], page["body"])
         out = render(page)
         written.append(str(out.relative_to(ROOT)))
     write_search_index()

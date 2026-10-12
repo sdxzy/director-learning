@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" role="img" aria-label="分镜表的四个核心字段">
+<rect width="720" height="200" fill="#f7f5f1"/>
+<rect x="30" y="40" width="660" height="120" fill="#1a1916"/>
+<rect x="46" y="48" width="14" height="16" fill="#f7f5f1"/>
+<rect x="46" y="136" width="14" height="16" fill="#f7f5f1"/>
+<rect x="126" y="48" width="14" height="16" fill="#f7f5f1"/>
+<rect x="126" y="136" width="14" height="16" fill="#f7f5f1"/>
+<rect x="206" y="48" width="14" height="16" fill="#f7f5f1"/>
+<rect x="206" y="136" width="14" height="16" fill="#f7f5f1"/>
+<rect x="286" y="48" width="14" height="16" fill="#f7f5f1"/>
+<rect x="286" y="136" width="14" height="16" fill="#f7f5f1"/>
+<rect x="366" y="48" width="14" height="16" fill="#f7f5f1"/>
+<rect x="366" y="136" width="14" height="16" fill="#f7f5f1"/>
+<rect x="446" y="48" width="14" height="16" fill="#f7f5f1"/>
+<rect x="446" y="136" width="14" height="16" fill="#f7f5f1"/>
+<rect x="526" y="48" width="14" height="16" fill="#f7f5f1"/>
+<rect x="526" y="136" width="14" height="16" fill="#f7f5f1"/>
+<rect x="606" y="48" width="14" height="16" fill="#f7f5f1"/>
+<rect x="606" y="136" width="14" height="16" fill="#f7f5f1"/>
+<rect x="70" y="70" width="130" height="70" fill="#f7f5f1"/>
+<text x="135" y="110" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">镜号</text>
+<rect x="230" y="70" width="130" height="70" fill="#f7f5f1"/>
+<text x="295" y="110" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">景别</text>
+<rect x="390" y="70" width="130" height="70" fill="#f7f5f1"/>
+<text x="455" y="110" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">运镜</text>
+<rect x="550" y="70" width="130" height="70" fill="#f7f5f1"/>
+<text x="615" y="110" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">画面</text>
+</svg>

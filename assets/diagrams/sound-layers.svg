@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 250" role="img" aria-label="声音三层：对白、音效、音乐，中间可以沉默">
+<rect width="720" height="250" fill="#f7f5f1"/>
+<text x="36" y="66" text-anchor="start" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">对白</text>
+<rect x="80" y="40" width="420" height="40" fill="#efece6" stroke="#cfc9bd"/>
+<text x="640" y="66" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">画内 / 画外</text>
+<text x="36" y="136" text-anchor="start" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">音效</text>
+<rect x="80" y="110" width="200" height="40" fill="#efece6" stroke="#cfc9bd"/>
+<text x="320.0" y="136" text-anchor="middle" fill="#8d3a32" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">静</text>
+<rect x="360" y="110" width="220" height="40" fill="#efece6" stroke="#cfc9bd"/>
+<text x="640" y="136" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">沉默留白</text>
+<text x="36" y="206" text-anchor="start" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">音乐</text>
+<rect x="220" y="180" width="360" height="40" fill="#efece6" stroke="#cfc9bd"/>
+<text x="640" y="206" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">无源，晚入</text>
+</svg>

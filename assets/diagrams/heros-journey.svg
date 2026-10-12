@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="英雄之旅圆环">
+<rect width="720" height="340" fill="#f7f5f1"/>
+<circle cx="360" cy="168" r="108" fill="none" stroke="#1a1916" stroke-width="1.5"/>
+<text x="360" y="172" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">英雄之旅</text>
+<circle cx="360.0" cy="60.0" r="4" fill="#1a1916"/>
+<text x="360.0" y="28.0" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">日常</text>
+<circle cx="414.0" cy="74.5" r="4" fill="#1a1916"/>
+<text x="432.0" y="47.3" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">召唤</text>
+<circle cx="453.5" cy="114.0" r="4" fill="#1a1916"/>
+<text x="484.7" y="100.0" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">拒绝</text>
+<circle cx="468.0" cy="168.0" r="4" fill="#1a1916"/>
+<text x="504.0" y="172.0" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">导师</text>
+<circle cx="453.5" cy="222.0" r="4" fill="#1a1916"/>
+<text x="484.7" y="244.0" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">门槛</text>
+<circle cx="414.0" cy="261.5" r="4" fill="#1a1916"/>
+<text x="432.0" y="296.7" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">考验</text>
+<circle cx="360.0" cy="276.0" r="4" fill="#1a1916"/>
+<text x="360.0" y="316.0" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">洞穴</text>
+<circle cx="306.0" cy="261.5" r="4" fill="#8d3a32"/>
+<text x="288.0" y="296.7" text-anchor="middle" fill="#8d3a32" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">磨难</text>
+<circle cx="266.5" cy="222.0" r="4" fill="#1a1916"/>
+<text x="235.3" y="244.0" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">奖赏</text>
+<circle cx="252.0" cy="168.0" r="4" fill="#1a1916"/>
+<text x="216.0" y="172.0" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">归途</text>
+<circle cx="266.5" cy="114.0" r="4" fill="#1a1916"/>
+<text x="235.3" y="100.0" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">复活</text>
+<circle cx="306.0" cy="74.5" r="4" fill="#1a1916"/>
+<text x="288.0" y="47.3" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">回归</text>
+</svg>

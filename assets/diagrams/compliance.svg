@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 230" role="img" aria-label="合规三道门：素材权利、肖像同意、平台规则">
+<rect width="720" height="230" fill="#f7f5f1"/>
+<path d="M40 110 H680" stroke="#cfc9bd" stroke-width="1.5"/>
+<rect x="80" y="70" width="150" height="80" fill="#f7f5f1" stroke="#1a1916"/>
+<text x="155" y="116" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="15" font-weight="400">素材权利</text>
+<circle cx="155" cy="110" r="0"/>
+<rect x="290" y="70" width="150" height="80" fill="#f7f5f1" stroke="#1a1916"/>
+<text x="365" y="116" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="15" font-weight="400">肖像同意</text>
+<circle cx="365" cy="110" r="0"/>
+<rect x="500" y="70" width="150" height="80" fill="#f7f5f1" stroke="#1a1916"/>
+<text x="575" y="116" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="15" font-weight="400">平台规则</text>
+<circle cx="575" cy="110" r="0"/>
+<text x="360" y="190" text-anchor="middle" fill="#8d3a32" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">三道门都过了，再生成、再发布</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="集弧线与季弧线，集尾留钩子">
+<rect width="720" height="280" fill="#f7f5f1"/>
+<path d="M40 70 Q360 20 680 70" fill="none" stroke="#1a1916" stroke-width="1.5"/>
+<text x="360" y="36" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">季问题</text>
+<path d="M70 180 Q130 110 190 180" fill="none" stroke="#8d3a32" stroke-width="1.5"/>
+<text x="130" y="200" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">第 1 集</text>
+<path d="M182 168 l8 10 h-16 z" fill="#8d3a32"/>
+<text x="130" y="222" text-anchor="middle" fill="#8d3a32" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="11" font-weight="400">钩子</text>
+<path d="M230 180 Q290 110 350 180" fill="none" stroke="#8d3a32" stroke-width="1.5"/>
+<text x="290" y="200" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">第 2 集</text>
+<path d="M342 168 l8 10 h-16 z" fill="#8d3a32"/>
+<text x="290" y="222" text-anchor="middle" fill="#8d3a32" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="11" font-weight="400">钩子</text>
+<path d="M390 180 Q450 110 510 180" fill="none" stroke="#8d3a32" stroke-width="1.5"/>
+<text x="450" y="200" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">第 3 集</text>
+<path d="M502 168 l8 10 h-16 z" fill="#8d3a32"/>
+<text x="450" y="222" text-anchor="middle" fill="#8d3a32" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="11" font-weight="400">钩子</text>
+<path d="M550 180 Q610 110 670 180" fill="none" stroke="#8d3a32" stroke-width="1.5"/>
+<text x="610" y="200" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">第 4 集</text>
+<path d="M662 168 l8 10 h-16 z" fill="#8d3a32"/>
+<text x="610" y="222" text-anchor="middle" fill="#8d3a32" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="11" font-weight="400">钩子</text>
+<text x="70" y="250" text-anchor="start" fill="#8d3a32" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">冷开场</text>
+<circle cx="58" cy="160" r="4" fill="#8d3a32"/>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="互补色：冷背景和暖主体">
+<rect width="720" height="300" fill="#f7f5f1"/>
+<rect x="60" y="40" width="250" height="160" fill="#3e4c52"/><rect x="410" y="40" width="250" height="160" fill="#8d3a32"/><g fill="none" stroke="#f7f5f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="185.0" cy="71.5" r="11.5" fill="#f7f5f1"/>
+<path d="M185.0 83.1 L185.0 119.4"/>
+<path d="M185.0 89.7 L167.4 109.5"/>
+<path d="M185.0 89.7 L203.7 105.1"/>
+<path d="M185.0 119.4 L175.1 170.0"/>
+<path d="M185.0 119.4 L196.0 170.0"/>
+</g>
+<g fill="#1a1916" stroke="none"><circle cx="181.3" cy="71.3" r="0.8"/><circle cx="188.7" cy="71.3" r="0.8"/></g>
+<path d="M185.0 73.6 L185.0 76.2" fill="none" stroke="#1a1916" stroke-width="1.2" stroke-linecap="round"/>
+<path d="M182.5 77.9 Q185.0 80.1 187.5 77.9" fill="none" stroke="#1a1916" stroke-width="1.2" stroke-linecap="round"/><g fill="none" stroke="#f7f5f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="535.0" cy="71.5" r="11.5" fill="#f7f5f1"/>
+<path d="M535.0 83.1 L535.0 119.4"/>
+<path d="M535.0 89.7 L517.4 109.5"/>
+<path d="M535.0 89.7 L553.7 105.1"/>
+<path d="M535.0 119.4 L525.1 170.0"/>
+<path d="M535.0 119.4 L546.0 170.0"/>
+</g>
+<g fill="#1a1916" stroke="none"><circle cx="531.3" cy="71.3" r="0.8"/><circle cx="538.7" cy="71.3" r="0.8"/></g>
+<path d="M535.0 73.6 L535.0 76.2" fill="none" stroke="#1a1916" stroke-width="1.2" stroke-linecap="round"/>
+<path d="M532.5 77.9 Q535.0 80.1 537.5 77.9" fill="none" stroke="#1a1916" stroke-width="1.2" stroke-linecap="round"/><text x="185" y="230" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">青 · 背景冷</text><text x="535" y="230" text-anchor="middle" fill="#8d3a32" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">橙红 · 主体暖</text><text x="360" y="270" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">互补色让人从背景里站出来</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" role="img" aria-label="一句话梗概：主人公、欲望、阻碍、赌注">
+<rect width="720" height="200" fill="#f7f5f1"/>
+<defs><marker id="logline-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#8d3a32"/></marker></defs>
+<rect x="30" y="70" width="140" height="64" fill="#f7f5f1" stroke="#1a1916"/>
+<text x="100" y="108" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="15" font-weight="400">主人公</text>
+<path d="M178 102 H198" stroke="#8d3a32" stroke-width="1.5" marker-end="url(#logline-arr)"/>
+<rect x="205" y="70" width="140" height="64" fill="#f7f5f1" stroke="#1a1916"/>
+<text x="275" y="108" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="15" font-weight="400">想要什么</text>
+<path d="M353 102 H373" stroke="#8d3a32" stroke-width="1.5" marker-end="url(#logline-arr)"/>
+<rect x="380" y="70" width="140" height="64" fill="#f7f5f1" stroke="#1a1916"/>
+<text x="450" y="108" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="15" font-weight="400">阻碍</text>
+<path d="M528 102 H548" stroke="#8d3a32" stroke-width="1.5" marker-end="url(#logline-arr)"/>
+<rect x="555" y="70" width="140" height="64" fill="#f7f5f1" stroke="#1a1916"/>
+<text x="625" y="108" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="15" font-weight="400">赌注</text>
+</svg>
