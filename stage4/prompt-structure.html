@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>提示词结构 · 导演入门学习站</title>
+<meta name="description" content="零基础导演入门：视听语言、剧本剧集、导演方法与 AI 影视创作">
+<link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body data-page="s4-prompt" data-total-pages="34" data-stage="4">
+<header class="site-header">
+  <button class="btn-icon menu-toggle" id="menu-toggle" aria-label="打开菜单">☰</button>
+  <a class="brand" href="../index.html">🎬 导演入门</a>
+  <div class="header-actions">
+    <button class="btn-icon" id="theme-toggle" aria-label="切换主题" title="切换主题">☾</button>
+  </div>
+</header>
+<div class="layout">
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-section">总览</div>
+  <a href="../index.html" class="stage-link">首页</a>
+  <div class="sidebar-section">学习阶段</div>
+  <details >
+    <summary>阶段一 · 视听语言</summary>
+    <a href="../stage1/index.html" class="">阶段概览</a>
+    <a href="../stage1/shot-size.html" class="sub-link">景别与角度</a>
+    <a href="../stage1/camera-movement.html" class="sub-link">运镜</a>
+    <a href="../stage1/composition.html" class="sub-link">构图</a>
+    <a href="../stage1/light-color.html" class="sub-link">光线与色彩</a>
+    <a href="../stage1/axis.html" class="sub-link">轴线与正反打</a>
+    <a href="../stage1/montage.html" class="sub-link">蒙太奇与剪辑</a>
+    <a href="../stage1/sound.html" class="sub-link">声音</a>
+    <a href="../stage1/practice.html" class="sub-link">练习与资源</a>
+  </details>
+  <details >
+    <summary>阶段二 · 剧本与剧集</summary>
+    <a href="../stage2/index.html" class="">阶段概览</a>
+    <a href="../stage2/story-structure.html" class="sub-link">故事结构</a>
+    <a href="../stage2/character-conflict.html" class="sub-link">人物与冲突</a>
+    <a href="../stage2/scene-writing.html" class="sub-link">场景写作</a>
+    <a href="../stage2/series-hooks.html" class="sub-link">剧集弧线与钩子</a>
+    <a href="../stage2/shot-list.html" class="sub-link">分镜头脚本</a>
+    <a href="../stage2/practice.html" class="sub-link">练习与资源</a>
+  </details>
+  <details >
+    <summary>阶段三 · 导演方法</summary>
+    <a href="../stage3/index.html" class="">阶段概览</a>
+    <a href="../stage3/workflow.html" class="sub-link">导演流程</a>
+    <a href="../stage3/blocking.html" class="sub-link">场面调度</a>
+    <a href="../stage3/directing-actors.html" class="sub-link">演员指导</a>
+    <a href="../stage3/storyboard.html" class="sub-link">故事板与机位</a>
+    <a href="../stage3/shooting-plan.html" class="sub-link">拍摄计划</a>
+    <a href="../stage3/practice.html" class="sub-link">练习与资源</a>
+  </details>
+  <details open>
+    <summary>阶段四 · AI 影视</summary>
+    <a href="../stage4/index.html" class="">阶段概览</a>
+    <a href="../stage4/tools-2026.html" class="sub-link">2026 工具现状</a>
+    <a href="../stage4/prompt-structure.html" class="sub-link">提示词结构</a>
+    <a href="../stage4/character-consistency.html" class="sub-link">角色一致性</a>
+    <a href="../stage4/short-film-workflow.html" class="sub-link">短片流程</a>
+    <a href="../stage4/compliance.html" class="sub-link">合规提醒</a>
+    <a href="../stage4/practice.html" class="sub-link">练习与资源</a>
+  </details>
+  <div class="sidebar-section">附录</div>
+  <a href="../appendix/glossary.html" class="">镜头术语速查</a>
+  <a href="../appendix/progress.html" class="">30 周进度表</a>
+  <a href="../appendix/resources.html" class="">推荐书单片单</a>
+</aside>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<div class="main-wrap">
+<main class="main">
+<nav class="breadcrumb" aria-label="面包屑"><a href="../index.html">首页</a> <span class="sep">/</span> <a href="../stage4/index.html">阶段四</a> <span class="sep">/</span> <span>提示词结构</span></nav>
+
+<span class="badge s4">阶段四</span>
+<h1>提示词结构</h1>
+<p class="lead">把 AI 想成「听话但缺判断的摄影组」。信息越像专业分镜表，结果越可控。</p>
+
+<h3>是什么</h3>
+<p>通用结构（一个镜头 = 一条提示词）：</p>
+<div class="prompt-block">[景别 + 角度] + [主体与外观] + [动作/表演] + [场景环境] + [光线] + [运镜] + [风格/色调/镜头质感] + [声音]</div>
+<h3>为什么重要</h3>
+<p>前三阶段的术语，在这里全部变现。不会说 dolly in / OTS / low-key，就只能得到「随机好看」。</p>
+<h3>怎么用</h3>
+<div class="example"><div class="label">中文示例</div><div class="prompt-block">近景，轻微仰拍。一位 30 岁左右的短发女人，穿湿透的米色风衣，站在雨夜的城中村巷口。她握着手机，先低头看屏幕，然后缓缓抬头望向镜头外，眼神从困惑变成恐惧。红色霓虹灯从画面左侧打在她脸上，背景虚化，有雨丝。镜头缓慢推近至特写。电影感，35mm 胶片质感，低饱和、红青色调。声音：雨声，远处电视嘈杂声，最后一声手机震动。</div></div>
+<div class="example"><div class="label">英文示例（国际工具往往更稳）</div><div class="prompt-block">Medium close-up, low angle. A woman in her 30s with short hair and a soaked beige trench coat stands at the mouth of a narrow alley on a rainy night. She looks down at her phone, then slowly raises her eyes off-screen; her expression shifts from confusion to fear. Red neon light from frame left, shallow depth of field, rain streaks in the background. Slow dolly-in to a close-up. Cinematic, 35mm film grain, desaturated teal-and-red palette. Audio: heavy rain, distant TV chatter, a single phone buzz.</div></div>
+<ul>
+  <li><strong>一镜一事</strong>：一个主动作 + 一种运镜，动作太多易崩。</li>
+  <li><strong>用专业术语</strong>：dolly in、tracking、OTS、shallow depth of field 等。</li>
+  <li><strong>表演写变化与意图</strong>：从……变成……</li>
+  <li><strong>光线写方向和颜色</strong></li>
+  <li><strong>控制时长</strong>：多数 5–15 秒，部分可达约 30 秒</li>
+  <li><strong>先图后视频</strong>：首帧/首尾帧可控性更高</li>
+  <li><strong>多镜头模式</strong>：即梦 Seedance、可灵等可在一条里写镜头 1、镜头 2…</li>
+</ul>
+<p>官方指南建议精读，如 Google Veo 提示词指南（Vertex AI 文档）。</p>
+<h3>练一练</h3>
+<p>用本页示例提示词，在 2–3 个工具各生成一次，记录画质、人物、运镜、成本差异。</p>
+<div class="remember"><strong>一句话记住：</strong>一镜一事；术语 + 光色方向 + 表演变化 = 可控提示词。</div>
+
+<nav class="chapter-nav"><a href="../stage4/tools-2026.html" class="prev"><span class="label">← 上一章</span>2026 工具现状</a><a href="../stage4/character-consistency.html" class="next"><span class="label">下一章 →</span>角色一致性</a></nav>
+</main>
+<footer class="site-footer">
+  写给 Mark · 零基础导演入门 · 目标：AI 影视创作 · 内容基准日期 2026-10-12 · AI 工具请以官网为准
+</footer>
+</div>
+</div>
+<button class="back-to-top" id="back-to-top" aria-label="回到顶部">↑</button>
+<script src="../js/nav.js"></script>
+</body>
+</html>
