@@ -33,7 +33,7 @@ director-learning-site/
 ├── stage2/                 # 阶段二：剧本与剧集创作
 ├── stage3/                 # 阶段三：导演工作方法
 ├── stage4/                 # 阶段四：AI 影视创作
-├── lapian/                 # 每日拉片：index.html、001.html，媒体在 lapian/001/
+├── lapian/                 # 每日逐帧：index.html、001.html，媒体在 lapian/001/
 ├── appendix/               # 术语速查、30 周进度表、书单片单
 └── lapian_pages.py         # 把 lapian/NNN/ 收成页面
 ```
@@ -64,7 +64,7 @@ python3 _generate.py
 
 日常学习只需打开 `index.html`，无需运行脚本。
 
-## 如何增加一期「每日拉片」
+## 如何增加一期「每日逐帧」
 
 一期一个文件夹，期号三位数字。以第 002 期为例：
 

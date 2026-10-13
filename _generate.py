@@ -100,7 +100,7 @@ def sidebar_html(depth, current):
     {link("stage4/short-film-workflow.html", "短片流程", "sub-link")}
     {link("stage4/compliance.html", "合规提醒", "sub-link")}
     {link("stage4/practice.html", "练习与资源", "sub-link")}''')}
-  <div class="sidebar-section">每日拉片</div>
+  <div class="sidebar-section">每日逐帧</div>
   {link("lapian/index.html", "全部期数", "stage-link")}
   {"".join(link(item["path"], item["nav"]) for item in lapian_pages.load_issues())}
   <div class="sidebar-section">附录</div>
@@ -179,7 +179,7 @@ def page_shell(
 <header class="site-header">
   <button class="btn-icon menu-toggle" id="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="sidebar">{ICON_MENU}</button>
   <a class="brand" href="{p}index.html">导演入门</a>
-  <a class="header-link{" is-current" if current == "lapian" else ""}" href="{p}lapian/index.html">每日拉片</a>
+  <a class="header-link{" is-current" if current == "lapian" else ""}" href="{p}lapian/index.html">每日逐帧</a>
   <button class="search-trigger" id="search-trigger" type="button" aria-label="搜索全站" aria-keyshortcuts="Control+K Meta+K">{ICON_SEARCH}<span class="search-trigger-label">搜索全站</span><kbd class="search-kbd" id="search-kbd">Ctrl K</kbd></button>
   <div class="header-actions">
     <button class="btn-icon" id="theme-toggle" type="button" aria-label="切换主题" title="切换主题">☾</button>
@@ -283,7 +283,7 @@ add(
 <div class="hero">
   <h1>导演入门学习站</h1>
   <p class="lead">写给 Mark：完全零基础，从「电影怎么说话」学到「怎么用 AI 拍电影」。重点是剧集创作与镜头拍摄，最终目标是成为 AI 视频生成导演。</p>
-  <p class="home-lapian"><a href="lapian/index.html">每日拉片</a> · 一期一个片段，对着画面讲景别和剪辑。</p>
+  <p class="home-lapian"><a href="lapian/index.html">每日逐帧</a> · 一期一个片段，对着画面讲景别和剪辑。</p>
   <div class="progress-bar-wrap">
     <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="学习进度"><span id="progress-bar-fill"></span></div>
     <p class="progress-text" id="progress-text">已学完 0 / __TOTAL_PAGES__ 页</p>
@@ -1662,9 +1662,9 @@ _lapian_issues = lapian_pages.load_issues()
 add(
     "lapian-index",
     "lapian/index.html",
-    "每日拉片",
+    "每日逐帧",
     "",
-    [("首页", "index.html"), ("每日拉片", None)],
+    [("首页", "index.html"), ("每日逐帧", None)],
     lapian_pages.archive_body(_lapian_issues),
 )
 for _issue in reversed(_lapian_issues):
@@ -1673,7 +1673,7 @@ for _issue in reversed(_lapian_issues):
         _issue["path"],
         _issue["title"],
         "",
-        [("首页", "index.html"), ("每日拉片", "lapian/index.html"), (f"第 {_issue['id']} 期", None)],
+        [("首页", "index.html"), ("每日逐帧", "lapian/index.html"), (f"第 {_issue['id']} 期", None)],
         lapian_pages.issue_body(_issue),
     )
 
@@ -1765,7 +1765,7 @@ def section_of(page):
     if page["path"].startswith("appendix"):
         return "附录"
     if page["path"].startswith("lapian"):
-        return "每日拉片"
+        return "每日逐帧"
     return "总览"
 
 

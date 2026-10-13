@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build 每日拉片 pages from lapian/NNN/ folders.
+"""Build 每日逐帧 pages from lapian/NNN/ folders.
 
 Each issue folder needs meta.json and lesson.md. Media (narrated.mp4,
 clip.mp4, narration.srt, frameNN.png) is optional and used when present.
@@ -233,7 +233,7 @@ def archive_body(issues):
         else "<p>还没有一期。加一集的方法写在 README。</p>"
     )
     return (
-        "<h1>每日拉片</h1>"
+        "<h1>每日逐帧</h1>"
         "<p class=\"lead\">一期一个片段。先看配音讲解，再对着静帧看景别、构图和剪辑。新的在前。</p>"
         f"{table}"
     )
@@ -247,7 +247,7 @@ def issue_body(issue):
     vtt = ensure_vtt(folder)
     tags = " · ".join(html.escape(tag) for tag in issue["tags"])
     parts = [
-        f'<p class="lapian-kicker">每日拉片 · 第 {issue_id} 期 · {html.escape(issue["date"])}'
+        f'<p class="lapian-kicker">每日逐帧 · 第 {issue_id} 期 · {html.escape(issue["date"])}'
         + (f" · {tags}" if tags else "")
         + "</p>",
         f'<h1>{html.escape(issue["title"])}</h1>',
@@ -294,7 +294,7 @@ def issue_body(issue):
 
 
 def neighbors_for(path, issues):
-    """Prev/next inside 每日拉片. Oldest issue points back at the archive."""
+    """Prev/next inside 每日逐帧. Oldest issue points back at the archive."""
     if path == "lapian/index.html":
         if not issues:
             return None, None
@@ -308,7 +308,7 @@ def neighbors_for(path, issues):
     prev_info = (
         (chrono[index - 1]["path"], chrono[index - 1]["title"])
         if index > 0
-        else ("lapian/index.html", "每日拉片")
+        else ("lapian/index.html", "每日逐帧")
     )
     next_info = (
         (chrono[index + 1]["path"], chrono[index + 1]["title"])
