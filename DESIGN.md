@@ -36,4 +36,4 @@
 
 讲色彩的那一张图里用了一块冷灰青，只为了和朱红并置，界面其他地方仍然只有一个强调色。
 
-照片只来自 Wikimedia Commons 上执照为公有领域的文件，缩在 `assets/img/`，图注写作者、文件名和许可。视频封面存在本地；iframe 要点了播放才加载。离线时图注里的链接仍然能打开。
+课文里的照片以 Blender Studio 公开短片为主，执照是 CC BY 3.0 或 CC BY 4.0：从官方成片截取的静帧，以及 Wikimedia Commons 上同一执照的静帧。图注写片名、年份、Blender Studio / Blender Foundation，并链到成片或文件页和 CC 许可。蒙太奇那一课保留一张《战舰波将金号》公有领域剧照，图注标明「经典对照」。更早的公有领域剧照文件还在 `assets/img/`，课文不再使用。清单见 `assets/img/credits.json`。视频封面存在本地；iframe 要点了播放才加载。离线时图注里的链接仍然能打开。

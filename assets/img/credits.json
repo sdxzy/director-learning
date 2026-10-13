@@ -1,71 +1,191 @@
-[
-  {
-    "file": "metropolis-workers.jpg",
-    "commons": "File:Arbeiter in der Unterstadt auf dem Set von Metropolis (1926).jpg",
-    "license": "Public domain",
-    "artist": "Horst von Harbou"
-  },
-  {
-    "file": "metropolis-death.jpg",
-    "commons": "File:Metropolis (1927) - Death.jpg",
-    "license": "Public domain",
-    "artist": "Karl Freund, Günther Rittau, Walter Ruttmann"
-  },
-  {
-    "file": "metropolis-beast.jpg",
-    "commons": "File:Metropolis (1927) - Brigitte Helm and the Seven Headed Beast.jpg",
-    "license": "Public domain",
-    "artist": "Karl Freund, Günther Rittau, Walter Ruttmann"
-  },
-  {
-    "file": "nosferatu-orlok.jpg",
-    "commons": "File:Max Schreck as Count Orlok in Nosferatu – Eine Symphonie des Grauens (1922).jpg",
-    "license": "Public domain",
-    "artist": "F. W. Murnau"
-  },
-  {
-    "file": "nosferatu-doorway.jpg",
-    "commons": "File:Nosferatu Doorway Frame.webp",
-    "license": "Public domain",
-    "artist": "Prana Film",
-    "note": "Converted from the Commons WebP to JPEG for broader local viewing. License is the Commons file's."
-  },
-  {
-    "file": "potemkin-steps.jpg",
-    "commons": "File:Potemkin-still1.jpg",
-    "license": "Public domain",
-    "artist": "S. M. Eisenstein"
-  },
-  {
-    "file": "potemkin-face.jpg",
-    "commons": "File:Potemkin-still6.jpg",
-    "license": "Public domain",
-    "artist": "S. M. Eisenstein"
-  },
-  {
-    "file": "notld-zombies.jpg",
-    "commons": "File:Night of the Living Dead (1968) - Zombies.JPG",
-    "license": "Public domain",
-    "artist": "The Walter Reade Organization"
-  },
-  {
-    "file": "notld-trailer.jpg",
-    "commons": "File:Night Of The Living Dead trailer screenshot.jpg",
-    "license": "Public domain",
-    "artist": "Walter Reade Organization"
-  },
-  {
-    "file": "kane-campaign.jpg",
-    "commons": "File:Citizen Kane-1.JPG",
-    "license": "Public domain",
-    "artist": "RKO Radio Pictures",
-    "note": "Frame from the 1940 Citizen Kane trailer, not the feature."
-  },
-  {
-    "file": "kane-lowangle.jpg",
-    "commons": "File:Citizen-Kane-Warrick.jpg",
-    "license": "Public domain",
-    "artist": "RKO Radio Pictures",
-    "note": "Frame from the 1940 Citizen Kane trailer, not the feature."
-  }
-]
+{
+  "note": "Lesson stills are CC BY frames from Blender Studio open movies, or Commons files whose LicenseShortName was checked. Battleship Potemkin remains only as a montage classic. Retired files stay on disk so the old license record is not thrown away. The 每日逐帧 section does not use this list.",
+  "verified": [
+    {
+      "file": "spring-wide.jpg",
+      "film": "Spring",
+      "year": 2019,
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Andy Goralczyk / Blender Foundation. Frame extracted for this site from the official short.",
+      "commonsLicenseShortName": "CC BY 4.0"
+    },
+    {
+      "file": "spring-space.jpg",
+      "film": "Spring",
+      "year": 2019,
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Andy Goralczyk / Blender Foundation. Frame extracted for this site.",
+      "timecodeSec": 140
+    },
+    {
+      "file": "spring-highkey.jpg",
+      "film": "Spring",
+      "year": 2019,
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Andy Goralczyk / Blender Foundation. Frame extracted for this site.",
+      "timecodeSec": 360
+    },
+    {
+      "file": "spring-rise-a.jpg",
+      "film": "Spring",
+      "year": 2019,
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Andy Goralczyk / Blender Foundation. Pair with spring-rise-b.jpg, 0.8s later, same shot.",
+      "timecodeSec": 412
+    },
+    {
+      "file": "spring-rise-b.jpg",
+      "film": "Spring",
+      "year": 2019,
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Andy Goralczyk / Blender Foundation. Pair with spring-rise-a.jpg.",
+      "timecodeSec": 412.8
+    },
+    {
+      "file": "tos-close.jpg",
+      "film": "Tears of Steel",
+      "year": 2012,
+      "license": "CC BY 3.0",
+      "source": "https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov",
+      "licensePage": "https://mango.blender.org/about/",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "credit": "Blender Studio / Blender Foundation. Frame extracted for this site.",
+      "timecodeSec": 80
+    },
+    {
+      "file": "tos-slit.jpg",
+      "film": "Tears of Steel",
+      "year": 2012,
+      "license": "CC BY 3.0",
+      "source": "https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov",
+      "licensePage": "https://mango.blender.org/about/",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "credit": "Blender Studio / Blender Foundation. Frame extracted for this site.",
+      "timecodeSec": 85
+    },
+    {
+      "file": "tos-lowkey.jpg",
+      "film": "Tears of Steel",
+      "year": 2012,
+      "license": "CC BY 3.0",
+      "source": "https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov",
+      "licensePage": "https://mango.blender.org/about/",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "credit": "Blender Studio / Blender Foundation. Frame extracted for this site.",
+      "timecodeSec": 700
+    },
+    {
+      "file": "tos-pan-a.jpg",
+      "film": "Tears of Steel",
+      "year": 2012,
+      "license": "CC BY 3.0",
+      "source": "https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov",
+      "licensePage": "https://mango.blender.org/about/",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "credit": "Blender Studio / Blender Foundation. Horizontal move pair with tos-pan-b.jpg.",
+      "timecodeSec": 278
+    },
+    {
+      "file": "tos-pan-b.jpg",
+      "film": "Tears of Steel",
+      "year": 2012,
+      "license": "CC BY 3.0",
+      "source": "https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov",
+      "licensePage": "https://mango.blender.org/about/",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "credit": "Blender Studio / Blender Foundation. Horizontal move pair with tos-pan-a.jpg.",
+      "timecodeSec": 278.8
+    },
+    {
+      "file": "tos-cut-a.jpg",
+      "film": "Tears of Steel",
+      "year": 2012,
+      "license": "CC BY 3.0",
+      "source": "https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov",
+      "licensePage": "https://mango.blender.org/about/",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "credit": "Blender Studio / Blender Foundation. Hard-cut pair with tos-cut-b.jpg.",
+      "timecodeSec": 310
+    },
+    {
+      "file": "tos-cut-b.jpg",
+      "film": "Tears of Steel",
+      "year": 2012,
+      "license": "CC BY 3.0",
+      "source": "https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov",
+      "licensePage": "https://mango.blender.org/about/",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "credit": "Blender Studio / Blender Foundation. Hard-cut pair with tos-cut-a.jpg.",
+      "timecodeSec": 310.7
+    },
+    {
+      "file": "bbb-forest.jpg",
+      "film": "Big Buck Bunny",
+      "year": 2008,
+      "license": "CC BY 3.0",
+      "commons": "File:Big Buck Bunny - forest.jpg",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "filmLicensePage": "https://peach.blender.org/about/",
+      "credit": "Blender Foundation / Project Peach. Commons LicenseShortName CC BY 3.0."
+    },
+    {
+      "file": "bbb-bunny.jpg",
+      "film": "Big Buck Bunny",
+      "year": 2008,
+      "license": "CC BY 3.0",
+      "commons": "File:BBB-Bunny.png",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "filmLicensePage": "https://peach.blender.org/about/",
+      "credit": "Blender Foundation. Commons LicenseShortName CC BY 3.0. JPEG made from that PNG."
+    },
+    {
+      "file": "bbb-yawn.jpg",
+      "film": "Big Buck Bunny",
+      "year": 2008,
+      "license": "CC BY 3.0",
+      "commons": "File:BBB sbadiglia.png",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "filmLicensePage": "https://peach.blender.org/about/",
+      "credit": "Blender Foundation. Screenshot credit on Commons: User:Church of emacs. LicenseShortName CC BY 3.0."
+    },
+    {
+      "file": "cosmos-franck.jpg",
+      "film": "Cosmos Laundromat",
+      "year": 2015,
+      "license": "CC BY 3.0",
+      "commons": "File:CosmosLaundromatFranck.jpg",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "credit": "Blender Foundation. Commons LicenseShortName CC BY 3.0."
+    },
+    {
+      "file": "potemkin-face.jpg",
+      "status": "classic",
+      "commons": "File:Potemkin-still6.jpg",
+      "license": "Public domain",
+      "artist": "S. M. Eisenstein",
+      "credit": "Kept only on the montage lesson, captioned 经典对照."
+    }
+  ],
+  "retired": [
+    "metropolis-workers.jpg",
+    "metropolis-death.jpg",
+    "metropolis-beast.jpg",
+    "nosferatu-orlok.jpg",
+    "nosferatu-doorway.jpg",
+    "potemkin-steps.jpg",
+    "notld-zombies.jpg",
+    "notld-trailer.jpg",
+    "kane-campaign.jpg",
+    "kane-lowangle.jpg"
+  ]
+}

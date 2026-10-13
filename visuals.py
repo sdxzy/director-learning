@@ -89,6 +89,51 @@ def credit_pd(artist, commons_name):
     )
 
 
+def _a(href, label):
+    return f'<a href="{html.escape(href, quote=True)}">{html.escape(label)}</a>'
+
+
+# Tears of Steel: mango.blender.org/about states CC BY 3.0. Frames grabbed from the
+# official 720p file on download.blender.org.
+TOS = (
+    "Blender Studio / Blender Foundation，《钢铁之泪》（Tears of Steel，2012）。本站从成片截取。"
+    + _a("https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov", "tears_of_steel_720p.mov")
+    + "。"
+    + _a("https://mango.blender.org/about/", "项目说明")
+    + "，"
+    + _a("https://creativecommons.org/licenses/by/3.0/", "CC BY 3.0")
+    + "。"
+)
+# Spring webm on Commons is the official short, LicenseShortName CC BY 4.0,
+# artist Andy Goralczyk / Blender Foundation.
+SPRING = (
+    "Andy Goralczyk / Blender Foundation，《春》（Spring，2019）。本站从官方成片截取。"
+    + _a("https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm", "Wikimedia Commons，Spring - Blender Open Movie.webm")
+    + "。"
+    + _a("https://creativecommons.org/licenses/by/4.0/", "CC BY 4.0")
+    + "。"
+)
+
+
+def credit_commons(artist, commons_name, license_label, deed):
+    return (
+        f"{html.escape(artist)}。"
+        + _a(wiki(commons_name), "Wikimedia Commons，" + commons_name)
+        + "。"
+        + _a(deed, license_label)
+        + "。"
+    )
+
+
+BBB_DEED = "https://creativecommons.org/licenses/by/3.0/"
+# Peach about page: the open movie, including published files, is CC BY 3.0.
+# Each still below also carries LicenseShortName CC BY 3.0 on its Commons file.
+
+
+def still_pair(inner):
+    return f'<div class="still-pair">{inner}</div>'
+
+
 def video(prefix, vid):
     title, channel, gloss = VIDEOS[vid]
     safe_title = html.escape(title)
@@ -139,48 +184,63 @@ def pairs_for(path, prefix):
         return [
             (
                 shot_lab(),
-                still(prefix, "metropolis-workers.jpg", "大都会工人城，人物很小", "人小、城大：环境先于面孔。",
-                      credit_pd("Horst von Harbou，1926", "Arbeiter in der Unterstadt auf dem Set von Metropolis (1926).jpg"))
-                + still(prefix, "kane-campaign.jpg", "公民凯恩预告片，演讲者仰拍", "人还是全身，但已经压过人群。",
-                        credit_pd("RKO Radio Pictures，《公民凯恩》1940 年预告片", "Citizen Kane-1.JPG"))
-                + still(prefix, "nosferatu-orlok.jpg", "诺斯费拉图，奥洛克伯爵面部特写", "收到脸上：眼睛和牙齿变成全部信息。",
-                        credit_pd("F. W. Murnau / Prana Film，剧照", "Max Schreck as Count Orlok in Nosferatu – Eine Symphonie des Grauens (1922).jpg"))
+                still(prefix, "spring-wide.jpg", "春，开阔的冷色远景", "大远景：主体很小，冷的天空占了大部分。", SPRING)
+                + still(prefix, "bbb-forest.jpg", "大兔兔宾尼，树林", "远景：树林占满画面，角色还没成为中心。",
+                        credit_commons("Blender Foundation / Project Peach，《大兔兔宾尼》（Big Buck Bunny，2008）",
+                                       "Big Buck Bunny - forest.jpg", "CC BY 3.0", BBB_DEED))
+                + still(prefix, "bbb-bunny.jpg", "大兔兔宾尼，兔子的脸", "近景到特写：脸占满画面，环境退到后面。",
+                        credit_commons("Blender Foundation，《大兔兔宾尼》（Big Buck Bunny，2008）",
+                                       "BBB-Bunny.png", "CC BY 3.0", BBB_DEED))
+                + still(prefix, "bbb-yawn.jpg", "大兔兔宾尼，兔子打哈欠", "大特写：一个哈欠就是这一格的全部信息。",
+                        credit_commons("Blender Foundation，《大兔兔宾尼》（Big Buck Bunny，2008）。截图：Wikimedia 用户 Church of emacs",
+                                       "BBB sbadiglia.png", "CC BY 3.0", BBB_DEED))
                 + videos(prefix, ["AyML8xuKfoc"])
                 + pull([
-                    "《大都会》（1927）工人城：人在建筑里有多小。",
-                    "《公民凯恩》预告片（1940）：演讲者与人群的尺度。",
-                    "《诺斯费拉图》（1922）：奥洛克的脸部特写。",
+                    "《沙丘》（2021）：人站在沙漠和采砂机前面，先交代尺度。",
+                    "《鱿鱼游戏》（2021）第一集「一二三木头人」：操场的大全景比任何一张脸都大。",
+                    "《春》（2019，Blender Studio）：飞过地面的远景。",
                 ]),
             ),
             (
                 fig("camera-angles", "仰、平、俯、鸟瞰、荷兰角。悬停或点选一格，边框会变成朱红。"),
-                still(prefix, "metropolis-death.jpg", "大都会，仰拍的纪念碑式人像", "从下往上，人变成纪念碑。",
-                      credit_pd("Karl Freund、Günther Rittau、Walter Ruttmann", "Metropolis (1927) - Death.jpg"))
-                + still(prefix, "kane-lowangle.jpg", "公民凯恩预告片，室内低角度三人", "天花板进画，三个人都被托起来。",
-                        credit_pd("RKO Radio Pictures，《公民凯恩》1940 年预告片", "Citizen-Kane-Warrick.jpg"))
+                still(prefix, "cosmos-franck.jpg", "宇宙洗衣店，大片留白里的角色", "人没有顶满画面，周围的空让他显得不那么逼人。角度课先看这张：空的多少，会改变你觉得他有多强。",
+                        credit_commons("Blender Foundation，《宇宙洗衣店》（Cosmos Laundromat，2015）",
+                                       "CosmosLaundromatFranck.jpg", "CC BY 3.0", BBB_DEED))
                 + videos(prefix, ["wLfZL9PZI9k", "DgZPQMyzKiE"])
                 + pull([
-                    "《大都会》（1927）「死亡」雕像：仰拍。",
-                    "《公民凯恩》预告片：室内低角度，看见天花板。",
+                    "《寄生虫》（2019）：楼梯是纵向的，人往下走，空间本身在写「被压到下一层」。",
                 ]),
             ),
         ]
     if path == "stage1/camera-movement.html":
         return [(
             fig("camera-moves", "推、拉、摇、移、跟、升降。箭头是摄影机要去的方向。"),
-            videos(prefix, ["IiyBo-qLDeM", "doaQC-S8de8"]),
+            still_pair(
+                still(prefix, "tos-pan-a.jpg", "钢铁之泪，横移前", "同一镜头，这一格。", TOS)
+                + still(prefix, "tos-pan-b.jpg", "钢铁之泪，横移后", "约 0.8 秒后，整个画面横着挪了一截。是摇或横移，不是硬切。", TOS)
+            )
+            + still_pair(
+                still(prefix, "spring-rise-a.jpg", "春，上下移动前", "同一镜头，这一格。", SPRING)
+                + still(prefix, "spring-rise-b.jpg", "春，上下移动后", "约 0.8 秒后，画面沿上下方向移开。是俯仰或升降，不是换镜头。", SPRING)
+            )
+            + videos(prefix, ["IiyBo-qLDeM", "doaQC-S8de8"])
+            + pull([
+                "《1917》（2019）：整部片做成一次走完的错觉，切点藏在全黑和挡镜里。",
+                "《熊家餐馆》第一季第 7 集「Review」：一条在后厨里走完的长镜头。",
+                "《继承之战》：对话里常用突然的变焦扎进人脸。",
+            ]),
         )]
     if path == "stage1/composition.html":
         return [(
             fig("composition", "三分法、引导线、框架。悬停一格，边框变朱红。"),
-            still(prefix, "potemkin-steps.jpg", "战舰波将金号，敖德萨阶梯", "台阶本身就是往下的引导线。",
-                  credit_pd("S. M. Eisenstein", "Potemkin-still1.jpg"))
-            + still(prefix, "nosferatu-doorway.jpg", "诺斯费拉图，门洞里的人影", "门框先把人关进一层画框。",
-                    credit_pd("Prana Film", "Nosferatu Doorway Frame.webp"))
+            still(prefix, "tos-close.jpg", "钢铁之泪，人在画面一侧", "人靠在一侧，另一侧留出空，视线才有地方去。", TOS)
+            + still(prefix, "tos-slit.jpg", "钢铁之泪，暗场里的一条亮", "大部分留在暗里，只留一条亮缝，先把看的地方定死。", TOS)
+            + still(prefix, "spring-space.jpg", "春，大片留白", "主体几乎只是一个点，空的地方本身就是构图。", SPRING)
             + videos(prefix, ["hUmZldt0DTg", "wsI8UES59TM"])
             + pull([
-                "《战舰波将金号》（1925）敖德萨阶梯：台阶作引导线。",
-                "《诺斯费拉图》（1922）：用门洞做框架。",
+                "《人生切割术》（2022–）：被切割的办公层几乎绝对居中、对称。",
+                "《寄生虫》（2019）：楼梯的线条把人往下带。",
+                "《爱乐之城》（2016）开场公路歌舞：人群沿着匝道铺开。",
             ]),
         )]
     if path == "stage1/light-color.html":
@@ -188,19 +248,24 @@ def pairs_for(path, prefix):
             (
                 fig("three-point", "俯视：主光塑形，辅光填一点阴影，轮廓光把人从背景上撕开。")
                 + fig("high-low-key", "高调几乎没有死黑；低调只留一小块能读的亮。"),
-                still(prefix, "notld-zombies.jpg", "活死人之夜，暗门里的人", "脸陷在暗里，门口的一点亮就够。",
-                      credit_pd("The Walter Reade Organization", "Night of the Living Dead (1968) - Zombies.JPG"))
-                + still(prefix, "notld-trailer.jpg", "活死人之夜预告片，硬侧光下的脸", "硬侧光，暗部几乎不补。",
-                        credit_pd("Walter Reade Organization", "Night Of The Living Dead trailer screenshot.jpg"))
+                still(prefix, "spring-highkey.jpg", "春，明亮的高调画面", "高调：亮部多，阴影很浅。", SPRING)
+                + still(prefix, "tos-lowkey.jpg", "钢铁之泪，沉在暗里的画面", "低调：大部分沉在暗里，只留一点能读的形。", TOS)
                 + videos(prefix, ["r2nD_knsNrc"])
                 + pull([
-                    "《活死人之夜》（1968）门口群像：低调。",
-                    "《活死人之夜》预告片：脸上的硬侧光。",
+                    "《寄生虫》（2019）：半地下室靠街面那一扇窗；朴社长家是整面玻璃的日光。",
+                    "《奥本海默》（2023）三一试验：一场真实爆炸把人脸打进同一阵白光。诺兰说过试验场面用的是实拍爆炸，不是后期做的火球。",
                 ]),
             ),
             (
                 fig("color-pair", "冷背景配暖主体。黑白片靠明暗做这件事，彩色片可以直接用互补色。"),
-                videos(prefix, ["lINVnA3rVIE", "4PcpGxihPac"]),
+                still(prefix, "spring-wide.jpg", "春，偏冷的蓝色远景", "冷：蓝占主导，距离感更远。", SPRING)
+                + still(prefix, "spring-highkey.jpg", "春，偏暖的高调画面", "暖：同一部短片里换一档颜色，情绪就换一档。", SPRING)
+                + videos(prefix, ["lINVnA3rVIE", "4PcpGxihPac"])
+                + pull([
+                    "《爱乐之城》（2016）：黄、蓝、红把歌舞从日常里分离出来。",
+                    "《绝命毒师》：玛丽长期穿紫，是剧组给定的人物颜色。",
+                    "《奥本海默》（2023）：彩色一条线、黑白一条线。诺兰把彩色说成奥本海默的视角。",
+                ]),
             ),
         ]
     if path == "stage1/axis.html":
@@ -218,14 +283,17 @@ def pairs_for(path, prefix):
         return [(
             fig("kuleshov", "脸没有变。变的是后面那一格，观众却觉得表情变了。")
             + fig("jl-cut", "J 切是下一镜的声音先到；L 切是上一镜的声音留下来。"),
-            still(prefix, "potemkin-face.jpg", "战舰波将金号，阶梯段落中的女子近景", "一张脸接上阶梯上的混乱，情绪是剪出来的。",
-                  credit_pd("S. M. Eisenstein", "Potemkin-still6.jpg"))
-            + still(prefix, "metropolis-beast.jpg", "大都会，机器与人的高反差画面", "两个差别很大的形象接在一起，意义靠碰撞。",
-                    credit_pd("Karl Freund、Günther Rittau、Walter Ruttmann", "Metropolis (1927) - Brigitte Helm and the Seven Headed Beast.jpg"))
+            still_pair(
+                still(prefix, "tos-cut-a.jpg", "钢铁之泪，硬切前", "这一格。", TOS)
+                + still(prefix, "tos-cut-b.jpg", "钢铁之泪，硬切后", "不到一秒，已经是另一个画面。意思从这一下里出来。", TOS)
+            )
+            + still(prefix, "potemkin-face.jpg", "战舰波将金号，阶梯段落中的女子近景", "经典对照：一张脸接上阶梯上的混乱，情绪是剪出来的。",
+                    "经典对照。" + credit_pd("S. M. Eisenstein，《战舰波将金号》（1925）", "Potemkin-still6.jpg"))
             + videos(prefix, ["TKXBAaQB03U", "FVR8zz8ci2k"])
             + pull([
-                "《战舰波将金号》（1925）敖德萨阶梯：脸、台阶、人群交替。",
-                "《大都会》（1927）机器与人：形象对撞。",
+                "《瞬息全宇宙》（2022）：硬切和画幅变化，把同一个动作接到另一个宇宙。",
+                "《奥本海默》（2023）：听证会和三一试验交叉剪。",
+                "经典对照：《战舰波将金号》（1925）敖德萨阶梯，脸、台阶、人群交替。",
             ]),
         )]
     if path == "stage1/sound.html":
