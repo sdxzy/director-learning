@@ -7,6 +7,8 @@ import json
 import re
 
 ROOT = Path(__file__).resolve().parent
+
+import lapian_pages
 TOTAL_PAGES = 36  # updated after defining all pages
 
 # Page order for prev/next navigation: (rel_path, title, stage)
@@ -98,6 +100,9 @@ def sidebar_html(depth, current):
     {link("stage4/short-film-workflow.html", "短片流程", "sub-link")}
     {link("stage4/compliance.html", "合规提醒", "sub-link")}
     {link("stage4/practice.html", "练习与资源", "sub-link")}''')}
+  <div class="sidebar-section">每日拉片</div>
+  {link("lapian/index.html", "全部期数", "stage-link")}
+  {"".join(link(item["path"], item["nav"]) for item in lapian_pages.load_issues())}
   <div class="sidebar-section">附录</div>
   {link("appendix/glossary.html", "镜头术语速查")}
   {link("appendix/progress.html", "30 周进度表")}
@@ -174,6 +179,7 @@ def page_shell(
 <header class="site-header">
   <button class="btn-icon menu-toggle" id="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="sidebar">{ICON_MENU}</button>
   <a class="brand" href="{p}index.html">导演入门</a>
+  <a class="header-link{" is-current" if current == "lapian" else ""}" href="{p}lapian/index.html">每日拉片</a>
   <button class="search-trigger" id="search-trigger" type="button" aria-label="搜索全站" aria-keyshortcuts="Control+K Meta+K">{ICON_SEARCH}<span class="search-trigger-label">搜索全站</span><kbd class="search-kbd" id="search-kbd">Ctrl K</kbd></button>
   <div class="header-actions">
     <button class="btn-icon" id="theme-toggle" type="button" aria-label="切换主题" title="切换主题">☾</button>
@@ -277,9 +283,10 @@ add(
 <div class="hero">
   <h1>导演入门学习站</h1>
   <p class="lead">写给 Mark：完全零基础，从「电影怎么说话」学到「怎么用 AI 拍电影」。重点是剧集创作与镜头拍摄，最终目标是成为 AI 视频生成导演。</p>
+  <p class="home-lapian"><a href="lapian/index.html">每日拉片</a> · 一期一个片段，对着画面讲景别和剪辑。</p>
   <div class="progress-bar-wrap">
     <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="学习进度"><span id="progress-bar-fill"></span></div>
-    <p class="progress-text" id="progress-text">已学完 0 / 34 页</p>
+    <p class="progress-text" id="progress-text">已学完 0 / __TOTAL_PAGES__ 页</p>
   </div>
 </div>
 
@@ -1651,6 +1658,26 @@ add(
 )
 
 
+_lapian_issues = lapian_pages.load_issues()
+add(
+    "lapian-index",
+    "lapian/index.html",
+    "每日拉片",
+    "",
+    [("首页", "index.html"), ("每日拉片", None)],
+    lapian_pages.archive_body(_lapian_issues),
+)
+for _issue in reversed(_lapian_issues):
+    add(
+        f"lapian-{_issue['id']}",
+        _issue["path"],
+        _issue["title"],
+        "",
+        [("首页", "index.html"), ("每日拉片", "lapian/index.html"), (f"第 {_issue['id']} 期", None)],
+        lapian_pages.issue_body(_issue),
+    )
+
+
 # ========== Render all pages ==========
 
 def depth_of(path: str) -> int:
@@ -1667,6 +1694,8 @@ def current_key(path: str) -> str:
         return "stage4"
     if path.startswith("appendix"):
         return "appendix"
+    if path.startswith("lapian"):
+        return "lapian"
     return "home"
 
 # Fix TOTAL_PAGES
@@ -1676,14 +1705,17 @@ TOTAL_PAGES = len(pages)
 NAV_ORDER = [(p["path"], p["title"]) for p in pages]
 
 def neighbors(path: str):
-    paths = [p["path"] for p in pages]
+    if path.startswith("lapian/"):
+        return lapian_pages.neighbors_for(path, _lapian_issues)
+    course = [p for p in pages if not p["path"].startswith("lapian/")]
+    paths = [p["path"] for p in course]
     i = paths.index(path)
     prev_info = None
     next_info = None
     if i > 0:
-        prev_info = (pages[i - 1]["path"], pages[i - 1]["title"])
-    if i < len(pages) - 1:
-        next_info = (pages[i + 1]["path"], pages[i + 1]["title"])
+        prev_info = (course[i - 1]["path"], course[i - 1]["title"])
+    if i < len(course) - 1:
+        next_info = (course[i + 1]["path"], course[i + 1]["title"])
     return prev_info, next_info
 
 # Patch page_shell to use updated TOTAL_PAGES — redefine thin wrapper
@@ -1732,6 +1764,8 @@ def section_of(page):
         return labels[stage]
     if page["path"].startswith("appendix"):
         return "附录"
+    if page["path"].startswith("lapian"):
+        return "每日拉片"
     return "总览"
 
 
@@ -1761,6 +1795,7 @@ def main():
     import visuals
     written = []
     for page in pages:
+        page["body"] = page["body"].replace("__TOTAL_PAGES__", str(TOTAL_PAGES))
         page["body"] = visuals.apply_visuals(page["path"], page["body"])
         out = render(page)
         written.append(str(out.relative_to(ROOT)))
