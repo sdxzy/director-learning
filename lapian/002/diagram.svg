@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 680" role="img" aria-label="垂直剖面：阳光下的朴家山坡住宅，往下是街与台阶、金家半地下室的街面窗，最底层是隐藏地堡。上等于光，下等于坠落">
+<rect width="720" height="680" fill="#f7f5f1"/>
+<defs>
+<marker id="sec-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0 0 L10 5 L0 10 Z" fill="#8d3a32"/>
+</marker>
+</defs>
+<g stroke="#cfc9bd" stroke-width="1">
+<line x1="156" y1="344" x2="214" y2="344"/>
+<line x1="506" y1="344" x2="564" y2="344"/>
+<line x1="156" y1="358" x2="214" y2="358"/>
+<line x1="506" y1="358" x2="564" y2="358"/>
+<line x1="156" y1="372" x2="214" y2="372"/>
+<line x1="506" y1="372" x2="564" y2="372"/>
+<line x1="156" y1="386" x2="214" y2="386"/>
+<line x1="506" y1="386" x2="564" y2="386"/>
+<line x1="156" y1="400" x2="214" y2="400"/>
+<line x1="506" y1="400" x2="564" y2="400"/>
+<line x1="156" y1="414" x2="214" y2="414"/>
+<line x1="506" y1="414" x2="564" y2="414"/>
+<line x1="156" y1="428" x2="214" y2="428"/>
+<line x1="506" y1="428" x2="564" y2="428"/>
+<line x1="156" y1="442" x2="214" y2="442"/>
+<line x1="506" y1="442" x2="564" y2="442"/>
+<line x1="156" y1="456" x2="214" y2="456"/>
+<line x1="506" y1="456" x2="564" y2="456"/>
+<line x1="156" y1="470" x2="214" y2="470"/>
+<line x1="506" y1="470" x2="564" y2="470"/>
+<line x1="156" y1="484" x2="214" y2="484"/>
+<line x1="506" y1="484" x2="564" y2="484"/>
+<line x1="156" y1="498" x2="214" y2="498"/>
+<line x1="506" y1="498" x2="564" y2="498"/>
+<line x1="156" y1="512" x2="214" y2="512"/>
+<line x1="506" y1="512" x2="564" y2="512"/>
+<line x1="156" y1="526" x2="214" y2="526"/>
+<line x1="506" y1="526" x2="564" y2="526"/>
+<line x1="156" y1="540" x2="214" y2="540"/>
+<line x1="506" y1="540" x2="564" y2="540"/>
+<line x1="156" y1="554" x2="214" y2="554"/>
+<line x1="506" y1="554" x2="564" y2="554"/>
+<line x1="156" y1="568" x2="214" y2="568"/>
+<line x1="506" y1="568" x2="564" y2="568"/>
+<line x1="156" y1="582" x2="214" y2="582"/>
+<line x1="506" y1="582" x2="564" y2="582"/>
+<line x1="156" y1="596" x2="214" y2="596"/>
+<line x1="506" y1="596" x2="564" y2="596"/>
+</g>
+<path d="M190 164 L530 164 L570 206 L150 206 Z" fill="#efece6" stroke="#cfc9bd" stroke-width="1"/>
+<rect x="220" y="68" width="280" height="96" fill="#f7f5f1" stroke="#1a1916" stroke-width="1.5"/>
+<rect x="238" y="88" width="244" height="30" fill="#efece6" stroke="#1a1916" stroke-width="1.5"/>
+<line x1="319" y1="88" x2="319" y2="118" stroke="#cfc9bd" stroke-width="1"/>
+<line x1="400" y1="88" x2="400" y2="118" stroke="#cfc9bd" stroke-width="1"/>
+<text x="360" y="150" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">朴家 · 山坡住宅</text>
+<path d="M360 206 H400 V234 H440 V262 H480 V290 H520 V318" fill="none" stroke="#1a1916" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="236" y="268" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">台阶</text>
+<rect x="220" y="318" width="280" height="124" fill="#f7f5f1" stroke="none"/>
+<rect x="221.5" y="336" width="277" height="104.5" fill="#efece6"/>
+<rect x="220" y="318" width="280" height="124" fill="none" stroke="#1a1916" stroke-width="1.5"/>
+<rect x="238" y="300" width="88" height="36" fill="#f7f5f1" stroke="#1a1916" stroke-width="1.5"/>
+<line x1="150" y1="318" x2="238" y2="318" stroke="#1a1916" stroke-width="1.5"/>
+<line x1="326" y1="318" x2="570" y2="318" stroke="#1a1916" stroke-width="1.5"/>
+<text x="340" y="356" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">窗贴着街面</text>
+<text x="360" y="400" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">金家 · 半地下室</text>
+<text x="584" y="322" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">街面</text>
+<path d="M300 442 H344 V464 H388 V486 H432 V508 H476 V530" fill="none" stroke="#1a1916" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="236" y="492" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">台阶</text>
+<rect x="250" y="530" width="220" height="80" fill="#efece6" stroke="#1a1916" stroke-width="1.5"/>
+<text x="360" y="576" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">隐藏地堡</text>
+<g fill="none" stroke="#8d3a32" stroke-width="1.5" stroke-linecap="round">
+<circle cx="360" cy="40" r="9" fill="#f7f5f1"/>
+<line x1="360" y1="22" x2="360" y2="14"/>
+<line x1="373" y1="27" x2="379" y2="21"/>
+<line x1="347" y1="27" x2="341" y2="21"/>
+<line x1="378" y1="40" x2="388" y2="40"/>
+<line x1="342" y1="40" x2="332" y2="40"/>
+</g>
+<text x="404" y="44" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">阳光</text>
+<line x1="78" y1="600" x2="78" y2="56" stroke="#8d3a32" stroke-width="1.5" marker-end="url(#sec-arrow)"/>
+<text x="78" y="40" text-anchor="middle" fill="#8d3a32" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">上 = 光</text>
+<line x1="642" y1="56" x2="642" y2="600" stroke="#8d3a32" stroke-width="1.5" marker-end="url(#sec-arrow)"/>
+<text x="642" y="652" text-anchor="middle" fill="#8d3a32" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">下 = 坠落</text>
+</svg>

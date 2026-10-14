@@ -72,13 +72,16 @@ python3 _generate.py
 ```
 lapian/002/
 ├── meta.json          # date、title、tags、可选 nav
-├── lesson.md          # 讲解正文，结构与 001 相同
-├── narrated.mp4       # 带配音的成片，页面最上方播放
-├── clip.mp4           # 无配音原片段
-├── narration.srt      # 旁白字幕；生成时会写成 narration.vtt 供播放器轨道
-├── script.txt         # 旁白稿，留在文件夹里备查
-└── frame01.png …      # 静帧，lesson.md 里写 frame01、frame02…
+├── lesson.md          # 讲解正文
+├── diagram.svg        # 可选。自绘示意图，不是影片剧照
+├── narrated.mp4       # 可选。带配音的成片，页面最上方播放
+├── clip.mp4           # 可选。无配音原片段
+├── narration.srt      # 可选。旁白字幕；生成时会写成 narration.vtt
+├── script.txt         # 可选。旁白稿，留在文件夹里备查
+└── frame01.png …      # 可选。静帧，lesson.md 里写 frame01、frame02…
 ```
+
+有版权的片子不放成片和静帧。缺的文件页面就不渲染，镜头行也不会留空图。
 
 `meta.json`：
 
@@ -96,7 +99,8 @@ lapian/002/
 `lesson.md` 用这些二级标题，生成器认的就是这几个名字：
 
 - `一句话看点`
-- `逐镜头拆解`：每个镜头一行，格式为 `**① frame01：景别·内容**（片段 0:03）`，下面用 `- ` 写说明。静帧文件名对上 `frame01.png`。
+- `先看讲解视频`：没有 `narrated.mp4` 时，放在「一句话看点」后面。第一条若是 Thomas Flight 的 Visual Architecture（`AvO8-925Edc`），用课文里那种点击再加载的播放框，不放影片封面。带 `&t=` 的时间点保持原样，仍是可点的链接。
+- `逐镜头拆解`：每个镜头一行，格式为 `**① frame01：景别·内容**（片段 0:03）`，下面用 `- ` 写说明。静帧文件名对上 `frame01.png`；文件不在就不插图。
 - `10 分钟小练习（二选一）`
 - `对应学习站章节`：写成 `- 景别与角度：https://sdxzy.github.io/director-learning/stage1/shot-size.html`，页面上会换成站内相对链接。
 - `作品信息`：片源和授权，页面上放在「片源与授权」。
@@ -108,4 +112,4 @@ lapian/002/
 python3 _generate.py
 ```
 
-会更新 `lapian/index.html`、`lapian/002.html`、侧栏、首页入口和搜索索引。媒体文件留在 `lapian/002/`，不要挪走。
+会更新 `lapian/index.html`、`lapian/002.html`、侧栏、首页入口和搜索索引。媒体文件留在 `lapian/002/`，不要挪走。若文件夹里有 `diagram.svg`（或 `diagram.png`），图会放在讲解视频后面，图注写「自绘示意图」。

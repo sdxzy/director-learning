@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>《寄生虫》：场面调度与垂直空间 · 导演入门学习站</title>
+<meta name="description" content="零基础导演入门：视听语言、剧本剧集、导演方法与 AI 影视创作">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../css/styles.css">
+<script>
+(function(){
+  try {
+    var s = localStorage.getItem("director-site-theme");
+    var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var t = (s === "light" || s === "dark") ? s : (dark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", t);
+    document.documentElement.style.colorScheme = t;
+  } catch (e) {}
+})();
+</script>
+
+</head>
+<body data-page="lapian-002" data-total-pages="37">
+<a class="skip-link" href="#content">跳到正文</a>
+<header class="site-header">
+  <button class="btn-icon menu-toggle" id="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="sidebar"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="brand" href="../index.html">导演入门</a>
+  <a class="header-link is-current" href="../lapian/index.html">每日逐帧</a>
+  <button class="search-trigger" id="search-trigger" type="button" aria-label="搜索全站" aria-keyshortcuts="Control+K Meta+K"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="search-trigger-label">搜索全站</span><kbd class="search-kbd" id="search-kbd">Ctrl K</kbd></button>
+  <div class="header-actions">
+    <button class="btn-icon" id="theme-toggle" type="button" aria-label="切换主题" title="切换主题">☾</button>
+  </div>
+  <div class="read-progress" aria-hidden="true"><span id="read-progress-fill"></span></div>
+</header>
+<div class="layout">
+
+<aside class="sidebar" id="sidebar">
+  <nav class="sidebar-nav" aria-label="课程目录">
+  <div class="sidebar-section">总览</div>
+  <a href="../index.html" class="stage-link">首页</a>
+  <div class="sidebar-section">学习阶段</div>
+  <details class="nav-group">
+    <summary>阶段一 · 视听语言</summary>
+    <div class="nav-group-links">
+    <a href="../stage1/index.html" class="">阶段概览</a>
+    <a href="../stage1/shot-size.html" class="sub-link">景别与角度</a>
+    <a href="../stage1/camera-movement.html" class="sub-link">运镜</a>
+    <a href="../stage1/composition.html" class="sub-link">构图</a>
+    <a href="../stage1/light-color.html" class="sub-link">光线与色彩</a>
+    <a href="../stage1/axis.html" class="sub-link">轴线与正反打</a>
+    <a href="../stage1/montage.html" class="sub-link">蒙太奇与剪辑</a>
+    <a href="../stage1/sound.html" class="sub-link">声音</a>
+    <a href="../stage1/practice.html" class="sub-link">练习与资源</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary>阶段二 · 剧本与剧集</summary>
+    <div class="nav-group-links">
+    <a href="../stage2/index.html" class="">阶段概览</a>
+    <a href="../stage2/story-structure.html" class="sub-link">故事结构</a>
+    <a href="../stage2/character-conflict.html" class="sub-link">人物与冲突</a>
+    <a href="../stage2/scene-writing.html" class="sub-link">场景写作</a>
+    <a href="../stage2/series-hooks.html" class="sub-link">剧集弧线与钩子</a>
+    <a href="../stage2/shot-list.html" class="sub-link">分镜头脚本</a>
+    <a href="../stage2/practice.html" class="sub-link">练习与资源</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary>阶段三 · 导演方法</summary>
+    <div class="nav-group-links">
+    <a href="../stage3/index.html" class="">阶段概览</a>
+    <a href="../stage3/workflow.html" class="sub-link">导演流程</a>
+    <a href="../stage3/blocking.html" class="sub-link">场面调度</a>
+    <a href="../stage3/directing-actors.html" class="sub-link">演员指导</a>
+    <a href="../stage3/storyboard.html" class="sub-link">故事板与机位</a>
+    <a href="../stage3/shooting-plan.html" class="sub-link">拍摄计划</a>
+    <a href="../stage3/practice.html" class="sub-link">练习与资源</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary>阶段四 · AI 影视</summary>
+    <div class="nav-group-links">
+    <a href="../stage4/index.html" class="">阶段概览</a>
+    <a href="../stage4/tools-2026.html" class="sub-link">2026 工具现状</a>
+    <a href="../stage4/prompt-structure.html" class="sub-link">提示词结构</a>
+    <a href="../stage4/character-consistency.html" class="sub-link">角色一致性</a>
+    <a href="../stage4/short-film-workflow.html" class="sub-link">短片流程</a>
+    <a href="../stage4/compliance.html" class="sub-link">合规提醒</a>
+    <a href="../stage4/practice.html" class="sub-link">练习与资源</a>
+    </div>
+  </details>
+  <div class="sidebar-section">每日逐帧</div>
+  <a href="../lapian/index.html" class="stage-link">全部期数</a>
+  <a href="../lapian/002.html" class="">002 寄生虫·楼梯</a><a href="../lapian/001.html" class="">001 敖德萨阶梯</a>
+  <div class="sidebar-section">附录</div>
+  <a href="../appendix/glossary.html" class="">镜头术语速查</a>
+  <a href="../appendix/progress.html" class="">30 周进度表</a>
+  <a href="../appendix/resources.html" class="">推荐书单片单</a>
+  </nav>
+  <div class="sidebar-foot" id="sidebar-progress"></div>
+</aside>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<div class="doc-shell">
+<div class="doc-column">
+<main class="main" id="content">
+<nav class="breadcrumb" aria-label="面包屑"><a href="../index.html">首页</a> <span class="sep">/</span> <a href="../lapian/index.html">每日逐帧</a> <span class="sep">/</span> <span>第 002 期</span></nav>
+<p class="lapian-kicker">每日逐帧 · 第 002 期 · 2026-10-14 · 场面调度 · 构图 · 光色 · 轴线</p>
+<h1>《寄生虫》：场面调度与垂直空间</h1>
+<p>奉俊昊几乎不用台词讲“阶级”，他用 <strong>上下楼梯、高低机位和阳光照不照得到</strong> 来讲：谁住得高、谁住得低，观众一眼就懂。</p>
+<h2>先看讲解视频</h2>
+<figure class="video-card"><button type="button" class="video-facade no-poster" data-embed="https://www.youtube-nocookie.com/embed/AvO8-925Edc?rel=0&amp;autoplay=1" data-title="The Visual Architecture of Parasite"><span class="play-btn" aria-hidden="true"></span><span class="facade-label">The Visual Architecture of Parasite</span><span class="sr-only">播放：The Visual Architecture of Parasite</span></button><figcaption><a href="https://www.youtube.com/watch?v=AvO8-925Edc">The Visual Architecture of Parasite</a><span class="credit">Thomas Flight · YouTube · 点击播放；离线时打开链接。</span></figcaption></figure>
+<ul>
+<li>主讲：Thomas Flight《The Visual Architecture of Parasite》（英文，10:20，可开自动翻译字幕）。看 0:30–6:30 这一段就够，下面每个段落都给了跳转点。 <a href="https://www.youtube.com/watch?v=AvO8-925Edc">https://www.youtube.com/watch?v=AvO8-925Edc</a></li>
+<li>补充：Thomas Flight《The Brilliant Cinematography of Parasite》（英文，8:17），讲运镜、长镜头和结尾手持。 <a href="https://www.youtube.com/watch?v=ZF6O93noHRc">https://www.youtube.com/watch?v=ZF6O93noHRc</a></li>
+<li>官方预告片（NEON）：先花两分钟熟悉两个家的样子。 <a href="https://www.youtube.com/watch?v=isOGD_7hNIY">https://www.youtube.com/watch?v=isOGD_7hNIY</a></li>
+</ul>
+<figure class="figure"><div class="figure-frame"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 680" role="img" aria-label="垂直剖面：阳光下的朴家山坡住宅，往下是街与台阶、金家半地下室的街面窗，最底层是隐藏地堡。上等于光，下等于坠落">
+<rect width="720" height="680" fill="#f7f5f1"/>
+<defs>
+<marker id="sec-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0 0 L10 5 L0 10 Z" fill="#8d3a32"/>
+</marker>
+</defs>
+<g stroke="#cfc9bd" stroke-width="1">
+<line x1="156" y1="344" x2="214" y2="344"/>
+<line x1="506" y1="344" x2="564" y2="344"/>
+<line x1="156" y1="358" x2="214" y2="358"/>
+<line x1="506" y1="358" x2="564" y2="358"/>
+<line x1="156" y1="372" x2="214" y2="372"/>
+<line x1="506" y1="372" x2="564" y2="372"/>
+<line x1="156" y1="386" x2="214" y2="386"/>
+<line x1="506" y1="386" x2="564" y2="386"/>
+<line x1="156" y1="400" x2="214" y2="400"/>
+<line x1="506" y1="400" x2="564" y2="400"/>
+<line x1="156" y1="414" x2="214" y2="414"/>
+<line x1="506" y1="414" x2="564" y2="414"/>
+<line x1="156" y1="428" x2="214" y2="428"/>
+<line x1="506" y1="428" x2="564" y2="428"/>
+<line x1="156" y1="442" x2="214" y2="442"/>
+<line x1="506" y1="442" x2="564" y2="442"/>
+<line x1="156" y1="456" x2="214" y2="456"/>
+<line x1="506" y1="456" x2="564" y2="456"/>
+<line x1="156" y1="470" x2="214" y2="470"/>
+<line x1="506" y1="470" x2="564" y2="470"/>
+<line x1="156" y1="484" x2="214" y2="484"/>
+<line x1="506" y1="484" x2="564" y2="484"/>
+<line x1="156" y1="498" x2="214" y2="498"/>
+<line x1="506" y1="498" x2="564" y2="498"/>
+<line x1="156" y1="512" x2="214" y2="512"/>
+<line x1="506" y1="512" x2="564" y2="512"/>
+<line x1="156" y1="526" x2="214" y2="526"/>
+<line x1="506" y1="526" x2="564" y2="526"/>
+<line x1="156" y1="540" x2="214" y2="540"/>
+<line x1="506" y1="540" x2="564" y2="540"/>
+<line x1="156" y1="554" x2="214" y2="554"/>
+<line x1="506" y1="554" x2="564" y2="554"/>
+<line x1="156" y1="568" x2="214" y2="568"/>
+<line x1="506" y1="568" x2="564" y2="568"/>
+<line x1="156" y1="582" x2="214" y2="582"/>
+<line x1="506" y1="582" x2="564" y2="582"/>
+<line x1="156" y1="596" x2="214" y2="596"/>
+<line x1="506" y1="596" x2="564" y2="596"/>
+</g>
+<path d="M190 164 L530 164 L570 206 L150 206 Z" fill="#efece6" stroke="#cfc9bd" stroke-width="1"/>
+<rect x="220" y="68" width="280" height="96" fill="#f7f5f1" stroke="#1a1916" stroke-width="1.5"/>
+<rect x="238" y="88" width="244" height="30" fill="#efece6" stroke="#1a1916" stroke-width="1.5"/>
+<line x1="319" y1="88" x2="319" y2="118" stroke="#cfc9bd" stroke-width="1"/>
+<line x1="400" y1="88" x2="400" y2="118" stroke="#cfc9bd" stroke-width="1"/>
+<text x="360" y="150" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">朴家 · 山坡住宅</text>
+<path d="M360 206 H400 V234 H440 V262 H480 V290 H520 V318" fill="none" stroke="#1a1916" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="236" y="268" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">台阶</text>
+<rect x="220" y="318" width="280" height="124" fill="#f7f5f1" stroke="none"/>
+<rect x="221.5" y="336" width="277" height="104.5" fill="#efece6"/>
+<rect x="220" y="318" width="280" height="124" fill="none" stroke="#1a1916" stroke-width="1.5"/>
+<rect x="238" y="300" width="88" height="36" fill="#f7f5f1" stroke="#1a1916" stroke-width="1.5"/>
+<line x1="150" y1="318" x2="238" y2="318" stroke="#1a1916" stroke-width="1.5"/>
+<line x1="326" y1="318" x2="570" y2="318" stroke="#1a1916" stroke-width="1.5"/>
+<text x="340" y="356" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">窗贴着街面</text>
+<text x="360" y="400" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">金家 · 半地下室</text>
+<text x="584" y="322" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">街面</text>
+<path d="M300 442 H344 V464 H388 V486 H432 V508 H476 V530" fill="none" stroke="#1a1916" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="236" y="492" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">台阶</text>
+<rect x="250" y="530" width="220" height="80" fill="#efece6" stroke="#1a1916" stroke-width="1.5"/>
+<text x="360" y="576" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">隐藏地堡</text>
+<g fill="none" stroke="#8d3a32" stroke-width="1.5" stroke-linecap="round">
+<circle cx="360" cy="40" r="9" fill="#f7f5f1"/>
+<line x1="360" y1="22" x2="360" y2="14"/>
+<line x1="373" y1="27" x2="379" y2="21"/>
+<line x1="347" y1="27" x2="341" y2="21"/>
+<line x1="378" y1="40" x2="388" y2="40"/>
+<line x1="342" y1="40" x2="332" y2="40"/>
+</g>
+<text x="404" y="44" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">阳光</text>
+<line x1="78" y1="600" x2="78" y2="56" stroke="#8d3a32" stroke-width="1.5" marker-end="url(#sec-arrow)"/>
+<text x="78" y="40" text-anchor="middle" fill="#8d3a32" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">上 = 光</text>
+<line x1="642" y1="56" x2="642" y2="600" stroke="#8d3a32" stroke-width="1.5" marker-end="url(#sec-arrow)"/>
+<text x="642" y="652" text-anchor="middle" fill="#8d3a32" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">下 = 坠落</text>
+</svg></div><figcaption>自绘示意图<span class="credit">不是影片剧照。</span></figcaption></figure>
+<h2>逐镜头拆解</h2>
+<article class="shot-row shot-row--plain"><div><h3>① 开场·半地下室的窗</h3><p class="shot-when">影片第一个镜头</p><ul>
+<li>画面：先拍窗户（窗外是街面，挂着晾晒的袜子），镜头再往下移，才露出窗下的基宇。</li>
+<li>为什么这样拍：窗户是这家人唯一“看得见地面”的地方。先给窗、再往下落，第一个镜头就告诉你：这家人住在地面以下。片尾也用了同样的“窗 → 往下”，首尾呼应。</li>
+</ul></div></article>
+<article class="shot-row shot-row--plain"><div><h3>② 基宇登上台阶，第一次见到太阳</h3><p class="shot-when">讲解视频 1 的 0:30 起</p><ul>
+<li>运镜/构图：基宇走上通往朴家的台阶，这是全片第一次直接拍到太阳。</li>
+<li>为什么这样拍：讲解里提到，朴家的布景是按太阳的方位来搭的，就为了拍到这一刻。<strong>光 = 更好的生活</strong>，住得越高，离太阳越近。</li>
+<li>跳转：<a href="https://www.youtube.com/watch?v=AvO8-925Edc&amp;t=30s">https://www.youtube.com/watch?v=AvO8-925Edc&amp;t=30s</a></li>
+</ul></div></article>
+<article class="shot-row shot-row--plain"><div><h3>③ 两扇窗在“对视”</h3><p class="shot-when">讲解视频 1 的 1:58 与 2:29</p><ul>
+<li>构图：两家各有一扇横向的大窗，形状接近电影的 2.39:1 画幅，像银幕里的银幕。</li>
+<li>轴线：金家的窗总从房间右侧拍，朴家的窗总从左侧拍。导演用拍两个人对话的 <strong>180 度轴线</strong> 规则来拍两栋房子，于是观众感觉两家隔着城市面对面。</li>
+<li>跳转：<a href="https://www.youtube.com/watch?v=AvO8-925Edc&amp;t=118s">https://www.youtube.com/watch?v=AvO8-925Edc&amp;t=118s</a> 、 <a href="https://www.youtube.com/watch?v=AvO8-925Edc&amp;t=149s">https://www.youtube.com/watch?v=AvO8-925Edc&amp;t=149s</a></li>
+</ul></div></article>
+<article class="shot-row shot-row--plain"><div><h3>④ 楼梯就是调度的轨道</h3><p class="shot-when">讲解视频 1 的 3:40；视频 2 的 3:22</p><ul>
+<li>场面调度：朴家上楼是卧室，金家上楼是马桶；金家人躲藏时，真的躲在朴家人的“下面”。谁站高、谁趴低，就是谁占上风。</li>
+<li>奉俊昊写剧本时就把走位想好了：谁要偷看、谁要躲在拐角，房子格局按这些走位来设计。</li>
+<li>跳转：<a href="https://www.youtube.com/watch?v=AvO8-925Edc&amp;t=220s">https://www.youtube.com/watch?v=AvO8-925Edc&amp;t=220s</a> 、 <a href="https://www.youtube.com/watch?v=ZF6O93noHRc&amp;t=202s">https://www.youtube.com/watch?v=ZF6O93noHRc&amp;t=202s</a></li>
+</ul></div></article>
+<article class="shot-row shot-row--plain"><div><h3>⑤ 暴雨夜，一路向下</h3><p class="shot-when">讲解视频 1 的 5:07</p><ul>
+<li>剪辑/构图：前面电影从不交代两家离多远；计划败露那晚，导演第一次把整段路拍出来，几乎每个镜头里人都在往下走、往下跑。</li>
+<li>情绪效果：观众这才“看见”两家的距离。爬上去用了大半部电影，掉下来只要一个晚上。</li>
+<li>跳转：<a href="https://www.youtube.com/watch?v=AvO8-925Edc&amp;t=307s">https://www.youtube.com/watch?v=AvO8-925Edc&amp;t=307s</a></li>
+</ul></div></article>
+<article class="shot-row shot-row--plain"><div><h3>⑥ 地下室揭秘，长镜头冲下楼梯</h3><p class="shot-when">讲解视频 1 的 5:43；视频 2 的 4:12</p><ul>
+<li>运镜：一个不切的长镜头沿楼梯一路往下冲，楼梯长得不像话。不切镜头，观众就和人物一起“掉”进更深一层。</li>
+<li>对比：全片多是三脚架固定、精确摇镜、平稳推轨和斯坦尼康跟拍，到高潮才换成手持。前面越稳，手持一来越乱。</li>
+<li>跳转：<a href="https://www.youtube.com/watch?v=AvO8-925Edc&amp;t=343s">https://www.youtube.com/watch?v=AvO8-925Edc&amp;t=343s</a> 、 <a href="https://www.youtube.com/watch?v=ZF6O93noHRc&amp;t=252s">https://www.youtube.com/watch?v=ZF6O93noHRc&amp;t=252s</a></li>
+</ul></div></article>
+<p><strong>整体思路</strong>：先把房子当成角色来设计（谁在上、谁在下、哪里有光），再让人物沿着楼梯走位，镜头只负责把这层关系拍清楚。这就是“场面调度”：在开机前，把人和空间的关系先摆对。</p>
+<h2>10 分钟小练习（二选一）</h2>
+<p><strong>A. 手机模仿</strong>：找一段有窗户的楼梯，拍同一个人两条，每条 5～8 秒，不剪： 1. 往上走：机位放低往上拍，让人走向窗户或亮处。 2. 往下走：机位放高往下拍，让人走进暗处，中途不停机。 并排看两条，只凭画面说出“谁在变好、谁在变坏”。说得出来，就是调度起作用了。</p>
+<p><strong>B. AI 提示词复刻</strong>：用即梦/可灵/Veo 生成两个镜头，再接在一起：</p>
+<ul>
+<li>镜头 1：<code>cinematic 2.39:1, low angle, a young Korean man in a cheap shirt walks up a steep outdoor stone staircase toward a modern hillside mansion, bright afternoon sun flaring at the top of frame, calm steady tracking shot, natural light</code></li>
+<li>镜头 2：<code>cinematic 2.39:1, night, heavy rain, high angle wide shot, a family of four runs down an endless narrow staircase into a dark low-income neighborhood, water streaming down the steps, cold street lights, handheld camera</code></li>
+</ul>
+<p>接好后问自己：只换了“往上 / 往下”和“亮 / 暗”，情绪差了多少？</p>
+<h2>对应课程</h2>
+<ul>
+<li><a href="../stage3/blocking.html">场面调度</a></li>
+<li><a href="../stage1/composition.html">构图（窗中窗、线条）</a></li>
+<li><a href="../stage1/light-color.html">光线与色彩（阳光 = 阶层）</a></li>
+<li><a href="../stage1/axis.html">轴线与正反打（两扇窗）</a></li>
+<li><a href="../stage1/camera-movement.html">运镜（长镜头、手持）</a></li>
+</ul>
+<h2>片源与授权</h2>
+<ul>
+<li>片名：《寄生虫》Parasite（기생충）</li>
+<li>导演：奉俊昊｜摄影：洪坤杓｜年份：2019｜画幅 2.39:1</li>
+<li>荣誉：戛纳金棕榈；第 92 届奥斯卡最佳影片等四项</li>
+<li>版权：有版权的商业电影。本期不截图、不剪辑，画面请看上面的讲解视频和预告片；页面里的示意图为自绘。</li>
+</ul>
+<h2>推荐延伸</h2>
+<ul>
+<li>Thomas Flight《The Visual Architecture of Parasite》章节：0:00 引子、1:16 两个家、2:29 阶层分隔、3:40 高度、4:59 下坠与隐藏空间、5:43 不平等的结构 <a href="https://www.youtube.com/watch?v=AvO8-925Edc">https://www.youtube.com/watch?v=AvO8-925Edc</a></li>
+<li>Thomas Flight《The Brilliant Cinematography of Parasite》章节：0:34 缓慢推进、1:24 固定机位、2:04 视觉提示与摇镜、2:50 长镜头、3:57 环境与高潮、4:43 布景与主题 <a href="https://www.youtube.com/watch?v=ZF6O93noHRc">https://www.youtube.com/watch?v=ZF6O93noHRc</a></li>
+<li>Filmmakers Academy《Parasite | The Look Of... (Episode 5)》：讲高低机位怎么随剧情翻转，以及 Alexa 65 大画幅 <a href="https://www.youtube.com/watch?v=HwFthGuuUvM">https://www.youtube.com/watch?v=HwFthGuuUvM</a></li>
+</ul>
+<div class="learn-card" id="learn-card">
+  <label class="learn-check">
+    <input type="checkbox" id="learn-complete">
+    <span>
+      <span class="learn-title">我已学完本页</span>
+      <span class="learn-hint">只保存在这台浏览器里，并计入首页总进度</span>
+    </span>
+  </label>
+</div>
+<nav class="chapter-nav" aria-label="上一页和下一页"><a href="../lapian/001.html" class="prev"><span class="label">← 上一章</span><span class="chapter-title">《战舰波将金号》敖德萨阶梯：景别 + 蒙太奇</span></a></nav>
+</main>
+<footer class="site-footer">
+  写给 Mark · 零基础导演入门 · 目标：AI 影视创作 · 内容基准日期 2026-10-12 · AI 工具请以官网为准
+</footer>
+</div>
+<aside class="toc-aside" id="toc-aside">
+  <details class="toc-details" id="toc-details">
+    <summary>本页目录</summary>
+    <nav class="toc-nav" aria-label="本页目录">
+      <ol id="toc-list"></ol>
+    </nav>
+  </details>
+</aside>
+</div>
+</div>
+<button class="back-to-top" id="back-to-top" type="button" aria-label="回到顶部">顶部</button>
+<script src="../js/search-index.js"></script>
+<script src="../js/nav.js"></script>
+</body>
+</html>

@@ -4,6 +4,7 @@
 
 Each issue folder needs meta.json and lesson.md. Media (narrated.mp4,
 clip.mp4, narration.srt, frameNN.png) is optional and used when present.
+diagram.svg or diagram.png, when present, is drawn after the lead.
 """
 from pathlib import Path
 import html
@@ -20,6 +21,8 @@ SHOT_RE = re.compile(
     r"^\*\*([①②③④⑤⑥⑦⑧⑨⑩])\s+frame(\d+)：(.+?)\*\*\s*（(.+?)）\s*$"
 )
 BARE_URL = re.compile(r"https?://[^\s<]+")
+YOUTUBE_ID = re.compile(r"youtube\.com/watch\?v=([A-Za-z0-9_-]{11})")
+FACADE_VIDEO = "AvO8-925Edc"
 
 
 def load_issues():
@@ -194,14 +197,67 @@ def _player(src, caption, poster=None, track=None):
     )
 
 
+def _first_youtube_id(lines):
+    match = YOUTUBE_ID.search("\n".join(lines))
+    return match.group(1) if match else ""
+
+
+def _youtube_facade(video_id, title, credit):
+    """Same click-to-load control as the stage lessons, without a film still."""
+    embed = (
+        "https://www.youtube-nocookie.com/embed/"
+        + video_id
+        + "?rel=0&amp;autoplay=1"
+    )
+    safe = html.escape(title)
+    return (
+        '<figure class="video-card">'
+        '<button type="button" class="video-facade no-poster" '
+        f'data-embed="{embed}" data-title="{html.escape(title, quote=True)}">'
+        '<span class="play-btn" aria-hidden="true"></span>'
+        f'<span class="facade-label">{safe}</span>'
+        f'<span class="sr-only">播放：{safe}</span>'
+        "</button>"
+        "<figcaption>"
+        f'<a href="https://www.youtube.com/watch?v={video_id}">{safe}</a>'
+        f'<span class="credit">{html.escape(credit)}</span>'
+        "</figcaption></figure>"
+    )
+
+
+def _diagram_html(folder, issue_id):
+    caption = '自绘示意图<span class="credit">不是影片剧照。</span>'
+    svg = folder / "diagram.svg"
+    png = folder / "diagram.png"
+    if svg.is_file():
+        raw = re.sub(r"<\?xml[^?]*\?>", "", svg.read_text(encoding="utf-8")).strip()
+        return (
+            '<figure class="figure">'
+            f'<div class="figure-frame">{raw}</div>'
+            f"<figcaption>{caption}</figcaption>"
+            "</figure>"
+        )
+    if png.is_file():
+        return (
+            '<figure class="figure">'
+            '<div class="figure-frame">'
+            f'<img src="{issue_id}/{png.name}" alt="自绘示意图" loading="lazy">'
+            "</div>"
+            f"<figcaption>{caption}</figcaption>"
+            "</figure>"
+        )
+    return ""
+
+
 def _shot_html(issue_id, folder, shot):
     bullets = "\n".join(f"<li>{_inline(item)}</li>" for item in shot["bullets"])
     image = ""
     if (folder / shot["file"]).is_file():
         alt = html.escape(f"{shot['mark']} {shot['title']}", quote=True)
         image = f'<img src="{issue_id}/{shot["file"]}" alt="{alt}" loading="lazy">'
+    row_class = "shot-row" if image else "shot-row shot-row--plain"
     return (
-        '<article class="shot-row">'
+        f'<article class="{row_class}">'
         f"{image}"
         "<div>"
         f"<h3>{html.escape(shot['mark'])} {html.escape(shot['title'])}</h3>"
@@ -263,6 +319,23 @@ def issue_body(issue):
         )
     if "一句话看点" in by_name:
         parts.append(_blocks(by_name["一句话看点"]))
+    # Narrated issues keep the player at the top. The lecture list is for
+    # issues that cannot ship a clip.
+    if "先看讲解视频" in by_name and not (folder / "narrated.mp4").is_file():
+        lines = by_name["先看讲解视频"]
+        parts.append("<h2>先看讲解视频</h2>")
+        if _first_youtube_id(lines) == FACADE_VIDEO:
+            parts.append(
+                _youtube_facade(
+                    FACADE_VIDEO,
+                    "The Visual Architecture of Parasite",
+                    "Thomas Flight · YouTube · 点击播放；离线时打开链接。",
+                )
+            )
+        parts.append(_blocks(lines))
+    diagram = _diagram_html(folder, issue_id)
+    if diagram:
+        parts.append(diagram)
     if "逐镜头拆解" in by_name:
         shots, rest = _shots(by_name["逐镜头拆解"])
         parts.append("<h2>逐镜头拆解</h2>")
