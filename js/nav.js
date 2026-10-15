@@ -708,6 +708,13 @@
   initShotLabs();
   initVideos();
 
+  // Open every external link (videos, timestamps, sources) in a new tab.
+  document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+    try { if (new URL(a.href).host === window.location.host) return; } catch (e) { return; }
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+  });
+
   window.DirectorSite = window.DirectorSite || {};
   window.DirectorSite.getLearned = getLearned;
 })();

@@ -99,7 +99,7 @@ def _inline(text: str) -> str:
         out.append(escaped)
         if i < len(urls):
             href = html.escape(urls[i], quote=True)
-            out.append(f'<a href="{href}">{href}</a>')
+            out.append(f'<a href="{href}" target="_blank" rel="noopener noreferrer">{href}</a>')
     return "".join(out)
 
 
@@ -249,7 +249,7 @@ def _youtube_facade(video_id, title, credit):
         f'<span class="sr-only">播放：{safe}</span>'
         "</button>"
         "<figcaption>"
-        f'<a href="https://www.youtube.com/watch?v={video_id}">{safe}</a>'
+        f'<a href="https://www.youtube.com/watch?v={video_id}" target="_blank" rel="noopener noreferrer">{safe}</a>'
         f'<span class="credit">{html.escape(credit)}</span>'
         "</figcaption></figure>"
     )

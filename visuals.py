@@ -84,13 +84,13 @@ def credit_pd(artist, commons_name):
     name = html.escape(commons_name)
     return (
         f"{html.escape(artist)}。"
-        f'<a href="{href}">Wikimedia Commons，{name}</a>。'
+        f'<a href="{href}" target="_blank" rel="noopener noreferrer">Wikimedia Commons，{name}</a>。'
         "公有领域（Public domain）。"
     )
 
 
 def _a(href, label):
-    return f'<a href="{html.escape(href, quote=True)}">{html.escape(label)}</a>'
+    return f'<a href="{html.escape(href, quote=True)}" target="_blank" rel="noopener noreferrer">{html.escape(label)}</a>'
 
 
 # Tears of Steel: mango.blender.org/about states CC BY 3.0. Frames grabbed from the
