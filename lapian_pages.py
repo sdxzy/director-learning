@@ -22,7 +22,8 @@ SHOT_RE = re.compile(
 )
 BARE_URL = re.compile(r"https?://[^\s<]+")
 YOUTUBE_ID = re.compile(r"youtube\.com/watch\?v=([A-Za-z0-9_-]{11})")
-FACADE_VIDEO = "AvO8-925Edc"
+LECTURE_TITLE = re.compile(r"《([^》]+)》")
+LECTURE_CHANNEL = re.compile(r"先看\s+(.+?)\s*的《")
 
 
 def load_issues():
@@ -202,6 +203,35 @@ def _first_youtube_id(lines):
     return match.group(1) if match else ""
 
 
+def _lecture_facade(lines):
+    """Click-to-load the first lecture. Title and channel come from 「先看某某的《标题》」."""
+    video_id = _first_youtube_id(lines)
+    if not video_id:
+        return ""
+    title = ""
+    channel = ""
+    for line in lines:
+        stripped = line.strip()
+        if not stripped.startswith("- "):
+            continue
+        title_match = LECTURE_TITLE.search(stripped)
+        if not title_match:
+            continue
+        title = title_match.group(1).strip()
+        channel_match = LECTURE_CHANNEL.search(stripped)
+        if channel_match:
+            channel = channel_match.group(1).strip()
+        break
+    if not title:
+        return ""
+    credit = (
+        f"{channel} · YouTube · 点击播放；离线时打开链接。"
+        if channel
+        else "YouTube · 点击播放；离线时打开链接。"
+    )
+    return _youtube_facade(video_id, title, credit)
+
+
 def _youtube_facade(video_id, title, credit):
     """Same click-to-load control as the stage lessons, without a film still."""
     embed = (
@@ -324,14 +354,9 @@ def issue_body(issue):
     if "先看讲解视频" in by_name and not (folder / "narrated.mp4").is_file():
         lines = by_name["先看讲解视频"]
         parts.append("<h2>先看讲解视频</h2>")
-        if _first_youtube_id(lines) == FACADE_VIDEO:
-            parts.append(
-                _youtube_facade(
-                    FACADE_VIDEO,
-                    "The Visual Architecture of Parasite",
-                    "Thomas Flight · YouTube · 点击播放；离线时打开链接。",
-                )
-            )
+        facade = _lecture_facade(lines)
+        if facade:
+            parts.append(facade)
         parts.append(_blocks(lines))
     diagram = _diagram_html(folder, issue_id)
     if diagram:

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" role="img" aria-label="俯视示意：一间狭窄后厨，摄影机从推车推进开始，沿马蹄形路线经过甜点角、备料线、出餐口、后门和灶台，不走回头路；开拍后一面活动墙在镜头身后推进来封住退路。不是真实布景平面。">
+<rect width="720" height="540" fill="#f7f5f1"/>
+<defs>
+<marker id="bear-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0 0 L10 5 L0 10 Z" fill="#8d3a32"/>
+</marker>
+<marker id="ink-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M0 0 L10 5 L0 10 Z" fill="#1a1916"/>
+</marker>
+</defs>
+<g font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' fill="#1a1916">
+<text x="40" y="44" font-size="17" font-weight="600">一镜到底的“马蹄形”走位（俯视示意）</text>
+<text x="40" y="68" font-size="13" fill="#6b665d">不是真实布景平面，只用来说明思路：小场景一个接一个，镜头不走回头路</text>
+<rect x="130" y="100" width="500" height="330" fill="#efece6" stroke="#1a1916" stroke-width="1.5"/>
+<rect x="150" y="116" width="120" height="56" fill="#f7f5f1" stroke="#cfc9bd"/>
+<text x="210" y="140" font-size="13" text-anchor="middle">甜点角</text>
+<text x="210" y="160" font-size="12" text-anchor="middle" fill="#6b665d">Marcus 做甜甜圈</text>
+<rect x="300" y="116" width="170" height="40" fill="#f7f5f1" stroke="#cfc9bd"/>
+<text x="385" y="141" font-size="13" text-anchor="middle">备料线 · Carmy</text>
+<rect x="500" y="116" width="114" height="74" fill="#f7f5f1" stroke="#cfc9bd"/>
+<text x="557" y="146" font-size="13" text-anchor="middle">出餐口</text>
+<text x="557" y="166" font-size="12" text-anchor="middle" fill="#6b665d">连着前厅</text>
+<rect x="500" y="340" width="114" height="74" fill="#f7f5f1" stroke="#cfc9bd"/>
+<text x="557" y="372" font-size="13" text-anchor="middle">后门</text>
+<text x="557" y="392" font-size="12" text-anchor="middle" fill="#6b665d">人物进出</text>
+<rect x="250" y="370" width="210" height="44" fill="#f7f5f1" stroke="#cfc9bd"/>
+<text x="355" y="397" font-size="13" text-anchor="middle">灶台 · 炸锅</text>
+<rect x="150" y="300" width="80" height="114" fill="#f7f5f1" stroke="#cfc9bd"/>
+<text x="190" y="352" font-size="13" text-anchor="middle">出单机</text>
+<text x="190" y="372" font-size="12" text-anchor="middle" fill="#6b665d">订单声</text>
+<line x1="40" y1="200" x2="120" y2="200" stroke="#1a1916" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ink-arrow)"/>
+<text x="40" y="186" font-size="12" fill="#6b665d">推车推进</text>
+<line x1="130" y1="170" x2="130" y2="250" stroke="#8d3a32" stroke-width="4"/>
+<text x="40" y="262" font-size="12" fill="#8d3a32">活动墙</text>
+<text x="40" y="280" font-size="12" fill="#6b665d">开拍后推进来</text>
+<text x="40" y="298" font-size="12" fill="#6b665d">封住退路</text>
+<path d="M150 200 C 240 200, 270 186, 300 186 L 470 186 C 500 186, 480 220, 480 250 L 480 300 C 480 330, 470 340, 440 340 L 270 340 C 245 340, 245 300, 250 280" fill="none" stroke="#8d3a32" stroke-width="2" marker-end="url(#bear-arrow)"/>
+<g font-size="12" fill="#f7f5f1">
+<circle cx="200" cy="198" r="11" fill="#8d3a32"/><text x="200" y="202" text-anchor="middle">1</text>
+<circle cx="385" cy="186" r="11" fill="#8d3a32"/><text x="385" y="190" text-anchor="middle">2</text>
+<circle cx="480" cy="230" r="11" fill="#8d3a32"/><text x="480" y="234" text-anchor="middle">3</text>
+<circle cx="480" cy="310" r="11" fill="#8d3a32"/><text x="480" y="314" text-anchor="middle">4</text>
+<circle cx="355" cy="340" r="11" fill="#8d3a32"/><text x="355" y="344" text-anchor="middle">5</text>
+<circle cx="252" cy="290" r="11" fill="#8d3a32"/><text x="252" y="294" text-anchor="middle">6</text>
+</g>
+<text x="40" y="468" font-size="13">红线是镜头的路线，数字是一个个小场景。每次镜头转向，都是跟着某个人的动作走。</text>
+<text x="40" y="492" font-size="13">路线绕成一个马蹄形，镜头一路往前，不用掉头，也就不会拍到布景外面。</text>
+<text x="40" y="516" font-size="12" fill="#6b665d">依据：Vulture 对摄影指导 Andrew Wehde 等人的采访（2022）。厨房格局为自绘示意。</text>
+</g>
+</svg>
