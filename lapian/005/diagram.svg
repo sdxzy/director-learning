@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 600" role="img" aria-label="自绘示意图，分上下两部分。上半部分对比两种色调：片中的洛杉矶是冷灰蓝色，偶尔点缀品红霓虹；拉斯维加斯是整片的橙色，天空位置有一抹偏黄的亮光。下半部分是同一种橙色的三种做法：摄影棚里灯不加色、在镜头前加定制滤镜，整个画面统一变橙；布达佩斯实景里给窗户贴色纸，低处偏红、高处偏浅的金琥珀色，颜色有深浅变化；顶层公寓布景里，灯上贴深浅不同的琥珀色纸，窗外是手绘背景，太阳由一盏聚光灯打出。色块只是示意，不是从画面里取的颜色。">
+<rect width="720" height="600" fill="#f7f5f1"/>
+<g font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' fill="#1a1916">
+<text x="40" y="44" font-size="17" font-weight="600">同一部片里的两个世界，和同一种橙色的三种做法</text>
+<text x="40" y="68" font-size="13" fill="#6b665d">自绘示意，色块只表示大致色调，不是从画面里取的颜色</text>
+
+<!-- Part 1: palettes -->
+<text x="40" y="104" font-size="14" font-weight="600">一、色调对比</text>
+
+<!-- LA -->
+<rect x="40" y="118" width="300" height="130" fill="#5f6b73"/>
+<rect x="40" y="118" width="300" height="50" fill="#79858c"/>
+<rect x="250" y="140" width="34" height="58" fill="#b8457e"/>
+<rect x="60" y="188" width="18" height="60" fill="#3f484e"/>
+<rect x="90" y="170" width="26" height="78" fill="#3f484e"/>
+<rect x="128" y="196" width="20" height="52" fill="#3f484e"/>
+<rect x="300" y="182" width="22" height="66" fill="#3f484e"/>
+<text x="40" y="270" font-size="13" font-weight="600">洛杉矶：冷灰蓝，下雪，偶尔一点霓虹</text>
+<text x="40" y="290" font-size="12" fill="#6b665d">参考过雾霾里的北京：满眼灰色，只有招牌亮着品红</text>
+
+<!-- Vegas -->
+<rect x="380" y="118" width="300" height="130" fill="#c4622d"/>
+<rect x="380" y="118" width="300" height="46" fill="#d98a3d"/>
+<rect x="380" y="118" width="300" height="16" fill="#e3ad55"/>
+<path d="M420 248 L432 196 L446 196 L458 248 Z" fill="#9c4a22"/>
+<circle cx="439" cy="186" r="12" fill="#9c4a22"/>
+<path d="M560 248 L566 214 L590 214 L598 248 Z" fill="#a8532a"/>
+<rect x="640" y="200" width="24" height="48" fill="#a8532a"/>
+<text x="380" y="270" font-size="13" font-weight="600">拉斯维加斯：整片的橙，看不到太阳</text>
+<text x="380" y="290" font-size="12" fill="#6b665d">天空那道偏黄的亮光，是绿色色纸透过橙红滤镜留下的</text>
+
+<!-- divider -->
+<line x1="40" y1="314" x2="680" y2="314" stroke="#cfc9bd"/>
+
+<!-- Part 2: three methods -->
+<text x="40" y="344" font-size="14" font-weight="600">二、同一种橙色，三种做法（按场景选最省事、效果最好的办法）</text>
+
+<!-- Method A: lens filter -->
+<rect x="40" y="360" width="200" height="140" fill="#efece6" stroke="#cfc9bd"/>
+<g fill="#f7f5f1" stroke="#1a1916" stroke-width="1">
+<circle cx="70" cy="380" r="7"/><circle cx="100" cy="380" r="7"/><circle cx="130" cy="380" r="7"/><circle cx="160" cy="380" r="7"/><circle cx="190" cy="380" r="7"/>
+</g>
+<text x="140" y="404" font-size="11" text-anchor="middle" fill="#6b665d">头顶的太空灯：不加色</text>
+<rect x="90" y="440" width="34" height="24" fill="#1a1916"/>
+<rect x="124" y="434" width="8" height="36" fill="#c4622d"/>
+<path d="M132 440 L170 428 M132 464 L170 476" stroke="#c4622d" stroke-width="1.5"/>
+<text x="140" y="490" font-size="11" text-anchor="middle" fill="#6b665d">镜头前加定制滤镜</text>
+<text x="40" y="522" font-size="13" font-weight="600">摄影棚：雕像和蜂箱</text>
+<text x="40" y="542" font-size="12" fill="#6b665d">整个画面统一变橙，</text>
+<text x="40" y="560" font-size="12" fill="#6b665d">省掉几百盏灯的色纸</text>
+
+<!-- Method B: gelled windows -->
+<rect x="260" y="360" width="200" height="140" fill="#efece6" stroke="#cfc9bd"/>
+<rect x="320" y="372" width="80" height="18" fill="#e3ad55" stroke="#1a1916"/>
+<text x="360" y="403" font-size="11" text-anchor="middle" fill="#6b665d">高处天窗：浅金琥珀</text>
+<rect x="284" y="430" width="30" height="46" fill="#c4622d" stroke="#1a1916"/>
+<rect x="406" y="430" width="30" height="46" fill="#c4622d" stroke="#1a1916"/>
+<text x="360" y="448" font-size="11" text-anchor="middle" fill="#6b665d">低处窗户：</text>
+<text x="360" y="464" font-size="11" text-anchor="middle" fill="#6b665d">偏红色纸</text>
+<text x="360" y="490" font-size="11" text-anchor="middle" fill="#6b665d">窗外架灯，镜头前不加滤镜</text>
+<text x="260" y="522" font-size="13" font-weight="600">实景：布达佩斯老交易所</text>
+<text x="260" y="542" font-size="12" fill="#6b665d">越往高处光越轻，</text>
+<text x="260" y="560" font-size="12" fill="#6b665d">橙色里有深有浅</text>
+
+<!-- Method C: penthouse set -->
+<rect x="480" y="360" width="200" height="140" fill="#efece6" stroke="#cfc9bd"/>
+<rect x="500" y="374" width="160" height="54" fill="#d98a3d" stroke="#1a1916"/>
+<circle cx="610" cy="400" r="10" fill="#f3d27a"/>
+<text x="580" y="444" font-size="11" text-anchor="middle" fill="#6b665d">窗外是手绘背景，太阳是一盏聚光灯</text>
+<rect x="500" y="456" width="160" height="6" fill="#e3ad55"/>
+<rect x="500" y="474" width="160" height="6" fill="#b0562a"/>
+<text x="580" y="494" font-size="11" text-anchor="middle" fill="#6b665d">上方灯浅琥珀，底部灯深琥珀</text>
+<text x="480" y="522" font-size="13" font-weight="600">搭景：戴克的顶层公寓</text>
+<text x="480" y="542" font-size="12" fill="#6b665d">现场先把光做出来，</text>
+<text x="480" y="560" font-size="12" fill="#6b665d">后期视效再补细节</text>
+
+<text x="40" y="588" font-size="11" fill="#6b665d">资料：Roger Deakins 在路易·卢米埃尔学院的对谈；American Cinematographer《Uncanny Valley: Blade Runner 2049》</text>
+</g>
+</svg>

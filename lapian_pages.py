@@ -5,6 +5,8 @@
 Each issue folder needs meta.json and lesson.md. Media (narrated.mp4,
 clip.mp4, narration.srt, frameNN.png) is optional and used when present.
 diagram.svg or diagram.png, when present, is drawn after the lead.
+「逐段拆解」 is the frameless form of 「逐镜头拆解」: same **① 标题**（说明）
+shape, without a frameNN still.
 """
 from pathlib import Path
 import html
@@ -20,7 +22,11 @@ COURSE_URL = re.compile(
 SHOT_RE = re.compile(
     r"^\*\*([①②③④⑤⑥⑦⑧⑨⑩])\s+frame(\d+)：(.+?)\*\*\s*（(.+?)）\s*$"
 )
+SEGMENT_RE = re.compile(
+    r"^\*\*([①②③④⑤⑥⑦⑧⑨⑩])\s+(.+?)\*\*\s*（(.+?)）\s*$"
+)
 BARE_URL = re.compile(r"https?://[^\s<]+")
+OL_ITEM = re.compile(r"^\d+\.\s+(.*)$")
 YOUTUBE_ID = re.compile(r"youtube\.com/watch\?v=([A-Za-z0-9_-]{11})")
 LECTURE_TITLE = re.compile(r"《([^》]+)》")
 LECTURE_CHANNEL = re.compile(r"先看\s+(.+?)\s*的《")
@@ -103,6 +109,73 @@ def _inline(text: str) -> str:
     return "".join(out)
 
 
+def _indent(line):
+    width = 0
+    for ch in line:
+        if ch == " ":
+            width += 1
+        elif ch == "\t":
+            width += 2
+        else:
+            break
+    return width
+
+
+def _parse_list(lines, i, indent):
+    """Bullets at one indent. Indented '- ' lines become a nested list.
+
+    A wrapped line or a bare URL under a bullet stays in that bullet, which is
+    how issues 001–004 attach their links. Text-only bullets are inlined in one
+    pass so that output does not change.
+    """
+    items = []
+    while i < len(lines):
+        raw = lines[i]
+        if not raw.strip():
+            break
+        if _indent(raw) != indent or not raw.strip().startswith("- "):
+            break
+        pieces = [("text", raw.strip()[2:])]
+        i += 1
+        # Only a deeper indent belongs to this bullet. A line at the same
+        # indent as a nested marker (the video URL under the timestamp list)
+        # belongs to the parent bullet, same as the other issues.
+        while i < len(lines) and lines[i].strip() and _indent(lines[i]) > indent:
+            nxt = lines[i]
+            nxt_indent = _indent(nxt)
+            nxt_stripped = nxt.strip()
+            if nxt_stripped.startswith("- "):
+                nested, i = _parse_list(lines, i, nxt_indent)
+                pieces.append(("ul", "<ul>\n" + "\n".join(nested) + "\n</ul>"))
+                continue
+            pieces.append(("text", nxt_stripped))
+            i += 1
+        if all(kind == "text" for kind, _ in pieces):
+            items.append(f"<li>{_inline(' '.join(text for _, text in pieces))}</li>")
+            continue
+        html_parts = []
+        buf = []
+
+        def flush():
+            if not buf:
+                return
+            chunk = _inline(" ".join(buf))
+            if html_parts:
+                chunk = " " + chunk
+            html_parts.append(chunk)
+            buf.clear()
+
+        for kind, val in pieces:
+            if kind == "text":
+                buf.append(val)
+            else:
+                flush()
+                html_parts.append("\n" + val)
+        flush()
+        items.append("<li>" + "".join(html_parts) + "</li>")
+    return items, i
+
+
 def _blocks(lines):
     parts = []
     i = 0
@@ -111,19 +184,28 @@ def _blocks(lines):
             i += 1
             continue
         if lines[i].lstrip().startswith("- "):
+            items, i = _parse_list(lines, i, _indent(lines[i]))
+            parts.append("<ul>\n" + "\n".join(items) + "\n</ul>")
+            continue
+        if OL_ITEM.match(lines[i].strip()):
             items = []
-            while i < len(lines) and lines[i].lstrip().startswith("- "):
-                item = lines[i].strip()[2:]
+            while i < len(lines) and OL_ITEM.match(lines[i].strip() or ""):
+                item = OL_ITEM.match(lines[i].strip()).group(1)
                 i += 1
                 while i < len(lines) and lines[i].startswith((" ", "\t")) and lines[i].strip():
                     item += " " + lines[i].strip()
                     i += 1
                 items.append(f"<li>{_inline(item)}</li>")
-            parts.append("<ul>\n" + "\n".join(items) + "\n</ul>")
+            parts.append("<ol>\n" + "\n".join(items) + "\n</ol>")
             continue
         para = [lines[i].strip()]
         i += 1
-        while i < len(lines) and lines[i].strip() and not lines[i].lstrip().startswith("- "):
+        while (
+            i < len(lines)
+            and lines[i].strip()
+            and not lines[i].lstrip().startswith("- ")
+            and not OL_ITEM.match(lines[i].strip())
+        ):
             para.append(lines[i].strip())
             i += 1
         parts.append(f"<p>{_inline(' '.join(para))}</p>")
@@ -279,6 +361,51 @@ def _diagram_html(folder, issue_id):
     return ""
 
 
+def _segments(lines):
+    """Frameless breakdown rows: **① 标题**（说明） plus bullets."""
+    segments = []
+    rest = []
+    i = 0
+    while i < len(lines):
+        match = SEGMENT_RE.match(lines[i].strip())
+        if not match:
+            if lines[i].strip():
+                rest.append(lines[i])
+            i += 1
+            continue
+        bullets = []
+        i += 1
+        while i < len(lines) and lines[i].lstrip().startswith("- "):
+            item = lines[i].strip()[2:]
+            i += 1
+            while i < len(lines) and lines[i].startswith((" ", "\t")) and lines[i].strip():
+                item += " " + lines[i].strip()
+                i += 1
+            bullets.append(item)
+        segments.append(
+            {
+                "mark": match.group(1),
+                "title": match.group(2).strip(),
+                "when": match.group(3).strip(),
+                "bullets": bullets,
+            }
+        )
+    return segments, rest
+
+
+def _segment_html(segment):
+    bullets = "\n".join(f"<li>{_inline(item)}</li>" for item in segment["bullets"])
+    return (
+        '<article class="shot-row shot-row--plain">'
+        "<div>"
+        f"<h3>{html.escape(segment['mark'])} {html.escape(segment['title'])}</h3>"
+        f'<p class="shot-when">{html.escape(segment["when"])}</p>'
+        f"<ul>\n{bullets}\n</ul>"
+        "</div>"
+        "</article>"
+    )
+
+
 def _shot_html(issue_id, folder, shot):
     bullets = "\n".join(f"<li>{_inline(item)}</li>" for item in shot["bullets"])
     image = ""
@@ -365,6 +492,12 @@ def issue_body(issue):
         shots, rest = _shots(by_name["逐镜头拆解"])
         parts.append("<h2>逐镜头拆解</h2>")
         parts.extend(_shot_html(issue_id, folder, shot) for shot in shots)
+        if rest:
+            parts.append(_blocks(rest))
+    if "逐段拆解" in by_name:
+        segments, rest = _segments(by_name["逐段拆解"])
+        parts.append("<h2>逐段拆解</h2>")
+        parts.extend(_segment_html(segment) for segment in segments)
         if rest:
             parts.append(_blocks(rest))
     if (folder / "clip.mp4").is_file():
