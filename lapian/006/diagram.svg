@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 600" role="img" aria-label="自绘示意图，分三部分。上半部分是三位一体核试验段落的响度示意曲线：倒计时阶段，小的机械声和配乐一步步升高；数到零时画面被强光填满，声音几乎降到零，只剩呼吸、风声和一句台词；过了一段时间冲击波抵达，响度猛地冲到最高，再拖着长长的尾音慢慢减弱。光是瞬间到达的，声音要过几十秒才到。左下部分对比声画同步和声画分离：同步时闪光和巨响在同一时刻，分离时闪光在前，中间隔着一段安静，巨响在后。右下部分是礼堂演讲那场戏的回声：欢呼和跺脚声很响，接着闪光、声音被抽空，只剩灰烬飘落的细小声音，然后核试验的声浪再次扑来。曲线只表示相对响度，是示意，不是从影片测得的数据。">
+<rect width="720" height="600" fill="#f7f5f1"/>
+<g font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' fill="#1a1916">
+<text x="40" y="44" font-size="17" font-weight="600">光先到，声音后到：三位一体核试验的响度起伏</text>
+<text x="40" y="68" font-size="13" fill="#6b665d">自绘示意，曲线只表示相对响度，不是从影片里测得的数据</text>
+
+<!-- Part 1 -->
+<text x="40" y="104" font-size="14" font-weight="600">一、这一段的声音是怎么起伏的</text>
+
+<!-- picture lane -->
+<g font-size="11" fill="#6b665d">
+<rect x="60" y="118" width="230" height="26" fill="#efece6" stroke="#cfc9bd"/>
+<text x="175" y="135" text-anchor="middle">倒计时：几个地点来回切</text>
+<rect x="290" y="118" width="40" height="26" fill="#ffffff" stroke="#1a1916"/>
+<text x="310" y="135" text-anchor="middle" fill="#1a1916">零</text>
+<rect x="330" y="118" width="180" height="26" fill="#efece6" stroke="#cfc9bd"/>
+<text x="420" y="135" text-anchor="middle">火球升起，人们呆住</text>
+<rect x="510" y="118" width="170" height="26" fill="#efece6" stroke="#cfc9bd"/>
+<text x="595" y="135" text-anchor="middle">冲击波抵达，掩体震动</text>
+</g>
+
+<!-- axes -->
+<line x1="60" y1="290" x2="680" y2="290" stroke="#1a1916"/>
+<line x1="60" y1="160" x2="60" y2="290" stroke="#1a1916"/>
+<text x="52" y="172" font-size="11" fill="#6b665d" text-anchor="end">响</text>
+<text x="52" y="290" font-size="11" fill="#6b665d" text-anchor="end">静</text>
+<text x="680" y="306" font-size="11" fill="#6b665d" text-anchor="end">时间 →</text>
+
+<!-- loudness curve -->
+<path d="M60 270 L100 270 L100 262 L140 262 L140 252 L180 252 L180 238 L220 238 L220 222 L255 222 L255 204 L290 196 L290 286 L330 286 Q340 282 350 286 Q362 281 374 286 Q388 282 400 286 Q414 281 428 286 Q446 282 464 286 L510 286 L512 166 Q540 200 580 236 Q630 268 680 280" fill="none" stroke="#1a1916" stroke-width="2"/>
+<!-- small ticks for mechanical sounds -->
+<g stroke="#6b665d" stroke-width="1">
+<line x1="110" y1="258" x2="110" y2="250"/><line x1="150" y1="248" x2="150" y2="240"/><line x1="192" y1="234" x2="192" y2="226"/><line x1="232" y1="218" x2="232" y2="210"/><line x1="268" y1="198" x2="268" y2="190"/>
+</g>
+<text x="66" y="212" font-size="11" fill="#6b665d">钥匙、计时器、仪器嗡鸣，</text>
+<text x="66" y="228" font-size="11" fill="#6b665d">配乐一步步推高</text>
+<text x="338" y="270" font-size="11" fill="#6b665d">只剩呼吸、风声和一句台词</text>
+<text x="556" y="190" font-size="11" fill="#1a1916">巨响：尖锐的一下，</text>
+<text x="566" y="206" font-size="11" fill="#1a1916">再拖着长长的尾音</text>
+
+<!-- light vs sound arrows -->
+<line x1="310" y1="150" x2="310" y2="290" stroke="#b0562a" stroke-dasharray="3 3"/>
+<line x1="511" y1="150" x2="511" y2="290" stroke="#b0562a" stroke-dasharray="3 3"/>
+<path d="M314 316 L507 316" stroke="#b0562a" stroke-width="1.5"/>
+<path d="M314 316 l8 -4 v8 Z M507 316 l-8 -4 v8 Z" fill="#b0562a"/>
+<text x="410" y="334" font-size="12" text-anchor="middle" fill="#b0562a">光瞬间到达，声音要过几十秒才到</text>
+
+<!-- divider -->
+<line x1="40" y1="350" x2="680" y2="350" stroke="#cfc9bd"/>
+
+<!-- Part 2: sync vs separation -->
+<text x="40" y="380" font-size="14" font-weight="600">二、两种声画关系</text>
+<text x="40" y="410" font-size="12">声画同步（大多数电影）</text>
+<line x1="40" y1="440" x2="320" y2="440" stroke="#cfc9bd"/>
+<rect x="100" y="422" width="10" height="18" fill="#e3ad55" stroke="#1a1916"/>
+<rect x="100" y="446" width="10" height="18" fill="#1a1916"/>
+<text x="120" y="436" font-size="11" fill="#6b665d">闪光</text>
+<text x="120" y="460" font-size="11" fill="#6b665d">巨响，同一时刻</text>
+<text x="40" y="494" font-size="12">声画分离（本片）</text>
+<line x1="40" y1="524" x2="320" y2="524" stroke="#cfc9bd"/>
+<rect x="100" y="506" width="10" height="18" fill="#e3ad55" stroke="#1a1916"/>
+<rect x="110" y="530" width="140" height="4" fill="#cfc9bd"/>
+<rect x="250" y="530" width="10" height="18" fill="#1a1916"/>
+<text x="120" y="520" font-size="11" fill="#6b665d">闪光</text>
+<text x="132" y="556" font-size="11" fill="#6b665d">一段安静</text>
+<text x="266" y="544" font-size="11" fill="#6b665d">巨响</text>
+
+<!-- Part 3: echo in the hall -->
+<text x="380" y="380" font-size="14" font-weight="600">三、回声：礼堂演讲那场戏</text>
+<line x1="380" y1="520" x2="680" y2="520" stroke="#1a1916"/>
+<path d="M380 450 L400 444 L420 452 L440 442 L460 450 L480 440 L500 448 L510 444 L512 516 L590 516 L592 430 Q620 470 680 508" fill="none" stroke="#1a1916" stroke-width="2"/>
+<text x="384" y="428" font-size="11" fill="#6b665d">欢呼、跺脚</text>
+<text x="514" y="506" font-size="11" fill="#6b665d">闪光，抽空</text>
+<text x="514" y="540" font-size="11" fill="#6b665d">只剩灰烬飘落声</text>
+<text x="600" y="430" font-size="11" fill="#1a1916">核爆声浪重现</text>
+<text x="380" y="566" font-size="11" fill="#6b665d">这里的声音不是“现场有什么”，</text>
+<text x="380" y="582" font-size="11" fill="#6b665d">而是“奥本海默心里听见了什么”</text>
+
+<text x="40" y="588" font-size="11" fill="#6b665d">资料：Richard King 的多篇采访；IndieWire 对诺兰的采访</text>
+</g>
+</svg>
