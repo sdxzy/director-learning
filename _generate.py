@@ -206,7 +206,7 @@ def page_shell(
 {nav}
 </main>
 <footer class="site-footer">
-  写给 Mark · 零基础导演入门 · 目标：AI 影视创作 · 内容基准日期 2026-10-12 · AI 工具请以官网为准
+  写给 Dong · 零基础导演入门 · 目标：AI 影视创作 · 内容基准日期 2026-10-12 · AI 工具请以官网为准
 </footer>
 </div>
 <aside class="toc-aside" id="toc-aside">
@@ -283,7 +283,7 @@ add(
     f"""
 <div class="hero">
   <h1>导演入门学习站</h1>
-  <p class="lead">写给 Mark：完全零基础，从「电影怎么说话」学到「怎么用 AI 拍电影」。重点是剧集创作与镜头拍摄，最终目标是成为 AI 视频生成导演。</p>
+  <p class="lead">写给 Dong：完全零基础，从「电影怎么说话」学到「怎么用 AI 拍电影」。重点是剧集创作与镜头拍摄，最终目标是成为 AI 视频生成导演。</p>
   <p class="home-lapian"><a href="lapian/index.html">每日逐帧</a> · 一期一个片段，对着画面讲景别和剪辑。</p>
   <div class="progress-bar-wrap">
     <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="学习进度"><span id="progress-bar-fill"></span></div>
