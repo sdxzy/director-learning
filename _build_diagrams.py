@@ -691,6 +691,61 @@ def workflow():
     return wrap(720, 220, "\n".join(parts), "导演流程：前期、拍摄、后期")
 
 
+def crew_map():
+    def box(x, y, w, h, title, sub=None, accent=False, size=14):
+        stroke = ACCENT if accent else INK
+        out = [f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{PAPER}" stroke="{stroke}"/>']
+        cx = x + w / 2
+        if sub:
+            out.append(text(cx, y + h / 2 - 3, title, size, INK))
+            out.append(text(cx, y + h / 2 + 14, sub, 11))
+        else:
+            out.append(text(cx, y + h / 2 + 5, title, size, INK))
+        return "\n".join(out)
+
+    arrow = f'stroke="{INK}" stroke-width="1.25" fill="none" marker-end="url(#arr-ink)"'
+    dashed = f'stroke="{MUTED}" stroke-width="1.25" fill="none" stroke-dasharray="5 4"'
+    p = [
+        f'<defs><marker id="arr-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="{INK}"/></marker></defs>',
+        text(30, 30, "制片线 · 钱、人、时间", 12, MUTED, "start"),
+        text(690, 30, "创作线 · 作品长什么样", 12, MUTED, "end"),
+        box(270, 18, 180, 40, "出品方 / 平台"),
+        f'<path d="M360 58 V88" {arrow}/>',
+        box(270, 92, 180, 44, "制片人", "统管项目、预算、进度"),
+        f'<path d="M270 114 H115 V170" {arrow}/>',
+        box(30, 174, 170, 44, "执行制片 / 制片主任", "现场后勤与花销", size=13),
+        f'<path d="M115 218 V248" {arrow}/>',
+        box(30, 252, 170, 44, "统筹", "排期与通告单"),
+        f'<path d="M360 136 V170" {arrow}/>',
+        box(290, 174, 140, 44, "导演", "对创作负总责", accent=True),
+        f'<path d="M438 196 H522" {arrow} marker-start="url(#arr-ink)"/>',
+        box(530, 174, 160, 44, "编剧 / 总编剧", "故事讲什么"),
+        f'<path d="M360 218 V320" stroke="{INK}" stroke-width="1.25" fill="none"/>',
+        f'<path d="M84 320 H636" stroke="{INK}" stroke-width="1.25" fill="none"/>',
+        f'<rect x="14" y="336" width="692" height="150" fill="none" stroke="{LINE}"/>',
+        text(24, 478, "各部门负责人", 11, MUTED, "start"),
+        f'<path d="M44 296 V336" {dashed}/>',
+        text(52, 318, "预算 · 排期", 11, MUTED, "start"),
+    ]
+    heads = [
+        ("摄影指导", ["摄影组", "灯光组", "机械组"], True),
+        ("美术指导", ["置景 · 道具", "服装 · 化妆"], True),
+        ("演员", ["主演 · 配角", "群演"], False),
+        ("副导演 / 场记", ["现场调度", "场记单"], False),
+        ("剪辑师", ["调色 · 视效", "声音 · 混录", "作曲"], False),
+    ]
+    for i, (name, subs, accent) in enumerate(heads):
+        x = 24 + i * 138
+        cx = x + 60
+        p.append(f'<path d="M{cx} 320 V352" {arrow}/>')
+        p.append(box(x, 356, 120, 38, name, accent=accent, size=13 if len(name) > 4 else 14))
+        for j, s in enumerate(subs):
+            p.append(text(cx, 416 + j * 18, s, 12))
+    p.append(f'<rect x="24" y="502" width="14" height="10" fill="{PAPER}" stroke="{ACCENT}"/>')
+    p.append(text(46, 511, "朱红框：创作铁三角　实线：创作上向导演负责　虚线：预算和排期对接制片", 12, MUTED, "start"))
+    return wrap(720, 528, "\n".join(p), "剧组汇报与协作关系：制片线管钱、人和时间，创作线由导演统领各部门")
+
+
 def verb_adjective():
     body = f'''
 <rect x="40" y="40" width="300" height="120" fill="{PAPER}" stroke="{LINE}"/>
@@ -806,6 +861,7 @@ def main():
         "scene-inout": scene_inout(),
         "shot-strip": shot_strip(),
         "workflow": workflow(),
+        "crew-map": crew_map(),
         "verb-adjective": verb_adjective(),
         "coverage": coverage(),
         "turnaround": turnaround(),

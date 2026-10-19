@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 528" role="img" aria-label="剧组汇报与协作关系：制片线管钱、人和时间，创作线由导演统领各部门">
+<rect width="720" height="528" fill="#f7f5f1"/>
+<defs><marker id="crew-map-arr-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#1a1916"/></marker></defs>
+<text x="30" y="30" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">制片线 · 钱、人、时间</text>
+<text x="690" y="30" text-anchor="end" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">创作线 · 作品长什么样</text>
+<rect x="270" y="18" width="180" height="40" fill="#f7f5f1" stroke="#1a1916"/>
+<text x="360.0" y="43.0" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">出品方 / 平台</text>
+<path d="M360 58 V88" stroke="#1a1916" stroke-width="1.25" fill="none" marker-end="url(#crew-map-arr-ink)"/>
+<rect x="270" y="92" width="180" height="44" fill="#f7f5f1" stroke="#1a1916"/>
+<text x="360.0" y="111.0" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">制片人</text>
+<text x="360.0" y="128.0" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="11" font-weight="400">统管项目、预算、进度</text>
+<path d="M270 114 H115 V170" stroke="#1a1916" stroke-width="1.25" fill="none" marker-end="url(#crew-map-arr-ink)"/>
+<rect x="30" y="174" width="170" height="44" fill="#f7f5f1" stroke="#1a1916"/>
+<text x="115.0" y="193.0" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">执行制片 / 制片主任</text>
+<text x="115.0" y="210.0" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="11" font-weight="400">现场后勤与花销</text>
+<path d="M115 218 V248" stroke="#1a1916" stroke-width="1.25" fill="none" marker-end="url(#crew-map-arr-ink)"/>
+<rect x="30" y="252" width="170" height="44" fill="#f7f5f1" stroke="#1a1916"/>
+<text x="115.0" y="271.0" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">统筹</text>
+<text x="115.0" y="288.0" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="11" font-weight="400">排期与通告单</text>
+<path d="M360 136 V170" stroke="#1a1916" stroke-width="1.25" fill="none" marker-end="url(#crew-map-arr-ink)"/>
+<rect x="290" y="174" width="140" height="44" fill="#f7f5f1" stroke="#8d3a32"/>
+<text x="360.0" y="193.0" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">导演</text>
+<text x="360.0" y="210.0" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="11" font-weight="400">对创作负总责</text>
+<path d="M438 196 H522" stroke="#1a1916" stroke-width="1.25" fill="none" marker-end="url(#crew-map-arr-ink)" marker-start="url(#crew-map-arr-ink)"/>
+<rect x="530" y="174" width="160" height="44" fill="#f7f5f1" stroke="#1a1916"/>
+<text x="610.0" y="193.0" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">编剧 / 总编剧</text>
+<text x="610.0" y="210.0" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="11" font-weight="400">故事讲什么</text>
+<path d="M360 218 V320" stroke="#1a1916" stroke-width="1.25" fill="none"/>
+<path d="M84 320 H636" stroke="#1a1916" stroke-width="1.25" fill="none"/>
+<rect x="14" y="336" width="692" height="150" fill="none" stroke="#cfc9bd"/>
+<text x="24" y="478" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="11" font-weight="400">各部门负责人</text>
+<path d="M44 296 V336" stroke="#5c5852" stroke-width="1.25" fill="none" stroke-dasharray="5 4"/>
+<text x="52" y="318" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="11" font-weight="400">预算 · 排期</text>
+<path d="M84 320 V352" stroke="#1a1916" stroke-width="1.25" fill="none" marker-end="url(#crew-map-arr-ink)"/>
+<rect x="24" y="356" width="120" height="38" fill="#f7f5f1" stroke="#8d3a32"/>
+<text x="84.0" y="380.0" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">摄影指导</text>
+<text x="84" y="416" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">摄影组</text>
+<text x="84" y="434" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">灯光组</text>
+<text x="84" y="452" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">机械组</text>
+<path d="M222 320 V352" stroke="#1a1916" stroke-width="1.25" fill="none" marker-end="url(#crew-map-arr-ink)"/>
+<rect x="162" y="356" width="120" height="38" fill="#f7f5f1" stroke="#8d3a32"/>
+<text x="222.0" y="380.0" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">美术指导</text>
+<text x="222" y="416" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">置景 · 道具</text>
+<text x="222" y="434" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">服装 · 化妆</text>
+<path d="M360 320 V352" stroke="#1a1916" stroke-width="1.25" fill="none" marker-end="url(#crew-map-arr-ink)"/>
+<rect x="300" y="356" width="120" height="38" fill="#f7f5f1" stroke="#1a1916"/>
+<text x="360.0" y="380.0" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">演员</text>
+<text x="360" y="416" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">主演 · 配角</text>
+<text x="360" y="434" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">群演</text>
+<path d="M498 320 V352" stroke="#1a1916" stroke-width="1.25" fill="none" marker-end="url(#crew-map-arr-ink)"/>
+<rect x="438" y="356" width="120" height="38" fill="#f7f5f1" stroke="#1a1916"/>
+<text x="498.0" y="380.0" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="13" font-weight="400">副导演 / 场记</text>
+<text x="498" y="416" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">现场调度</text>
+<text x="498" y="434" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">场记单</text>
+<path d="M636 320 V352" stroke="#1a1916" stroke-width="1.25" fill="none" marker-end="url(#crew-map-arr-ink)"/>
+<rect x="576" y="356" width="120" height="38" fill="#f7f5f1" stroke="#1a1916"/>
+<text x="636.0" y="380.0" text-anchor="middle" fill="#1a1916" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="14" font-weight="400">剪辑师</text>
+<text x="636" y="416" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">调色 · 视效</text>
+<text x="636" y="434" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">声音 · 混录</text>
+<text x="636" y="452" text-anchor="middle" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">作曲</text>
+<rect x="24" y="502" width="14" height="10" fill="#f7f5f1" stroke="#8d3a32"/>
+<text x="46" y="511" text-anchor="start" fill="#5c5852" font-family='"Noto Sans CJK SC","Noto Sans SC","PingFang SC",sans-serif' font-size="12" font-weight="400">朱红框：创作铁三角　实线：创作上向导演负责　虚线：预算和排期对接制片</text>
+</svg>

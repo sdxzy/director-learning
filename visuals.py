@@ -39,7 +39,7 @@ WIDE = {
     "shot-sizes", "camera-angles", "camera-moves", "composition", "kuleshov",
     "jl-cut", "heros-journey", "episode-arc", "story-braid", "prompt-anatomy",
     "storyboard", "three-act", "axis-180", "ots-reverse", "blocking-plan",
-    "turnaround", "color-pair", "high-low-key", "three-point",
+    "turnaround", "color-pair", "high-low-key", "three-point", "crew-map",
 }
 
 
@@ -360,6 +360,15 @@ def apply_visuals(path, body):
             '同一人物的六种景别。课表从这里往下走。<a href="stage1/shot-size.html">打开「景别与角度」</a>',
         )
         body = body.replace(needle, home_fig + "\n" + needle, 1)
+    if path == "stage3/crew-roles.html":
+        needle = "<!--fig:crew-map-->"
+        if needle not in body:
+            raise SystemExit("crew-map placeholder not found")
+        body = body.replace(
+            needle,
+            fig("crew-map", "实线是创作上的汇报，虚线是预算和排期。部门负责人两头都要对接。"),
+            1,
+        )
     if path == "stage2/story-structure.html":
         needle = "<h2>英雄之旅（简版）</h2>"
         if needle not in body:
