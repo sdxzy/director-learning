@@ -7,6 +7,10 @@ clip.mp4, narration.srt, frameNN.png) is optional and used when present.
 diagram.svg or diagram.png, when present, is drawn after the lead.
 「逐段拆解」 is the frameless form of 「逐镜头拆解」: same **① 标题**（说明）
 shape, without a frameNN still.
+「推荐视频」 is the shorter issue shape: **① 标题**（作者，时长） then a
+guidance paragraph and a bare URL. The URL is a link on the title, not an embed.
+「今天学什么」「10 分钟小练习」「对应课程」「版权说明」 render only when present,
+so earlier issues that do not use those headings stay as they were.
 """
 from pathlib import Path
 import html
@@ -393,6 +397,93 @@ def _segments(lines):
     return segments, rest
 
 
+def _recommended_html(lines):
+    """Link rows for 「推荐视频」. Title is the link text; the URL is not embedded."""
+    parts = []
+    i = 0
+    n = len(lines)
+    while i < n:
+        while i < n and not lines[i].strip():
+            i += 1
+        if i >= n:
+            break
+        match = SEGMENT_RE.match(lines[i].strip())
+        if not match:
+            block = _blocks(lines[i:])
+            if block:
+                parts.append(block)
+            break
+        i += 1
+        body = []
+        url = ""
+        while i < n and not SEGMENT_RE.match(lines[i].strip()):
+            stripped = lines[i].strip()
+            if not url and BARE_URL.fullmatch(stripped):
+                url = stripped
+            else:
+                body.append(lines[i])
+            i += 1
+        title = html.escape(match.group(2).strip())
+        mark = html.escape(match.group(1))
+        if url:
+            href = html.escape(url, quote=True)
+            heading = (
+                f'{mark} <a href="{href}" target="_blank" rel="noopener noreferrer">{title}</a>'
+            )
+        else:
+            heading = f"{mark} {title}"
+        meta = html.escape(match.group(3).strip())
+        block = _blocks(body)
+        parts.append(
+            '<article class="shot-row shot-row--plain">'
+            "<div>"
+            f"<h3>{heading}</h3>"
+            f'<p class="shot-when">{meta}</p>'
+            f"{block}"
+            "</div>"
+            "</article>"
+        )
+    return "\n".join(parts)
+
+
+_COURSE_PHRASE = re.compile(
+    r"^(.*)的([^的\s，。；：]{1,16})：\s*"
+    r"https://sdxzy\.github\.io/director-learning/(stage\d+/[\w.-]+\.html)\s*$"
+)
+
+
+def _course_blocks(lines):
+    """「对应课程」 prose. A same-site chapter URL becomes a relative link.
+
+    List items in 「对应学习站章节」 already do this for the whole line. Here the
+    URL sits at the end of a sentence, so only the short phrase before the colon
+    becomes the link. The surrounding Chinese stays.
+    """
+    out = []
+    pending = []
+
+    def flush():
+        if not pending:
+            return
+        block = _blocks(pending)
+        if block:
+            out.append(block)
+        pending.clear()
+
+    for line in lines:
+        match = _COURSE_PHRASE.match(line.strip())
+        if not match:
+            pending.append(line)
+            continue
+        flush()
+        prefix = _inline(match.group(1) + "的")
+        label = html.escape(match.group(2))
+        href = html.escape("../" + match.group(3), quote=True)
+        out.append(f'<p>{prefix}<a href="{href}">{label}</a></p>')
+    flush()
+    return "\n".join(out)
+
+
 def _segment_html(segment):
     bullets = "\n".join(f"<li>{_inline(item)}</li>" for item in segment["bullets"])
     return (
@@ -476,6 +567,9 @@ def issue_body(issue):
         )
     if "一句话看点" in by_name:
         parts.append(_blocks(by_name["一句话看点"]))
+    if "今天学什么" in by_name:
+        parts.append("<h2>今天学什么</h2>")
+        parts.append(_blocks(by_name["今天学什么"]))
     # Narrated issues keep the player at the top. The lecture list is for
     # issues that cannot ship a clip.
     if "先看讲解视频" in by_name and not (folder / "narrated.mp4").is_file():
@@ -485,6 +579,9 @@ def issue_body(issue):
         if facade:
             parts.append(facade)
         parts.append(_blocks(lines))
+    if "推荐视频" in by_name:
+        parts.append("<h2>推荐视频</h2>")
+        parts.append(_recommended_html(by_name["推荐视频"]))
     diagram = _diagram_html(folder, issue_id)
     if diagram:
         parts.append(diagram)
@@ -508,19 +605,25 @@ def issue_body(issue):
                 poster=f"{issue_id}/frame02.png" if (folder / "frame02.png").is_file() else None,
             )
         )
-    for name in ("10 分钟小练习（二选一）",):
+    for name in ("10 分钟小练习（二选一）", "10 分钟小练习"):
         if name in by_name:
             parts.append(f"<h2>{html.escape(name)}</h2>")
             parts.append(_blocks(by_name[name]))
     if "对应学习站章节" in by_name:
         parts.append("<h2>对应课程</h2>")
         parts.append(_blocks(by_name["对应学习站章节"]))
+    if "对应课程" in by_name:
+        parts.append("<h2>对应课程</h2>")
+        parts.append(_course_blocks(by_name["对应课程"]))
     if "作品信息" in by_name:
         parts.append("<h2>片源与授权</h2>")
         parts.append(_blocks(by_name["作品信息"]))
     if "推荐延伸视频" in by_name:
         parts.append("<h2>推荐延伸</h2>")
         parts.append(_blocks(by_name["推荐延伸视频"]))
+    if "版权说明" in by_name:
+        parts.append("<h2>版权说明</h2>")
+        parts.append(_blocks(by_name["版权说明"]))
     return "\n".join(parts)
 
 

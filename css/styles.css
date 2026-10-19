@@ -763,6 +763,8 @@ th {
   background: #141311;
 }
 .shot-row h3 { margin: 0 0 0.2rem; font-size: 1.05rem; }
+.shot-row h3 a { color: var(--accent); }
+.shot-row p:last-child { margin-bottom: 0; }
 .shot-when {
   margin: 0 0 0.35rem;
   font-size: 0.82rem;
