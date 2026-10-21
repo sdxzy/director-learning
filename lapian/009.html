@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>运镜：镜头一动，观众的注意力就跟着走 · 导演入门学习站</title>
+<meta name="description" content="零基础导演入门：视听语言、剧本剧集、导演方法与 AI 影视创作">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../css/styles.css">
+<script>
+(function(){
+  try {
+    var s = localStorage.getItem("director-site-theme");
+    var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var t = (s === "light" || s === "dark") ? s : (dark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", t);
+    document.documentElement.style.colorScheme = t;
+  } catch (e) {}
+})();
+</script>
+
+</head>
+<body data-page="lapian-009" data-total-pages="45">
+<a class="skip-link" href="#content">跳到正文</a>
+<header class="site-header">
+  <button class="btn-icon menu-toggle" id="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="sidebar"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="brand" href="../index.html">导演入门</a>
+  <a class="header-link is-current" href="../lapian/index.html">每日逐帧</a>
+  <button class="search-trigger" id="search-trigger" type="button" aria-label="搜索全站" aria-keyshortcuts="Control+K Meta+K"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="search-trigger-label">搜索全站</span><kbd class="search-kbd" id="search-kbd">Ctrl K</kbd></button>
+  <div class="header-actions">
+    <button class="btn-icon" id="theme-toggle" type="button" aria-label="切换主题" title="切换主题">☾</button>
+  </div>
+  <div class="read-progress" aria-hidden="true"><span id="read-progress-fill"></span></div>
+</header>
+<div class="layout">
+
+<aside class="sidebar" id="sidebar">
+  <nav class="sidebar-nav" aria-label="课程目录">
+  <div class="sidebar-section">总览</div>
+  <a href="../index.html" class="stage-link">首页</a>
+  <div class="sidebar-section">学习阶段</div>
+  <details class="nav-group">
+    <summary>阶段一 · 视听语言</summary>
+    <div class="nav-group-links">
+    <a href="../stage1/index.html" class="">阶段概览</a>
+    <a href="../stage1/shot-size.html" class="sub-link">景别与角度</a>
+    <a href="../stage1/camera-movement.html" class="sub-link">运镜</a>
+    <a href="../stage1/composition.html" class="sub-link">构图</a>
+    <a href="../stage1/light-color.html" class="sub-link">光线与色彩</a>
+    <a href="../stage1/axis.html" class="sub-link">轴线与正反打</a>
+    <a href="../stage1/montage.html" class="sub-link">蒙太奇与剪辑</a>
+    <a href="../stage1/sound.html" class="sub-link">声音</a>
+    <a href="../stage1/practice.html" class="sub-link">练习与资源</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary>阶段二 · 剧本与剧集</summary>
+    <div class="nav-group-links">
+    <a href="../stage2/index.html" class="">阶段概览</a>
+    <a href="../stage2/story-structure.html" class="sub-link">故事结构</a>
+    <a href="../stage2/character-conflict.html" class="sub-link">人物与冲突</a>
+    <a href="../stage2/scene-writing.html" class="sub-link">场景写作</a>
+    <a href="../stage2/series-hooks.html" class="sub-link">剧集弧线与钩子</a>
+    <a href="../stage2/shot-list.html" class="sub-link">分镜头脚本</a>
+    <a href="../stage2/practice.html" class="sub-link">练习与资源</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary>阶段三 · 导演方法</summary>
+    <div class="nav-group-links">
+    <a href="../stage3/index.html" class="">阶段概览</a>
+    <a href="../stage3/workflow.html" class="sub-link">导演流程</a>
+    <a href="../stage3/crew-roles.html" class="sub-link">剧组角色与协作</a>
+    <a href="../stage3/blocking.html" class="sub-link">场面调度</a>
+    <a href="../stage3/directing-actors.html" class="sub-link">演员指导</a>
+    <a href="../stage3/storyboard.html" class="sub-link">故事板与机位</a>
+    <a href="../stage3/shooting-plan.html" class="sub-link">拍摄计划</a>
+    <a href="../stage3/practice.html" class="sub-link">练习与资源</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary>阶段四 · AI 影视</summary>
+    <div class="nav-group-links">
+    <a href="../stage4/index.html" class="">阶段概览</a>
+    <a href="../stage4/tools-2026.html" class="sub-link">2026 工具现状</a>
+    <a href="../stage4/prompt-structure.html" class="sub-link">提示词结构</a>
+    <a href="../stage4/character-consistency.html" class="sub-link">角色一致性</a>
+    <a href="../stage4/short-film-workflow.html" class="sub-link">短片流程</a>
+    <a href="../stage4/compliance.html" class="sub-link">合规提醒</a>
+    <a href="../stage4/practice.html" class="sub-link">练习与资源</a>
+    </div>
+  </details>
+  <div class="sidebar-section">每日逐帧</div>
+  <a href="../lapian/index.html" class="stage-link">全部期数</a>
+  <a href="../lapian/009.html" class="">009 运镜·镜头怎么动</a><a href="../lapian/008.html" class="">008 镜头角度·俯仰之间</a><a href="../lapian/007.html" class="">007 构图·人放在画面哪里</a><a href="../lapian/006.html" class="">006 奥本海默·三位一体核试验的沉默</a><a href="../lapian/005.html" class="">005 银翼杀手2049·橙色拉斯维加斯</a><a href="../lapian/004.html" class="">004 老无所依·抛硬币</a><a href="../lapian/003.html" class="">003 熊家餐馆·一镜到底</a><a href="../lapian/002.html" class="">002 寄生虫·楼梯</a><a href="../lapian/001.html" class="">001 敖德萨阶梯</a>
+  <div class="sidebar-section">附录</div>
+  <a href="../appendix/glossary.html" class="">镜头术语速查</a>
+  <a href="../appendix/progress.html" class="">30 周进度表</a>
+  <a href="../appendix/resources.html" class="">推荐书单片单</a>
+  </nav>
+  <div class="sidebar-foot" id="sidebar-progress"></div>
+</aside>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<div class="doc-shell">
+<div class="doc-column">
+<main class="main" id="content">
+<nav class="breadcrumb" aria-label="面包屑"><a href="../index.html">首页</a> <span class="sep">/</span> <a href="../lapian/index.html">每日逐帧</a> <span class="sep">/</span> <span>第 009 期</span></nav>
+<p class="lapian-kicker">每日逐帧 · 第 009 期 · 2026-10-21 · 运镜 · 推拉与变焦 · 摇镜头 · 移镜头与跟镜头 · 希区柯克变焦</p>
+<h1>运镜：镜头一动，观众的注意力就跟着走</h1>
+<h2>今天学什么</h2>
+<p>运镜，就是摄影机在拍摄过程中怎么动：往前推、往后拉、站在原地左右摇、整台机器横着移、跟着人走、升高或降低，当然也可以一动不动。前两期学的构图和角度，说的是一个镜头“怎么摆”“从哪看”；运镜则让这些在一个镜头之内发生变化，观众的注意力和情绪会跟着机器一起走。往前推，观众离人物的内心更近；往后拉，人物和周围环境的关系，甚至他的孤独，就一点点露出来。第 003 期《熊家餐馆》里我们看过一镜到底的运镜，今天把最基本的几种动法一次理清。新手最常犯的毛病，是为了“有电影感”而乱动，所以看视频时，每遇到一种运镜，都问自己一句：它为什么要动？</p>
+<h2>推荐视频</h2>
+<article class="shot-row shot-row--plain"><div><h3>① <a href="https://www.bilibili.com/video/BV14iXCBAE48/" target="_blank" rel="noopener noreferrer">《电影感运镜的终极指南|镜头运动全解析》</a></h3><p class="shot-when">吸一口风rocky，7:39，B 站播放约 61 万</p><p>建议从头看完。它按推拉、变焦、升降、俯仰、摇、移、跟、环绕、固定、手持的顺序，把常见的镜头运动挨个过了一遍，配着手写标注，不少示范是 UP 主自己实拍的。看完，你心里就有了一张完整的运镜地图。视频分好了章节，方便回看：0:53 起讲变焦，它看上去和推镜头很像，区别在于推镜头是机器真的往前走，变焦只是镜头焦距在变，画面里的空间感会不一样；3:32 起的移镜头和 4:39 起的跟镜头是最常用的两种，值得多看一遍；6:46 起讲手持镜头，可以和前面那些平稳的运镜对比着看。</p></div></article>
+<article class="shot-row shot-row--plain"><div><h3>② <a href="https://www.bilibili.com/video/BV1YT411z7xM/" target="_blank" rel="noopener noreferrer">《【电影镜头】如何让你的故事更有冲击力？七分钟看懂摇镜头！》</a></h3><p class="shot-when">冰山映画，6:36，B 站播放约 18 万</p><p>建议从头看到 6:02。第一个视频告诉你有哪些动法，这一个只挑“摇”这一种，讲它在故事里到底能做什么：揭示画面外的信息、暗示接下来的情节、模拟角色的视线、和别的运镜组合，以及猛地甩过去制造紧张感。章节同样分得很清楚。最值得细看的是两段：1:48 起的“模拟视角”，镜头一摇，就等于替角色转头去看，里面有《你好，李焕英》的例子，看完你会明白这种镜头为什么容易让人动情；5:26 起的“快速摇摄”，镜头一甩，节奏和情绪马上就紧了，例子里有《爆裂鼓手》。</p></div></article>
+<article class="shot-row shot-row--plain"><div><h3>③ <a href="https://www.bilibili.com/video/BV1xq4y1n7Jj/" target="_blank" rel="noopener noreferrer">《一部手机，简单一分钟教会你希区柯克变焦。》</a></h3><p class="shot-when">你的不秃头，2:50，B 站播放约 120 万</p><p>不到三分钟，建议完整看完。希区柯克变焦也叫推轨变焦，是把第一个视频里的“推拉”和“变焦”反着叠在一起：机器往前推的同时把焦距调广，或者往后退的同时把焦距推长。这样人物在画面里的大小基本不变，背景却像被拉远或者压了过来，观众会有一种天旋地转、心里一沉的感觉。视频先讲原理和经典电影里的用法，再演示怎么只用一部手机做出来，可以当作今天练习的加分项。</p></div></article>
+<h2>10 分钟小练习</h2>
+<p><strong>手机拍摄版</strong>：请一位朋友，在家里的客厅或者楼下便利店门口，从门口走到桌边坐下，拿起手机看一眼。同一段动作拍三条，每条十几秒：第一条手机固定不动；第二条跟在他身后，和他同步往前走；第三条等他坐下以后，慢慢朝他的脸推近。想拍得稳一点，可以把两只手肘贴紧身体，走路时膝盖微微弯曲、步子放小。拍完连着看一遍，每条用一句话写下给你的感觉。再想一想：如果手机上收到的是一条坏消息，哪种拍法最能让观众跟着他心里一紧？还有余力的话，照第三个视频试一次希区柯克变焦。</p>
+<p><strong>AI 提示词版</strong>：人物、场景和光线都不变，只改运镜那几个词，生成三段 5 秒左右的视频来对比。现在主流的 AI 视频工具大多能听懂这类运镜描述。示例提示词：</p>
+<ul>
+<li>电影镜头，固定机位，一个穿灰色卫衣的年轻男人坐在深夜便利店靠窗的位置，低头看手机，窗外偶尔有车灯划过，中景，冷色调，35mm 胶片质感</li>
+<li>电影镜头，镜头缓慢向前推进，从中景推到面部特写，一个穿灰色卫衣的年轻男人坐在深夜便利店靠窗的位置，低头看手机，表情慢慢凝固，冷色调，35mm 胶片质感</li>
+<li>电影镜头，镜头缓慢向后拉远，从面部特写拉到大全景，露出空荡荡的便利店和窗外无人的街道，一个穿灰色卫衣的年轻男人独自坐在窗边，冷色调，35mm 胶片质感</li>
+</ul>
+<p>生成之后比一比：哪一段让你更想知道他看到了什么，哪一段让你更觉得他孤单？</p>
+<h2>对应课程</h2>
+<p>想把概念再理一遍，可以回到学习站第一阶段的<a href="../stage1/camera-movement.html">“运镜”一章</a></p>
+<h2>版权说明</h2>
+<p>本期不截图、不剪辑任何影片画面，画面请在上面的视频里看。视频版权归各自作者所有。</p>
+<div class="learn-card" id="learn-card">
+  <label class="learn-check">
+    <input type="checkbox" id="learn-complete">
+    <span>
+      <span class="learn-title">我已学完本页</span>
+      <span class="learn-hint">只保存在这台浏览器里，并计入首页总进度</span>
+    </span>
+  </label>
+</div>
+<nav class="chapter-nav" aria-label="上一页和下一页"><a href="../lapian/008.html" class="prev"><span class="label">← 上一章</span><span class="chapter-title">镜头角度：机器放高一点还是低一点，人物的强弱就变了</span></a></nav>
+</main>
+<footer class="site-footer">
+  写给 Dong · 零基础导演入门 · 目标：AI 影视创作 · 内容基准日期 2026-10-12 · AI 工具请以官网为准
+</footer>
+</div>
+<aside class="toc-aside" id="toc-aside">
+  <details class="toc-details" id="toc-details">
+    <summary>本页目录</summary>
+    <nav class="toc-nav" aria-label="本页目录">
+      <ol id="toc-list"></ol>
+    </nav>
+  </details>
+</aside>
+</div>
+</div>
+<button class="back-to-top" id="back-to-top" type="button" aria-label="回到顶部">顶部</button>
+<script src="../js/search-index.js"></script>
+<script src="../js/nav.js"></script>
+</body>
+</html>
