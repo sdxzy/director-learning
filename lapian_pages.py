@@ -448,7 +448,8 @@ def _recommended_html(lines):
 
 _COURSE_PHRASE = re.compile(
     r"^(.*)的([^的\s，。；：]{1,16})：\s*"
-    r"https://sdxzy\.github\.io/director-learning/(stage\d+/[\w.-]+\.html)\s*$"
+    r"https://sdxzy\.github\.io/director-learning/(stage\d+/[\w.-]+\.html)"
+    r"\s*(。)?\s*$"
 )
 
 
@@ -479,7 +480,8 @@ def _course_blocks(lines):
         prefix = _inline(match.group(1) + "的")
         label = html.escape(match.group(2))
         href = html.escape("../" + match.group(3), quote=True)
-        out.append(f'<p>{prefix}<a href="{href}">{label}</a></p>')
+        punct = match.group(4) or ""
+        out.append(f'<p>{prefix}<a href="{href}">{label}</a>{punct}</p>')
     flush()
     return "\n".join(out)
 
