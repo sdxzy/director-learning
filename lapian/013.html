@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>剧本结构：故事为什么要分成三幕 · 导演入门学习站</title>
+<meta name="description" content="零基础导演入门：视听语言、剧本剧集、导演方法与 AI 影视创作">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../css/styles.css">
+<script>
+(function(){
+  try {
+    var s = localStorage.getItem("director-site-theme");
+    var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var t = (s === "light" || s === "dark") ? s : (dark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", t);
+    document.documentElement.style.colorScheme = t;
+  } catch (e) {}
+})();
+</script>
+
+</head>
+<body data-page="lapian-013" data-total-pages="49">
+<a class="skip-link" href="#content">跳到正文</a>
+<header class="site-header">
+  <button class="btn-icon menu-toggle" id="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="sidebar"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="brand" href="../index.html">导演入门</a>
+  <a class="header-link is-current" href="../lapian/index.html">每日逐帧</a>
+  <button class="search-trigger" id="search-trigger" type="button" aria-label="搜索全站" aria-keyshortcuts="Control+K Meta+K"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="search-trigger-label">搜索全站</span><kbd class="search-kbd" id="search-kbd">Ctrl K</kbd></button>
+  <div class="header-actions">
+    <button class="btn-icon" id="theme-toggle" type="button" aria-label="切换主题" title="切换主题">☾</button>
+  </div>
+  <div class="read-progress" aria-hidden="true"><span id="read-progress-fill"></span></div>
+</header>
+<div class="layout">
+
+<aside class="sidebar" id="sidebar">
+  <nav class="sidebar-nav" aria-label="课程目录">
+  <div class="sidebar-section">总览</div>
+  <a href="../index.html" class="stage-link">首页</a>
+  <div class="sidebar-section">学习阶段</div>
+  <details class="nav-group">
+    <summary>阶段一 · 视听语言</summary>
+    <div class="nav-group-links">
+    <a href="../stage1/index.html" class="">阶段概览</a>
+    <a href="../stage1/shot-size.html" class="sub-link">景别与角度</a>
+    <a href="../stage1/camera-movement.html" class="sub-link">运镜</a>
+    <a href="../stage1/composition.html" class="sub-link">构图</a>
+    <a href="../stage1/light-color.html" class="sub-link">光线与色彩</a>
+    <a href="../stage1/axis.html" class="sub-link">轴线与正反打</a>
+    <a href="../stage1/montage.html" class="sub-link">蒙太奇与剪辑</a>
+    <a href="../stage1/sound.html" class="sub-link">声音</a>
+    <a href="../stage1/practice.html" class="sub-link">练习与资源</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary>阶段二 · 剧本与剧集</summary>
+    <div class="nav-group-links">
+    <a href="../stage2/index.html" class="">阶段概览</a>
+    <a href="../stage2/story-structure.html" class="sub-link">故事结构</a>
+    <a href="../stage2/character-conflict.html" class="sub-link">人物与冲突</a>
+    <a href="../stage2/scene-writing.html" class="sub-link">场景写作</a>
+    <a href="../stage2/series-hooks.html" class="sub-link">剧集弧线与钩子</a>
+    <a href="../stage2/shot-list.html" class="sub-link">分镜头脚本</a>
+    <a href="../stage2/practice.html" class="sub-link">练习与资源</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary>阶段三 · 导演方法</summary>
+    <div class="nav-group-links">
+    <a href="../stage3/index.html" class="">阶段概览</a>
+    <a href="../stage3/workflow.html" class="sub-link">导演流程</a>
+    <a href="../stage3/crew-roles.html" class="sub-link">剧组角色与协作</a>
+    <a href="../stage3/blocking.html" class="sub-link">场面调度</a>
+    <a href="../stage3/directing-actors.html" class="sub-link">演员指导</a>
+    <a href="../stage3/storyboard.html" class="sub-link">故事板与机位</a>
+    <a href="../stage3/shooting-plan.html" class="sub-link">拍摄计划</a>
+    <a href="../stage3/practice.html" class="sub-link">练习与资源</a>
+    </div>
+  </details>
+  <details class="nav-group">
+    <summary>阶段四 · AI 影视</summary>
+    <div class="nav-group-links">
+    <a href="../stage4/index.html" class="">阶段概览</a>
+    <a href="../stage4/tools-2026.html" class="sub-link">2026 工具现状</a>
+    <a href="../stage4/prompt-structure.html" class="sub-link">提示词结构</a>
+    <a href="../stage4/character-consistency.html" class="sub-link">角色一致性</a>
+    <a href="../stage4/short-film-workflow.html" class="sub-link">短片流程</a>
+    <a href="../stage4/compliance.html" class="sub-link">合规提醒</a>
+    <a href="../stage4/practice.html" class="sub-link">练习与资源</a>
+    </div>
+  </details>
+  <div class="sidebar-section">每日逐帧</div>
+  <a href="../lapian/index.html" class="stage-link">全部期数</a>
+  <a href="../lapian/013.html" class="">013 剧本结构·三幕式</a><a href="../lapian/012.html" class="">012 场面调度·人怎么走</a><a href="../lapian/011.html" class="">011 剪辑与蒙太奇</a><a href="../lapian/010.html" class="">010 景别·拍多大</a><a href="../lapian/009.html" class="">009 运镜·镜头怎么动</a><a href="../lapian/008.html" class="">008 镜头角度·俯仰之间</a><a href="../lapian/007.html" class="">007 构图·人放在画面哪里</a><a href="../lapian/006.html" class="">006 奥本海默·三位一体核试验的沉默</a><a href="../lapian/005.html" class="">005 银翼杀手2049·橙色拉斯维加斯</a><a href="../lapian/004.html" class="">004 老无所依·抛硬币</a><a href="../lapian/003.html" class="">003 熊家餐馆·一镜到底</a><a href="../lapian/002.html" class="">002 寄生虫·楼梯</a><a href="../lapian/001.html" class="">001 敖德萨阶梯</a>
+  <div class="sidebar-section">附录</div>
+  <a href="../appendix/glossary.html" class="">镜头术语速查</a>
+  <a href="../appendix/progress.html" class="">30 周进度表</a>
+  <a href="../appendix/resources.html" class="">推荐书单片单</a>
+  </nav>
+  <div class="sidebar-foot" id="sidebar-progress"></div>
+</aside>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<div class="doc-shell">
+<div class="doc-column">
+<main class="main" id="content">
+<nav class="breadcrumb" aria-label="面包屑"><a href="../index.html">首页</a> <span class="sep">/</span> <a href="../lapian/index.html">每日逐帧</a> <span class="sep">/</span> <span>第 013 期</span></nav>
+<p class="lapian-kicker">每日逐帧 · 第 013 期 · 2026-10-25 · 剧本结构 · 三幕式 · 情节点 · 救猫咪节拍表</p>
+<h1>剧本结构：故事为什么要分成三幕</h1>
+<h2>今天学什么</h2>
+<p>前面六期一直在学“怎么拍”，今天换到更上游的问题：故事本身怎么搭。最常用的骨架叫三幕式，第一幕交代人物和他原本的生活，再用一件事把这种生活打破；第二幕让主角去追一个目标，困难越来越大；第三幕把矛盾推到顶点，然后收尾。它不是死规定，但大多数商业电影和剧集都能用它拆开来看。学会以后，你看片时就知道“现在讲到哪一步了”，自己用 AI 做短片时，也不会只有一堆好看的镜头却讲不成一个故事。</p>
+<h2>推荐视频</h2>
+<article class="shot-row shot-row--plain"><div><h3>① <a href="https://www.bilibili.com/video/BV1Bz4y1s7T5/" target="_blank" rel="noopener noreferrer">《三幕式戏剧结构解析 - 讲述超凡故事的终极法宝》</a></h3><p class="shot-when">调色师手册，27:09，B 站播放约 6.9 万</p><p>建议从头看，时间紧可以分两次。这是一条带中文翻译的搬运视频，简介里附了原片来源，是专门做电影制作教学的 StudioBinder 频道。它会把三幕各占多少篇幅、每一幕里有哪些关键节点讲一遍。看的时候拿张纸，把“第一幕结束时主角做了什么决定”和“第二幕中间发生了什么转折”这两个位置记下来，这是整个结构里最关键的两颗钉子。</p></div></article>
+<article class="shot-row shot-row--plain"><div><h3>② <a href="https://www.bilibili.com/video/BV1ou411Y7Vk/" target="_blank" rel="noopener noreferrer">《什么是救猫咪？ -《星际穿越》中的15个节拍表解读【剧本解读系列】》</a></h3><p class="shot-when">调色师手册，17:14，B 站播放约 3.3 万</p><p>看完第一个再看这个，建议从头看。“救猫咪”是编剧布莱克·斯奈德写的一本编剧书，他把三幕式再细分成 15 个节拍，比如开场画面、触发事件、灵魂黑夜等等。这个视频用《星际穿越》把 15 个节拍逐个对上。你不用背下全部名字，重点感受一件事：一部近三小时的电影，情节转折其实落在相当固定的位置上。</p></div></article>
+<article class="shot-row shot-row--plain"><div><h3>③ <a href="https://www.bilibili.com/video/BV17JGv6hExs/" target="_blank" rel="noopener noreferrer">《《疯狂动物城》15 故事节拍表完整拆解。为什么所有爆款故事的情绪曲线都一模一样？》</a></h3><p class="shot-when">野兽大陆，19:48，B 站播放约 1.3 万</p><p>可以当作复习，用同一套节拍表拆另一部片。视频带分段：0:30 起讲第一幕铺垫，11:00 起讲灵魂黑夜和希望出现，14:39 起讲结局和高潮，19:10 起是总结。时间不够的话，先看开头到 1:55 的第一幕，再跳到 11:00 看灵魂黑夜，最能看出“主角跌到谷底再爬起来”这条情绪曲线。</p></div></article>
+<h2>10 分钟小练习</h2>
+<p><strong>纸笔版</strong>：挑一部你最近看过、印象很深的电影或一集剧，用三句话写下它的三幕。第一句写主角原本过着什么生活，是哪件事打破了它；第二句写主角想要什么，中途遇到的最大阻碍是什么；第三句写最后的对决或选择，以及结局。写完对照一下：第一幕结束和第二幕中间那个转折，你能不能各指出一个具体场面？指不出来，就说明这部片的结构你还没看透，值得再回去看一遍。</p>
+<p><strong>AI 提示词版</strong>：把一个 30 秒短片拆成三幕，每一幕写一条提示词，连起来生成三个镜头。示例提示词：</p>
+<ul>
+<li>第一幕：电影镜头，中景，清晨的老旧修车铺，一个中年修车工独自哼着歌擦拭工具，阳光从卷帘门缝照进来，生活平静有序，35mm 胶片质感</li>
+<li>第二幕：电影镜头，近景，同一间修车铺，修车工手里攥着一张拆迁通知，眉头紧锁，身后几个陌生人正在量店面尺寸，光线变冷，35mm 胶片质感</li>
+<li>第三幕：电影镜头，全景，傍晚，修车工把最后一辆修好的自行车推到门口交给一个小女孩，身后的店铺已经搬空，夕阳把两人的影子拉得很长，35mm 胶片质感</li>
+</ul>
+<p>生成完把三张图按顺序放在一起，问自己：没有任何台词，别人能看懂“平静被打破，最后做出选择”这条线吗？看不懂，就改第二幕，让冲突更具体。</p>
+<h2>对应课程</h2>
+<p>想把概念再系统理一遍，可以回到学习站第二阶段的<a href="../stage2/story-structure.html">“故事结构”一章</a>。</p>
+<h2>版权说明</h2>
+<p>本期不截图、不剪辑任何影片画面，画面请在上面的视频里看。视频版权归各自作者所有。</p>
+<div class="learn-card" id="learn-card">
+  <label class="learn-check">
+    <input type="checkbox" id="learn-complete">
+    <span>
+      <span class="learn-title">我已学完本页</span>
+      <span class="learn-hint">只保存在这台浏览器里，并计入首页总进度</span>
+    </span>
+  </label>
+</div>
+<nav class="chapter-nav" aria-label="上一页和下一页"><a href="../lapian/012.html" class="prev"><span class="label">← 上一章</span><span class="chapter-title">场面调度：人怎么站、怎么走，镜头怎么跟</span></a></nav>
+</main>
+<footer class="site-footer">
+  写给 Dong · 零基础导演入门 · 目标：AI 影视创作 · 内容基准日期 2026-10-12 · AI 工具请以官网为准
+</footer>
+</div>
+<aside class="toc-aside" id="toc-aside">
+  <details class="toc-details" id="toc-details">
+    <summary>本页目录</summary>
+    <nav class="toc-nav" aria-label="本页目录">
+      <ol id="toc-list"></ol>
+    </nav>
+  </details>
+</aside>
+</div>
+</div>
+<button class="back-to-top" id="back-to-top" type="button" aria-label="回到顶部">顶部</button>
+<script src="../js/search-index.js"></script>
+<script src="../js/nav.js"></script>
+</body>
+</html>
