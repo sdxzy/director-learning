@@ -9,6 +9,8 @@ diagram.svg or diagram.png, when present, is drawn after the lead.
 shape, without a frameNN still.
 「推荐视频」 is the shorter issue shape: **① 标题**（作者，时长） then a
 guidance paragraph and a bare URL. The URL is a link on the title, not an embed.
+A [label](https://...) in a paragraph links those words. A same-site chapter
+URL becomes a relative link in this tab; every other URL opens a new tab.
 「今天学什么」「10 分钟小练习」「对应课程」「版权说明」 render only when present,
 so earlier issues that do not use those headings stay as they were.
 """
@@ -30,6 +32,7 @@ SEGMENT_RE = re.compile(
     r"^\*\*([①②③④⑤⑥⑦⑧⑨⑩])\s+(.+?)\*\*\s*（(.+?)）\s*$"
 )
 BARE_URL = re.compile(r"https?://[^\s<]+")
+MD_LINK = re.compile(r"\[([^\]\n]+)\]\((https?://[^\s)]+)\)")
 OL_ITEM = re.compile(r"^\d+\.\s+(.*)$")
 YOUTUBE_ID = re.compile(r"youtube\.com/watch\?v=([A-Za-z0-9_-]{11})")
 LECTURE_TITLE = re.compile(r"《([^》]+)》")
@@ -91,6 +94,17 @@ def ensure_vtt(folder: Path):
     return vtt if vtt.is_file() else None
 
 
+def _anchor(url: str, label: str) -> str:
+    """Markdown link. Same-site chapters stay in this tab; other URLs open a new tab."""
+    safe_label = html.escape(label)
+    course = COURSE_URL.fullmatch(url)
+    if course:
+        href = html.escape("../" + course.group(1), quote=True)
+        return f'<a href="{href}">{safe_label}</a>'
+    href = html.escape(url, quote=True)
+    return f'<a href="{href}" target="_blank" rel="noopener noreferrer">{safe_label}</a>'
+
+
 def _inline(text: str) -> str:
     labeled = re.fullmatch(
         r"(.+?)：\s*https://sdxzy\.github\.io/director-learning/(stage\d+/[\w.-]+\.html)\s*",
@@ -99,6 +113,13 @@ def _inline(text: str) -> str:
     if labeled:
         return f'<a href="../{labeled.group(2)}">{html.escape(labeled.group(1))}</a>'
 
+    anchors = []
+
+    def stash(match):
+        anchors.append(_anchor(match.group(2), match.group(1)))
+        return f"@@MDLINK{len(anchors) - 1}@@"
+
+    text = MD_LINK.sub(stash, text)
     parts = BARE_URL.split(text)
     urls = BARE_URL.findall(text)
     out = []
@@ -106,6 +127,11 @@ def _inline(text: str) -> str:
         escaped = html.escape(part)
         escaped = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", escaped)
         escaped = re.sub(r"`([^`]+)`", r"<code>\1</code>", escaped)
+        escaped = re.sub(
+            r"@@MDLINK(\d+)@@",
+            lambda match: anchors[int(match.group(1))],
+            escaped,
+        )
         out.append(escaped)
         if i < len(urls):
             href = html.escape(urls[i], quote=True)
