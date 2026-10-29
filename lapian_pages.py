@@ -11,6 +11,9 @@ shape, without a frameNN still.
 guidance paragraph and a bare URL. The URL is a link on the title, not an embed.
 A [label](https://...) in a paragraph links those words. A same-site chapter
 URL becomes a relative link in this tab; every other URL opens a new tab.
+A quoted title or book title followed by a parenthetical relative path,
+“章节”一章（../stage1/axis.html） or 《片名》（../lapian/004.html）, becomes
+an in-tab link on that title. The path is not shown.
 「今天学什么」「10 分钟小练习」「对应课程」「版权说明」 render only when present,
 so earlier issues that do not use those headings stay as they were.
 """
@@ -33,6 +36,10 @@ SEGMENT_RE = re.compile(
 )
 BARE_URL = re.compile(r"https?://[^\s<]+")
 MD_LINK = re.compile(r"\[([^\]\n]+)\]\((https?://[^\s)]+)\)")
+PAREN_REF = re.compile(
+    r"(“[^”]{1,80}”(?:一章)?|《[^》]{1,80}》)"
+    r"（(\.\./(?:stage\d+|lapian)/[\w.-]+\.html)）"
+)
 OL_ITEM = re.compile(r"^\d+\.\s+(.*)$")
 YOUTUBE_ID = re.compile(r"youtube\.com/watch\?v=([A-Za-z0-9_-]{11})")
 LECTURE_TITLE = re.compile(r"《([^》]+)》")
@@ -119,6 +126,13 @@ def _inline(text: str) -> str:
         anchors.append(_anchor(match.group(2), match.group(1)))
         return f"@@MDLINK{len(anchors) - 1}@@"
 
+    def stash_paren(match):
+        href = html.escape(match.group(2), quote=True)
+        label = html.escape(match.group(1))
+        anchors.append(f'<a href="{href}">{label}</a>')
+        return f"@@MDLINK{len(anchors) - 1}@@"
+
+    text = PAREN_REF.sub(stash_paren, text)
     text = MD_LINK.sub(stash, text)
     parts = BARE_URL.split(text)
     urls = BARE_URL.findall(text)
