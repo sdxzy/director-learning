@@ -13,7 +13,8 @@ A [label](https://...) in a paragraph links those words. A same-site chapter
 URL becomes a relative link in this tab; every other URL opens a new tab.
 A quoted title or book title followed by a parenthetical relative path,
 “章节”一章（../stage1/axis.html） or 《片名》（../lapian/004.html）, becomes
-an in-tab link on that title. The path is not shown.
+an in-tab link on that title. The path is not shown. A stage name does the
+same: 第四阶段（../stage4/index.html）.
 「今天学什么」「10 分钟小练习」「对应课程」「版权说明」 render only when present,
 so earlier issues that do not use those headings stay as they were.
 """
@@ -38,6 +39,10 @@ BARE_URL = re.compile(r"https?://[^\s<]+")
 MD_LINK = re.compile(r"\[([^\]\n]+)\]\((https?://[^\s)]+)\)")
 PAREN_REF = re.compile(
     r"(“[^”]{1,80}”(?:一章)?|《[^》]{1,80}》)"
+    r"（(\.\./(?:stage\d+|lapian)/[\w.-]+\.html)）"
+)
+STAGE_REF = re.compile(
+    r"(第[一二三四五六七八九十\d]+阶段)"
     r"（(\.\./(?:stage\d+|lapian)/[\w.-]+\.html)）"
 )
 OL_ITEM = re.compile(r"^\d+\.\s+(.*)$")
@@ -133,6 +138,7 @@ def _inline(text: str) -> str:
         return f"@@MDLINK{len(anchors) - 1}@@"
 
     text = PAREN_REF.sub(stash_paren, text)
+    text = STAGE_REF.sub(stash_paren, text)
     text = MD_LINK.sub(stash, text)
     parts = BARE_URL.split(text)
     urls = BARE_URL.findall(text)
